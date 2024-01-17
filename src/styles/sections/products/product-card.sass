@@ -1,0 +1,151 @@
+.product-card
+	position: relative
+	display: flex
+	flex-direction: column
+	gap: fluid(12,22)
+	height: 100%
+
+	&__img
+		position: relative
+		isolation: isolate
+
+		display: flex
+		align-items: center
+		justify-content: center
+
+		aspect-ratio: 430/293
+
+		overflow: hidden
+
+		border-radius: var(--radius-m)
+		background-color: var(--color-neutral-200)
+
+		color: var(--color-white)
+
+		picture
+			display: block
+			width: 100%
+			height: 100%
+
+		&-img
+			display: block
+			width: 100%
+			height: 100%
+			object-fit: cover
+			object-position: center
+
+	&__btn
+		position: absolute
+		inset: 0
+		z-index: var(--z-index-above)
+
+		display: flex
+		align-items: center
+		justify-content: center
+
+		opacity: 0
+
+		text-decoration: none
+
+		transition: opacity .3s ease
+
+		&::after
+			content: ''
+			position: absolute
+			inset: 0
+			z-index: var(--z-index-below)
+			background-color: rgba(0, 0, 0, 0.5)
+			opacity: 0
+			transition: opacity .3s ease
+
+		@include hover
+			opacity: 1
+
+			&::after
+				opacity: 1
+
+	&__top
+		display: flex
+		//чтобы при переполнении контента теги были сверху
+		flex-direction: row-reverse
+		flex-grow: 1
+		flex-wrap: wrap
+		align-items: flex-start
+		justify-content: flex-end
+		gap: fluid(6,12)
+
+		margin-bottom: rem(14)
+		padding-bottom: fluid(10,24)
+
+		border-bottom: 1px solid var(--color-neutral-200)
+
+	&__name
+		flex-grow: 1
+		color: currentcolor
+		font-size: fluid(16,24)
+		font-weight: 500
+		line-height: var(--lineHeightH)
+		text-decoration: none
+
+	&__info
+		display: flex
+		justify-content: space-between
+		gap: rem(6)
+
+		@include while-mob-xl
+			flex-direction: column
+
+		&-el
+			display: flex
+			flex-direction: column
+			gap: fluid(4,8)
+
+			@include while-mob-xl
+				flex-direction: row
+
+		&-label
+			color: var(--color-neutral-300)
+			font-size: rem(11)
+			font-weight: 500
+			line-height: var(--lineHeightP3)
+
+			@include while-mob-xl
+				flex-grow: 1
+
+		&-cont
+			font-size: fluid(11,16)
+			line-height: var(--lineHeightP1)
+
+	&__bottom
+		display: flex
+		align-items: center
+		justify-content: space-between
+		gap: rem(16)
+		margin-top: fluid(14,24)
+		padding-top: fluid(14,24)
+		border-top: 1px solid var(--color-neutral-200)
+
+		@include until-laptop
+			flex-wrap: wrap
+
+	&__price
+		flex: 1 1 auto
+		font-size: var(--fontSizeP1)
+		font-weight: 500
+		line-height: var(--lineHeightP2)
+
+	&__actions
+		display: flex
+		flex-shrink: 0
+		align-items: center
+		gap: rem(6)
+		margin-left: auto
+
+	&__action
+		flex-shrink: 0
+
+	&__desc 
+		display: flex
+		flex-direction: column
+		flex-grow: 1
+

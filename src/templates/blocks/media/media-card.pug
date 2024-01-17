@@ -1,0 +1,26 @@
+mixin media-card(item = 'Electrocars привозит в Россию автомобили RISING', photoNum = 1)
+	article.media-card
+		.media-card__img
+			+image(`img/media/media-${photoNum}.webp`, 587, 342, ' ', '', 'lazy', 'img/media.svg').media-card__img-img
+
+		.media-card__desc
+			.media-card__tags.tags
+				span.tags__item Новости салона
+				span.tags__item Новинки
+
+			a(href="#").media-card__name=item
+
+			.media-info
+				.media-info__item
+					+icon('calendar').media-info__icon
+					span.media-info__text 4 октября
+
+				.media-info__item
+					+icon('views-icon').media-info__icon
+					span.media-info__text 1 231
+
+				.media-info__item
+					+icon('time-icon').media-info__icon
+					span.media-info__text 3 мин
+
+		a(href="#").media-card__link Подробнее

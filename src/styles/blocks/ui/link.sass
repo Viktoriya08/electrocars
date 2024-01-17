@@ -1,0 +1,115 @@
+.link
+	--link-color: inherit
+	--link-color-hover: var(--color-primary-400)
+	--link-color-active: var(--color-primary-500)
+	--link-color-disabled: var(--color-neutral-300)
+	--link-color-focus: var(--color-primary-400)
+	--link-icon-size:  #{rem(16)}
+
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	gap: #{rem(8)}
+
+	padding: 0
+
+	color: var(--link-color)
+	font-size: var(--fontSizeP2)
+	font-weight: 400
+	line-height: var(--lineHeightP4)
+
+	text-decoration: none
+
+	transition: color .3s ease
+
+	cursor: pointer
+
+	&::before,
+	&::after
+		content: ''
+
+		display: block
+		flex-shrink: 0
+
+		width: rem(6)
+		height: fluid(18,22)
+
+		background-color: currentcolor
+		mask-position: center
+
+		mask-repeat: no-repeat
+		mask-size: contain
+
+	&::before
+		@include icon('link-before')
+
+	&::after
+		@include icon('link-after')
+
+	&:focus
+		outline: none
+
+	&:focus-visible
+		border-radius: rem(8)
+		outline: 1px solid var(--link-color-focus)
+		outline-offset: rem(6)
+
+	@include hover
+		--link-color: var(--link-color-hover)
+
+	&:active
+		--link-color: var(--link-color-active)
+
+	&:disabled,
+	&.disabled
+		--link-color: var(--link-color-disabled)
+
+		pointer-events: none
+
+		&:focus-visible
+			outline: none
+
+	&__icon
+		display: block
+		flex-shrink: 0
+		size: var(--link-icon-size)
+
+	&--simple
+		justify-content: unset
+
+		&::before,
+		&::after
+			content: unset
+
+	&--size
+		&-l
+			font-size: var(--fontSizeH3)
+			font-weight: 500
+			line-height: var(--lineHeightH3)
+
+		&-m
+			font-size: var(--fontSizeP)
+			font-weight: 400
+			line-height: var(--lineHeightP1)
+
+	&--color
+		&-secondary
+			--link-color: var(--color-neutral-100)
+			--link-color-hover: var(--color-neutral-100-trans-50)
+			--link-color-active: var(--color-neutral-100-trans-30)
+			--link-color-disabled: var(--color-neutral-200)
+			--link-color-focus: var(--color-primary-400)
+
+		&-tertiary
+			--link-color: var(--color-primary-400)
+			--link-color-hover: var(--color-primary-500)
+			--link-color-active: var(--color-primary-600)
+			--link-color-disabled: var(--color-neutral-200)
+			--link-color-focus: var(--color-primary-400)
+
+		&-quaternary
+			--link-color: var(--color-neutral-300)
+			--link-color-hover: var(--color-primary-500)
+			--link-color-active: var(--color-primary-600)
+			--link-color-disabled: var(--color-neutral-200)
+			--link-color-focus: var(--color-primary-400)

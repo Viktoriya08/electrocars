@@ -1,0 +1,162 @@
+.icon-btn
+	--icon-btn-pa: #{fluid(7,11)}
+	--icon-btn-color: inherit
+	--icon-btn-color-hover: inherit
+	--icon-btn-color-active: inherit
+	--icon-btn-color-disabled: inherit
+	--icon-btn-bg: transparent
+	--icon-btn-bg-hover: transparent
+	--icon-btn-bg-active: transparent
+	--icon-btn-bg-disabled: transparent
+	--icon-btn-border-size: 1px
+	--icon-btn-border-color: transparent
+	--icon-btn-border-color-hover: transparent
+	--icon-btn-border-color-active: transparent
+	--icon-btn-border-color-disabled: transparent
+	--icon-btn-outline-color: var(--color-primary-400)
+	--icon-btn-radius: var(--radius-m)
+	--icon-btn-loader-color: inherit
+	--icon-btn-loader-ring-color: transparent
+	--icon-btn-icon-size: #{fluid(14, 20)}
+
+	position: relative
+
+	display: inline-flex
+	align-items: center
+	justify-content: center
+
+	padding: var(--icon-btn-pa)
+
+	border: var(--icon-btn-border-size) solid var(--icon-btn-border-color)
+	border-radius: var(--icon-btn-radius)
+
+	background-color: var(--icon-btn-bg)
+
+	color: var(--icon-btn-color)
+
+	text-decoration: none
+
+	transition: color .3s ease, border-color .3s ease, background-color .3s ease
+
+	cursor: pointer
+
+	&:focus
+		outline: none
+
+	&:focus-visible
+		outline: 1px solid var(--icon-btn-outline-color)
+		outline-offset: -1px
+
+	@include hover
+		--icon-btn-color: var(--icon-btn-color-hover)
+		--icon-btn-bg: var(--icon-btn-bg-hover)
+		--icon-btn-border-color: var(--icon-btn-border-color-hover)
+
+	&:active
+		--icon-btn-color: var(--icon-btn-color-active)
+		--icon-btn-bg: var(--icon-btn-bg-active)
+		--icon-btn-border-color: var(--icon-btn-border-color-active)
+
+	&:disabled,
+	&.disabled
+		--icon-btn-color: var(--icon-btn-color-disabled)
+		--icon-btn-bg: var(--icon-btn-bg-disabled)
+		--icon-btn-border-color: var(--icon-btn-border-color-disabled)
+
+		cursor: not-allowed
+
+		&:focus-visible
+			outline: none
+
+	&[data-count]
+		&::after
+			content: attr(data-count)
+			position: absolute
+			top: 0
+			right: 0
+
+			display: flex
+			align-items: center
+			justify-content: center
+
+			size: fluid(14, 16)
+			padding: fluid(1, 2)
+
+			border-radius: var(--radius-xs)
+
+			background-color: var(--color-primary-400)
+
+			color: var(--color-neutral-100)
+
+			font-size: var(--fontSizeP5)
+			font-weight: 500
+			line-height: 1
+
+	&.disabled
+		pointer-events: none
+
+	&.loading
+		cursor: wait
+
+		&::before
+			content: ''
+
+			display: block
+			flex: none
+
+			size: var(--icon-btn-icon-size)
+
+			border-width: 2px
+			border-style: solid
+
+			border-radius: 50%
+			border-color: var(--icon-btn-loader-color) var(--icon-btn-loader-color) var(--icon-btn-loader-ring-color)
+
+			transition: border-color .3s ease
+			animation: spin360 .7s linear infinite
+
+		& > *
+			display: none
+
+	&__text
+		display: block
+		flex: none
+
+	&__icon
+		display: block
+		flex: none
+		size: var(--icon-btn-icon-size)
+		color: currentcolor
+
+	&--color
+		&-primary
+			--icon-btn-color: var(--color-primary-500)
+			--icon-btn-color-hover: var(--color-primary-500)
+			--icon-btn-color-active: var(--color-primary-500)
+			--icon-btn-color-disabled: var(--color-neutral-300)
+			--icon-btn-bg: transparent
+			--icon-btn-bg-hover: var(--color-primary-300)
+			--icon-btn-bg-active: var(--color-primary-300)
+			--icon-btn-bg-disabled: transparent
+			--icon-btn-border-color: transparent
+			--icon-btn-border-color-hover: transparent
+			--icon-btn-border-color-active: transparent
+			--icon-btn-border-color-disabled: var(--color-neutral-200)
+			--icon-btn-loader-color: var(--color-primary-400)
+			--icon-btn-loader-ring-color: var(--color-primary-300)
+
+		&-secondary
+			--icon-btn-color: var(--color-primary-500)
+			--icon-btn-color-hover: var(--color-primary-500)
+			--icon-btn-color-active: var(--color-primary-500)
+			--icon-btn-color-disabled: var(--color-neutral-300)
+			--icon-btn-bg: var(--color-primary-300)
+			--icon-btn-bg-hover: var(--color-primary-400)
+			--icon-btn-bg-active: var(--color-primary-400)
+			--icon-btn-bg-disabled: transparent
+			--btn-border-color: transparent
+			--btn-border-color-hover: transparent
+			--btn-border-color-active: transparent
+			--btn-border-color-disabled: var(--color-neutral-200)
+			--btn-loader-color: var(--color-primary-400)
+			--btn-loader-ring-color: var(--color-primary-300)

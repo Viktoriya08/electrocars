@@ -1,0 +1,8 @@
+section.page-section.page-section--border
+	.wrapper 
+
+		h2.page-section__title-default Каталог
+
+		.catalog.catalog__items.catalog__items--four
+			each item, index in ['HiPhi X', 'Li9', 'Neta S']
+				+product-card(item, index).catalog__item

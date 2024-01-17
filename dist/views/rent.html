@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <link rel="preload" as="font" type="font/woff" href="/local/client-app/dist/fonts/Inter/Inter-Medium.woff" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/local/client-app/dist/fonts/Inter/Inter-Medium.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff" href="/local/client-app/dist/fonts/Inter/Inter-Regular.woff" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/local/client-app/dist/fonts/Inter/Inter-Regular.woff2" crossorigin>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/local/client-app/dist/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/local/client-app/dist/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/local/client-app/dist/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/local/client-app/dist/favicons/favicon-16x16.png">
+    <!--link(rel="manifest" href="/favicons/site.webmanifest")-->
+    <!--link(rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#ffffff")-->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="Аренда">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:image" content="https://html.xpager.ru/electrocars/img/opengraph-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="660">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://html.xpager.ru/electrocars/img/opengraph-image.jpg">
+    <meta name="format-detection" content="telephone=no">
+    <title>Аренда</title>
+    <script type="module" crossorigin src="/local/client-app/dist/scripts/main-chunk-fdacad84.js"></script>
+    <link rel="stylesheet" href="/local/client-app/dist/styles/index-dbfe154b.css">
+  </head>
+  <body>
+    <div class="layout" id="app">
+      <suspense>
+        <template #default>
+          <root-component>
+            <sticky-header>
+              <template #default>
+                <header class="header">
+                  <div class="wrapper header__wrapper"><a class="header__logo logo" href="../"><img class="logo__img" src="/local/client-app/dist/img/logo-text.svg" alt="electrocars" width="142" height="12" loading="eager" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';"></a>
+                    <div class="header__block header__block--left">
+                      <nav class="header__nav">
+                        <button class="header__link link link--simple" @click="openModal('callback-modal')">Заказать звонок</button><a class="header__link link link--simple" href="#">Контакты</a>
+                      </nav>
+                    </div>
+                    <div class="header__block header__block--center">
+                      <button class="btn btn--color-secondary btn--size-medium" href="#"><span class="btn__text">Каталог</span>
+                            <svg class="btn__icon" aria-hidden="true">
+                              <use xlink:href="/local/client-app/dist/img/icons.svg#icon-catalog"></use>
+                            </svg>
+                      </button>
+                    </div>
+                    <header-actions>
+                      <template #default="{searchShown, showSearch, hideSearch}">
+                        <div class="header__block header__block--right">
+                          <nav class="header__nav" v-show="!searchShown"><a class="header__link link link--simple" href="#">Лизинг</a><a class="header__link link link--simple" href="#">Аренда</a><a class="header__link link link--simple" href="#">Зарядные станции и СТО</a></nav>
+                          <div class="header__actions">
+                            <site-search class="header__search" v-show="searchShown" @clear="hideSearch"></site-search><a class="header__action icon-btn icon-btn--color-primary" v-show="!searchShown" href="#" data-count="3">
+                                  <svg class="icon-btn__icon" aria-hidden="true">
+                                    <use xlink:href="/local/client-app/dist/img/icons.svg#icon-compare"></use>
+                                  </svg></a>
+                            <button class="header__action icon-btn icon-btn--color-primary" v-show="!searchShown" @click="showSearch">
+                                  <svg class="icon-btn__icon" aria-hidden="true">
+                                    <use xlink:href="/local/client-app/dist/img/icons.svg#icon-search"></use>
+                                  </svg>
+                            </button>
+                            <burger-dropdown class="header__action">
+                              <div class="burger-menu__links"><a class="burger-menu__link link link--simple link--size-l link--color-tertiary" href="#">Каталог <span class="count">24</span></a><a class="burger-menu__link link link--simple link--size-l" href="#">Лизинг</a><a class="burger-menu__link link link--simple link--size-l" href="#">Аренда</a><a class="burger-menu__link link link--simple link--size-l" href="#">Зарядные станции и СТО</a></div>
+                              <div class="burger-menu__links burger-menu__links--sm"><a class="burger-menu__link link link--simple link--size-m" href="#">Оплата и доставка</a><a class="burger-menu__link link link--simple link--size-m" href="#">О компании</a><a class="burger-menu__link link link--simple link--size-m" href="#">Медиа</a><a class="burger-menu__link link link--simple link--size-m" href="#">Акции</a><a class="burger-menu__link link link--simple link--size-m" href="#">Контакты</a></div>
+                            </burger-dropdown>
+                          </div>
+                        </div>
+                      </template>
+                    </header-actions>
+                  </div>
+                </header>
+              </template>
+            </sticky-header>
+            <mobile-header v-slot="{shouldBeHidden}">
+              <header class="mobile-header" :class="{'mobile-header--hidden' : shouldBeHidden}">
+                <div class="wrapper">
+                  <div class="mobile-header__body">
+                    <div class="mobile-header__actions">
+                      <burger-dropdown id="mobile-burger">
+                        <header-actions>
+                          <template #default="{searchShown, showSearch, hideSearch}">
+                            <div class="burger-menu__top"><a class="icon-btn icon-btn--color-primary" v-show="!searchShown" href="#" data-count="3">
+                                    <svg class="icon-btn__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-compare"></use>
+                                    </svg></a>
+                              <button class="header__action icon-btn icon-btn--color-primary" v-show="!searchShown" @click="showSearch">
+                                    <svg class="icon-btn__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-search"></use>
+                                    </svg>
+                              </button>
+                              <site-search class="burger-menu__search" v-if="searchShown" label="Поиск" @clear="hideSearch"></site-search>
+                            </div>
+                          </template>
+                        </header-actions>
+                        <div class="burger-menu__links"><a class="burger-menu__link link link--simple link--size-l link--color-tertiary" href="#">Каталог <span class="count">24</span></a><a class="burger-menu__link link link--simple link--size-l" href="#">Лизинг</a><a class="burger-menu__link link link--simple link--size-l" href="#">Аренда</a><a class="burger-menu__link link link--simple link--size-l" href="#">Зарядные станции и СТО</a></div>
+                        <div class="burger-menu__links burger-menu__links--sm"><a class="burger-menu__link link link--simple link--size-m" href="#">Оплата и доставка</a><a class="burger-menu__link link link--simple link--size-m" href="#">О компании</a><a class="burger-menu__link link link--simple link--size-m" href="#">Медиа</a><a class="burger-menu__link link link--simple link--size-m" href="#">Акции</a><a class="burger-menu__link link link--simple link--size-m" href="#">Контакты</a></div>
+                      </burger-dropdown>
+                    </div><a class="mobile-header__logo logo" href="#"><img class="logo__img" src="/local/client-app/dist/img/logo.svg" alt="electrocars" width="28" height="28" loading="eager" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';"></a>
+                    <div class="mobile-header__actions">
+                      <button class="link link--simple" @click="openModal('callback-modal')">Позвонить</button>
+                    </div>
+                  </div>
+                </div>
+              </header>
+            </mobile-header>
+            <main class="page page-rent">
+              <!--top-->
+                  <section class="page-header">
+                    <div class="wrapper page-header__wrapper">
+                          <nav class="breadcrumbs page-header__breadcrumbs">
+                            <div class="breadcrumbs__wrapper">
+                              <ol class="breadcrumbs__items">
+                                <li class="breadcrumbs__item"><a class="breadcrumbs__link link" href="#" aria-current="page">Главная</a></li>
+                                <li class="breadcrumbs__item">Аренда</li>
+                              </ol>
+                            </div>
+                          </nav>
+                      <div class="page-header__content">
+                        <h1 class="page-title">Аренда <br> электрокаров</h1>
+                      </div>
+                    </div>
+                  </section>
+              <!--баннер-блок-->
+              <section class="page-section block-img">
+                <div class="content-block">
+                  <div class="wrapper">
+                    <div class="content-block__body">
+                      <div class="content-block__cont benefits">
+                        <div class="benefits__grid"> 
+                          <div class="benefits__elem benefits-card">
+                            <div class="benefits-card__title">50+ уникальных <br>авто</div>
+                            <div class="benefits-card__text">Наша коллекция включает автомобили от ведущих производителей со всего мира, что позволяет предложить вам широкий выбор электрокаров.</div>
+                          </div>
+                          <div class="benefits__elem benefits-card">
+                            <div class="benefits-card__title">Круглосуточная техническая поддержка</div>
+                            <div class="benefits-card__text">Высококвалифицированная команда специалистов всегда готова ответить на вопросы и предоставить необходимые консультации в случае проблем.</div>
+                          </div>
+                          <div class="benefits__elem benefits-card">
+                            <div class="benefits-card__title">Доставка и прием <br>автомобилей 24/7</div>
+                            <div class="benefits-card__text">Компания предлагает доставку и прием автомобилей круглосуточно, чтобы обеспечить потребности клиентов в любое удобное для них время.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="block-img__picture"> <img class="block-img__img" src="/local/client-app/dist/img/rent/rent.jpg" alt=" " width="1920" height="800" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/product.svg';">
+                </div>
+              </section>
+              <!-- Популярные электрокары-->
+              <section class="page-section content-block">
+                <div class="wrapper">
+                  <div class="content-block__body">
+                    <div class="content-block__title"> 
+                      <div class="subtitle subtitle--short">Популярные электрокары</div>
+                    </div>
+                    <div class="content-block__cont">
+                          <article class="info-block">
+                            <div class="info-block__wrapper"> 
+                              <div class="info-block__info">
+                                <div class="info-block__img info-block__img--big"> <img class="info-block__img-img" src="/local/client-app/dist/img/spotlight/spotlight-1.jpg" alt=" " width="430" height="293" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/product.svg';">
+                                </div>
+                                <div class="info-block__title">HiPhi X</div>
+                                <ul class="info-block__list"> 
+                                  <li class="info-block__item data data--white">
+                                    <div class="data__title">Год выпуска</div>
+                                    <div class="data__info">2023</div>
+                                  </li>
+                                  <li class="info-block__item data data--white"> 
+                                    <div class="data__title">Емкость батареи</div>
+                                    <div class="data__info">42,8 кВт</div>
+                                  </li>
+                                  <li class="info-block__item data data--white"> 
+                                    <div class="data__title">Запас хода</div>
+                                    <div class="data__info">210 км</div>
+                                  </li>
+                                  <li class="info-block__item data data--white"> 
+                                    <div class="data__title">Разгон 0-100 км/ч</div>
+                                    <div class="data__info">5,3 сек</div>
+                                  </li>
+                                </ul>
+                              </div>
+                              <div class="info-block__right"> 
+                                <div class="info-block__box"> 
+                                  <div class="info-block__text">Компания является экспертом в области электромобилей и обладает глубокими знаниями о последних разработках и трендах в этой области.</div>
+                                  <button class="info-block__btn btn btn--color-primary"> <span class="btn__text">Подробнее</span></button>
+                                </div>
+                                <div class="info-block__img info-block__img--small"><img src="/local/client-app/dist/img/spotlight/spotlight-1_1.jpg" alt=" " width="274" height="180" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/product.svg';">
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                          <article class="info-block">
+                            <div class="info-block__wrapper"> 
+                              <div class="info-block__info">
+                                <div class="info-block__img info-block__img--big"> <img class="info-block__img-img" src="/local/client-app/dist/img/spotlight/spotlight-2.jpg" alt=" " width="430" height="293" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/product.svg';">
+                                </div>
+                                <div class="info-block__title">Li 9</div>
+                                <ul class="info-block__list"> 
+                                  <li class="info-block__item data data--white">
+                                    <div class="data__title">Год выпуска</div>
+                                    <div class="data__info">2023</div>
+                                  </li>
+                                  <li class="info-block__item data data--white"> 
+                                    <div class="data__title">Емкость батареи</div>
+                                    <div class="data__info">42,8 кВт</div>
+                                  </li>
+                                  <li class="info-block__item data data--white"> 
+                                    <div class="data__title">Запас хода</div>
+                                    <div class="data__info">210 км</div>
+                                  </li>
+                                  <li class="info-block__item data data--white"> 
+                                    <div class="data__title">Разгон 0-100 км/ч</div>
+                                    <div class="data__info">5,3 сек</div>
+                                  </li>
+                                </ul>
+                              </div>
+                              <div class="info-block__right"> 
+                                <div class="info-block__box"> 
+                                  <div class="info-block__text">Компания является экспертом в области электромобилей и обладает глубокими знаниями о последних разработках и трендах в этой области.</div>
+                                  <button class="info-block__btn btn btn--color-primary"> <span class="btn__text">Подробнее</span></button>
+                                </div>
+                                <div class="info-block__img info-block__img--small"><img src="/local/client-app/dist/img/spotlight/spotlight-2_2.jpg" alt=" " width="274" height="180" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/product.svg';">
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                          <article class="info-block">
+                            <div class="info-block__wrapper"> 
+                              <div class="info-block__info">
+                                <div class="info-block__img info-block__img--big"> <img class="info-block__img-img" src="/local/client-app/dist/img/spotlight/spotlight-3.jpg" alt=" " width="430" height="293" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/product.svg';">
+                                </div>
+                                <div class="info-block__title">Rising R7</div>
+                                <ul class="info-block__list"> 
+                                  <li class="info-block__item data data--white">
+                                    <div class="data__title">Год выпуска</div>
+                                    <div class="data__info">2023</div>
+                                  </li>
+                                  <li class="info-block__item data data--white"> 
+                                    <div class="data__title">Емкость батареи</div>
+                                    <div class="data__info">42,8 кВт</div>
+                                  </li>
+                                  <li class="info-block__item data data--white"> 
+                                    <div class="data__title">Запас хода</div>
+                                    <div class="data__info">210 км</div>
+                                  </li>
+                                  <li class="info-block__item data data--white"> 
+                                    <div class="data__title">Разгон 0-100 км/ч</div>
+                                    <div class="data__info">5,3 сек</div>
+                                  </li>
+                                </ul>
+                              </div>
+                              <div class="info-block__right"> 
+                                <div class="info-block__box"> 
+                                  <div class="info-block__text">Компания является экспертом в области электромобилей и обладает глубокими знаниями о последних разработках и трендах в этой области.</div>
+                                  <button class="info-block__btn btn btn--color-primary"> <span class="btn__text">Подробнее</span></button>
+                                </div>
+                                <div class="info-block__img info-block__img--small"><img src="/local/client-app/dist/img/spotlight/spotlight-3_3.jpg" alt=" " width="274" height="180" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/product.svg';">
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <!-- form-->
+                  <section class="page-section" id="callback">
+                    <div class="wrapper">
+                      <div class="form-block">
+                        <h1 class="form-block__title">Повысьте качество вашего сервиса с помощью электрокаров?</h1>
+                        <div class="form-block__form">
+                          <callback-form></callback-form>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+              <!-- Требования  для аренды электрокаров-->
+              <section class="page-section content-block content-block--border">
+                <div class="wrapper">
+                  <div class="content-block__body">
+                    <div class="content-block__title"> 
+                      <div class="subtitle">Развиваем инфраструктуру электромобилей в городе</div>
+                    </div>
+                    <div class="content-block__cont benefits">
+                      <div class="benefits__grid benefits__grid--chess">
+                        <div class="benefits__elem benefits-card">
+                          <div class="benefits-card__title">Возрастные ограничения</div>
+                          <div class="benefits-card__text"> 
+                            <p>Для аренды электрокара требуется возраст от 18 лет и наличие водительского удостоверения, действительного не менее 1 года.</p>
+                          </div>
+                        </div>
+                        <div class="benefits__elem benefits-card">
+                          <div class="benefits-card__title">Залог и оплата</div>
+                          <div class="benefits-card__text">
+                            <p>При аренде электрокара требуется предоставить залог в виде депозита на случай возможных повреждений или штрафов. Оплата за аренду электрокара производится заранее или по договоренности согласно выбранному тарифу.</p>
+                          </div>
+                        </div>
+                        <div class="benefits__elem benefits-card">
+                          <div class="benefits-card__title">Соблюдение правил использования</div>
+                          <div class="benefits-card__text"> 
+                            <p>Водитель должен строго соблюдать правила дорожного движения и безопасности, а также руководствоваться правилами использования электрокаров, предоставленными компанией.</p>
+                          </div>
+                        </div>
+                        <div class="benefits__elem benefits-card">
+                          <div class="benefits-card__title">Обязательная зарядка и возврат автомобиля</div>
+                          <div class="benefits-card__text">
+                            <p>Арендатор обязан возвращать электрокар с достаточным зарядом батареи, согласно указаниям компании.</p>
+                            <p>При отсутствии возможности зарядить автомобиль, арендатор должен обратиться в компанию для получения инструкций и рекомендаций.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <!--часто задаваемые вопросы-->
+              <section class="page-section color-block">
+                <div class="wrapper color-block__wrapper">
+                  <div class="color-block__body color-block__body--light">
+                    <div class="color-block__title">
+                      <h2 class="subtitle">Часто задаваемые <br> вопросы</h2>
+                    </div>
+                    <div class="color-block__cont">
+                      <article class="faq-block">
+                        <div class="faq-block__cont">
+                          <base-accordion class="faq-block__item">
+                            <template #title>
+                              Где можно зарядить автомобиль? <br>
+                              Можно ли заряжаться дома?
+                            </template>
+                            <template #body>
+                              <p>Гарантия распространяется на лакокрасочное покрытие и основные узлы и агрегаты:</p>
+                              <ul>
+                                <li>Тяговая батарея</li>
+                                <li>Электрические компоненты (детали и системы, которые должны находиться под напряжением для выполнения своих функций, за исключением расходных материалов)</li>
+                                <li>Элементы кузова</li>
+                                <li>Двигатель</li>
+                                <li>Рулевой механизм в сборе</li>
+                                <li>и другие</li>
+                              </ul>
+                            </template>
+                          </base-accordion>
+                          <base-accordion class="faq-block__item">
+                            <template #title>На сколько дается гарантия после покупки?</template>
+                            <template #body>
+                              <p>Гарантия распространяется на лакокрасочное покрытие и основные узлы и агрегаты:</p>
+                              <ul>
+                                <li>Тяговая батарея</li>
+                                <li>Электрические компоненты (детали и системы, которые должны находиться под напряжением для выполнения своих функций, за исключением расходных материалов)</li>
+                                <li>Элементы кузова</li>
+                                <li>Двигатель</li>
+                                <li>Рулевой механизм в сборе</li>
+                                <li>и другие</li>
+                              </ul>
+                            </template>
+                          </base-accordion>
+                          <base-accordion class="faq-block__item">
+                            <template #title>
+                              Где обслуживать электромобиль <br>
+                              после покупки?
+                            </template>
+                            <template #body>
+                              <p>Гарантия распространяется на лакокрасочное покрытие и основные узлы и агрегаты:</p>
+                              <ul>
+                                <li>Тяговая батарея</li>
+                                <li>Электрические компоненты (детали и системы, которые должны находиться под напряжением для выполнения своих функций, за исключением расходных материалов)</li>
+                                <li>Элементы кузова</li>
+                                <li>Двигатель</li>
+                                <li>Рулевой механизм в сборе</li>
+                                <li>и другие</li>
+                              </ul>
+                            </template>
+                          </base-accordion>
+                          <base-accordion class="faq-block__item">
+                            <template #title>
+                              На каком языке интерфейс? <br>
+                              Какой языковой пакет в машине?
+                            </template>
+                            <template #body>
+                              <p>Гарантия распространяется на лакокрасочное покрытие и основные узлы и агрегаты:</p>
+                              <ul>
+                                <li>Тяговая батарея</li>
+                                <li>Электрические компоненты (детали и системы, которые должны находиться под напряжением для выполнения своих функций, за исключением расходных материалов)</li>
+                                <li>Элементы кузова</li>
+                                <li>Двигатель</li>
+                                <li>Рулевой механизм в сборе</li>
+                                <li>и другие</li>
+                              </ul>
+                            </template>
+                          </base-accordion>
+                          <base-accordion class="faq-block__item">
+                            <template #title>Могу ли взять электромобиль на тест-драйв?</template>
+                            <template #body>
+                              <p>Гарантия распространяется на лакокрасочное покрытие и основные узлы и агрегаты:</p>
+                              <ul>
+                                <li>Тяговая батарея</li>
+                                <li>Электрические компоненты (детали и системы, которые должны находиться под напряжением для выполнения своих функций, за исключением расходных материалов)</li>
+                                <li>Элементы кузова</li>
+                                <li>Двигатель</li>
+                                <li>Рулевой механизм в сборе</li>
+                                <li>и другие</li>
+                              </ul>
+                            </template>
+                          </base-accordion>
+                        </div>
+                      </article>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <!--Отзывы-->
+              <section class="page-section color-block" id="reviews-slider">
+                <div class="wrapper color-block__wrapper">
+                  <div class="color-block__body color-block__body--dark">
+                    <div class="color-block__title">
+                      <h2 class="subtitle">Отзывы клиентов</h2>
+                    </div>
+                    <div class="color-block__cont">
+                      <article class="reviews-block">
+                        <div class="reviews-block__top">
+                          <div class="reviews-block__btn">
+                            <button class="btn btn--color-fith" @click="openModal('review-modal')"><span class="btn__text">Оставить отзыв</span></button>
+                          </div>
+                          <div class="reviews-block__controls">
+                            <div class="swiper-buttons">
+                              <div class="swiper-button swiper-button-prev swiper-button--dark"></div>
+                              <div class="swiper-button swiper-button-next swiper-button--dark"></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                          </div>
+                        </div>
+                        <reviews-slider class="reviews-block__slider" id="reviews-slider">
+                          <template #default>
+                            <div class="reviews-block__slide swiper-slide">
+                              <div class="reviews-card">
+                                <div class="reviews-card__top"><span class="reviews-card__name">Юрий С.</span><span class="reviews-card__date">19 Августа 2021</span></div>
+                                <div class="reviews-card__cont">
+                                  <div class="reviews-card__text">
+                                    <p>
+                                      Я арендовал HiPhi X на выходные и остался в полном восторге! Этот электрокар не только выглядит современно и стильно, но и обладает потрясающей производительностью. Заряда батареи хватило на все мои поездки, а система быстрой зарядки была настоящим спасением. Рекомендую эту модель всем...<br> Я арендовал HiPhi X на выходные и остался в полном восторге! Этот электрокар не только выглядит современно и стильно, но и обладает потрясающей производительностью. Заряда батареи хватило на все мои поездки, а система быстрой зарядки была настоящим спасением. Рекомендую эту модель всем...</p>
+                                  </div>
+                                  <div class="reviews-card__link">
+                                    <button class="link" @click="openModal('review-details-1')">подробнее</button>
+                                  </div>
+                                </div>
+                                <div class="reviews-card__bottom">
+                                  <div class="reviews-card__product product-preview"><img class="product-preview__img" src="/local/client-app/dist/img/reviews/product-1.webp" alt="alt" width="120" height="72" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';">
+                                    <div class="product-preview__name">HiPhi Y</div><a class="product-preview__link" href="#">Подробнее</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="reviews-block__slide swiper-slide">
+                              <div class="reviews-card">
+                                <div class="reviews-card__top"><span class="reviews-card__name">Елена Д.</span><span class="reviews-card__date">19 Августа 2021</span></div>
+                                <div class="reviews-card__cont">
+                                  <div class="reviews-card__text">
+                                    <p>Я арендовал HiPhi X на выходные и остался в полном восторге! Этот электрокар не только выглядит современно и стильно, но и обладает потрясающей производительностью. Заряда батареи хватило на все мои поездки, а система быстрой зарядки была настоящим спасением. Рекомендую эту модель всем, кто хочет насладиться комфортом и безупречным управлением электрокара!</p>
+                                  </div>
+                                </div>
+                                <div class="reviews-card__bottom">
+                                  <div class="reviews-card__product product-preview"><img class="product-preview__img" src="/local/client-app/dist/img/reviews/product-1.webp" alt="alt" width="120" height="72" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';">
+                                    <div class="product-preview__name">HiPhi Y</div><a class="product-preview__link" href="#">Подробнее</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="reviews-block__slide swiper-slide">
+                              <div class="reviews-card">
+                                <div class="reviews-card__top"><span class="reviews-card__name">Александр Л.</span><span class="reviews-card__date">19 Августа 2021</span></div>
+                                <div class="reviews-card__cont">
+                                  <div class="reviews-card__text">
+                                    <p>Я арендовал HiPhi X на выходные и остался в полном восторге! Этот электрокар не только выглядит современно и стильно, но и обладает потрясающей производительностью. Заряда батареи хватило на все мои поездки, а система быстрой зарядки была настоящим спасением. Рекомендую эту модель всем, кто хочет насладиться комфортом и безупречным управлением электрокара!</p>
+                                  </div>
+                                </div>
+                                <div class="reviews-card__bottom">
+                                  <div class="reviews-card__product product-preview"><img class="product-preview__img" src="/local/client-app/dist/img/reviews/product-3.webp" alt="alt" width="120" height="72" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';">
+                                    <div class="product-preview__name">HiPhi Y</div><a class="product-preview__link" href="#">Подробнее</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="reviews-block__slide swiper-slide">
+                              <div class="reviews-card">
+                                <div class="reviews-card__top"><span class="reviews-card__name">Александр Л.</span><span class="reviews-card__date">19 Августа 2021</span></div>
+                                <div class="reviews-card__cont">
+                                  <div class="reviews-card__text">
+                                    <p>Я арендовал HiPhi X на выходные и остался в полном восторге! Этот электрокар не только выглядит современно и стильно, но и обладает потрясающей производительностью. Заряда батареи хватило на все мои поездки, а система быстрой зарядки была настоящим спасением. Рекомендую эту модель всем, кто хочет насладиться комфортом и безупречным управлением электрокара!</p>
+                                  </div>
+                                </div>
+                                <div class="reviews-card__bottom">
+                                  <div class="reviews-card__product product-preview"><img class="product-preview__img" src="/local/client-app/dist/img/reviews/product-3.webp" alt="alt" width="120" height="72" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';">
+                                    <div class="product-preview__name">HiPhi Y</div><a class="product-preview__link" href="#">Подробнее</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </template>
+                        </reviews-slider>
+                      </article>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <!--Интересный опыт и решения-->
+              <section class="page-section media-block" id="media-slider">
+                <div class="wrapper">
+                  <div class="page-section__top">
+                    <h2 class="page-section__title subtitle">Интересный опыт <br> и решения</h2>
+                    <div class="page-section__controls">
+                      <div class="swiper-buttons">
+                        <div class="swiper-button swiper-button-prev"></div>
+                        <div class="swiper-button swiper-button-next"></div>
+                      </div>
+                      <div class="swiper-pagination"></div>
+                    </div>
+                  </div>
+                  <media-slider class="media-block__slider" id="media-slider">
+                    <template #default>
+                      <div class="media-block__slide swiper-slide">
+                            <article class="media-card">
+                              <div class="media-card__img"><img class="media-card__img-img" src="/local/client-app/dist/img/media/media-1.webp" alt=" " width="587" height="342" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/media.svg';">
+                              </div>
+                              <div class="media-card__desc">
+                                <div class="media-card__tags tags"><span class="tags__item">Новости салона</span><span class="tags__item">Новинки</span></div><a class="media-card__name" href="#">Electrocars привозит в Россию автомобили RISING</a>
+                                <div class="media-info">
+                                  <div class="media-info__item">
+                                        <svg class="media-info__icon" aria-hidden="true">
+                                          <use xlink:href="/local/client-app/dist/img/icons.svg#icon-calendar"></use>
+                                        </svg><span class="media-info__text">4 октября</span>
+                                  </div>
+                                  <div class="media-info__item">
+                                        <svg class="media-info__icon" aria-hidden="true">
+                                          <use xlink:href="/local/client-app/dist/img/icons.svg#icon-views-icon"></use>
+                                        </svg><span class="media-info__text">1 231</span>
+                                  </div>
+                                  <div class="media-info__item">
+                                        <svg class="media-info__icon" aria-hidden="true">
+                                          <use xlink:href="/local/client-app/dist/img/icons.svg#icon-time-icon"></use>
+                                        </svg><span class="media-info__text">3 мин</span>
+                                  </div>
+                                </div>
+                              </div><a class="media-card__link" href="#">Подробнее</a>
+                            </article>
+                      </div>
+                      <div class="media-block__slide swiper-slide">
+                            <article class="media-card">
+                              <div class="media-card__img"><img class="media-card__img-img" src="/local/client-app/dist/img/media/media-2.webp" alt=" " width="587" height="342" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/media.svg';">
+                              </div>
+                              <div class="media-card__desc">
+                                <div class="media-card__tags tags"><span class="tags__item">Новости салона</span><span class="tags__item">Новинки</span></div><a class="media-card__name" href="#">Сколько служат батарея и мотор электромобиля?</a>
+                                <div class="media-info">
+                                  <div class="media-info__item">
+                                        <svg class="media-info__icon" aria-hidden="true">
+                                          <use xlink:href="/local/client-app/dist/img/icons.svg#icon-calendar"></use>
+                                        </svg><span class="media-info__text">4 октября</span>
+                                  </div>
+                                  <div class="media-info__item">
+                                        <svg class="media-info__icon" aria-hidden="true">
+                                          <use xlink:href="/local/client-app/dist/img/icons.svg#icon-views-icon"></use>
+                                        </svg><span class="media-info__text">1 231</span>
+                                  </div>
+                                  <div class="media-info__item">
+                                        <svg class="media-info__icon" aria-hidden="true">
+                                          <use xlink:href="/local/client-app/dist/img/icons.svg#icon-time-icon"></use>
+                                        </svg><span class="media-info__text">3 мин</span>
+                                  </div>
+                                </div>
+                              </div><a class="media-card__link" href="#">Подробнее</a>
+                            </article>
+                      </div>
+                      <div class="media-block__slide swiper-slide">
+                            <article class="media-card">
+                              <div class="media-card__img"><img class="media-card__img-img" src="/local/client-app/dist/img/media/media-3.webp" alt=" " width="587" height="342" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/media.svg';">
+                              </div>
+                              <div class="media-card__desc">
+                                <div class="media-card__tags tags"><span class="tags__item">Новости салона</span><span class="tags__item">Новинки</span></div><a class="media-card__name" href="#">HiPhi X – главная перчинка ресторанного форума</a>
+                                <div class="media-info">
+                                  <div class="media-info__item">
+                                        <svg class="media-info__icon" aria-hidden="true">
+                                          <use xlink:href="/local/client-app/dist/img/icons.svg#icon-calendar"></use>
+                                        </svg><span class="media-info__text">4 октября</span>
+                                  </div>
+                                  <div class="media-info__item">
+                                        <svg class="media-info__icon" aria-hidden="true">
+                                          <use xlink:href="/local/client-app/dist/img/icons.svg#icon-views-icon"></use>
+                                        </svg><span class="media-info__text">1 231</span>
+                                  </div>
+                                  <div class="media-info__item">
+                                        <svg class="media-info__icon" aria-hidden="true">
+                                          <use xlink:href="/local/client-app/dist/img/icons.svg#icon-time-icon"></use>
+                                        </svg><span class="media-info__text">3 мин</span>
+                                  </div>
+                                </div>
+                              </div><a class="media-card__link" href="#">Подробнее</a>
+                            </article>
+                      </div>
+                      <div class="media-block__slide swiper-slide">
+                            <article class="media-card">
+                              <div class="media-card__img"><img class="media-card__img-img" src="/local/client-app/dist/img/media/media-1.webp" alt=" " width="587" height="342" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/media.svg';">
+                              </div>
+                              <div class="media-card__desc">
+                                <div class="media-card__tags tags"><span class="tags__item">Новости салона</span><span class="tags__item">Новинки</span></div><a class="media-card__name" href="#">Electrocars привозит в Россию автомобили RISING</a>
+                                <div class="media-info">
+                                  <div class="media-info__item">
+                                        <svg class="media-info__icon" aria-hidden="true">
+                                          <use xlink:href="/local/client-app/dist/img/icons.svg#icon-calendar"></use>
+                                        </svg><span class="media-info__text">4 октября</span>
+                                  </div>
+                                  <div class="media-info__item">
+                                        <svg class="media-info__icon" aria-hidden="true">
+                                          <use xlink:href="/local/client-app/dist/img/icons.svg#icon-views-icon"></use>
+                                        </svg><span class="media-info__text">1 231</span>
+                                  </div>
+                                  <div class="media-info__item">
+                                        <svg class="media-info__icon" aria-hidden="true">
+                                          <use xlink:href="/local/client-app/dist/img/icons.svg#icon-time-icon"></use>
+                                        </svg><span class="media-info__text">3 мин</span>
+                                  </div>
+                                </div>
+                              </div><a class="media-card__link" href="#">Подробнее</a>
+                            </article>
+                      </div>
+                      <div class="media-block__slide swiper-slide">
+                            <article class="media-card">
+                              <div class="media-card__img"><img class="media-card__img-img" src="/local/client-app/dist/img/media/media-2.webp" alt=" " width="587" height="342" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/media.svg';">
+                              </div>
+                              <div class="media-card__desc">
+                                <div class="media-card__tags tags"><span class="tags__item">Новости салона</span><span class="tags__item">Новинки</span></div><a class="media-card__name" href="#">Сколько служат батарея и мотор электромобиля?</a>
+                                <div class="media-info">
+                                  <div class="media-info__item">
+                                        <svg class="media-info__icon" aria-hidden="true">
+                                          <use xlink:href="/local/client-app/dist/img/icons.svg#icon-calendar"></use>
+                                        </svg><span class="media-info__text">4 октября</span>
+                                  </div>
+                                  <div class="media-info__item">
+                                        <svg class="media-info__icon" aria-hidden="true">
+                                          <use xlink:href="/local/client-app/dist/img/icons.svg#icon-views-icon"></use>
+                                        </svg><span class="media-info__text">1 231</span>
+                                  </div>
+                                  <div class="media-info__item">
+                                        <svg class="media-info__icon" aria-hidden="true">
+                                          <use xlink:href="/local/client-app/dist/img/icons.svg#icon-time-icon"></use>
+                                        </svg><span class="media-info__text">3 мин</span>
+                                  </div>
+                                </div>
+                              </div><a class="media-card__link" href="#">Подробнее</a>
+                            </article>
+                      </div>
+                      <div class="media-block__slide swiper-slide">
+                            <article class="media-card">
+                              <div class="media-card__img"><img class="media-card__img-img" src="/local/client-app/dist/img/media/media-3.webp" alt=" " width="587" height="342" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/media.svg';">
+                              </div>
+                              <div class="media-card__desc">
+                                <div class="media-card__tags tags"><span class="tags__item">Новости салона</span><span class="tags__item">Новинки</span></div><a class="media-card__name" href="#">HiPhi X – главная перчинка ресторанного форума</a>
+                                <div class="media-info">
+                                  <div class="media-info__item">
+                                        <svg class="media-info__icon" aria-hidden="true">
+                                          <use xlink:href="/local/client-app/dist/img/icons.svg#icon-calendar"></use>
+                                        </svg><span class="media-info__text">4 октября</span>
+                                  </div>
+                                  <div class="media-info__item">
+                                        <svg class="media-info__icon" aria-hidden="true">
+                                          <use xlink:href="/local/client-app/dist/img/icons.svg#icon-views-icon"></use>
+                                        </svg><span class="media-info__text">1 231</span>
+                                  </div>
+                                  <div class="media-info__item">
+                                        <svg class="media-info__icon" aria-hidden="true">
+                                          <use xlink:href="/local/client-app/dist/img/icons.svg#icon-time-icon"></use>
+                                        </svg><span class="media-info__text">3 мин</span>
+                                  </div>
+                                </div>
+                              </div><a class="media-card__link" href="#">Подробнее</a>
+                            </article>
+                      </div>
+                    </template>
+                  </media-slider>
+                </div>
+              </section>
+            </main>
+            <footer class="footer">
+              <div class="wrapper">
+                <div class="footer__cont">
+                  <nav class="footer__menu">
+                    <ul class="footer__menu-list">
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">Каталог</a></li>
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">Лизинг</a></li>
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">Аренда</a></li>
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">Зарядные станции и СТО</a></li>
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">Оплата и доставка</a></li>
+                    </ul>
+                    <ul class="footer__menu-list">
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">О компании</a></li>
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">Акции</a></li>
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">Контакты</a></li>
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">Медиа</a></li>
+                    </ul>
+                  </nav>
+                  <address class="footer__contacts">
+                    <div class="footer__contacts-cont">
+                      <div class="footer__contacts-list">
+                        <div class="footer__contacts-item"><span class="footer__contacts-text">Челябинск <br> Свободы, 91&nbsp;к.&nbsp;1а</span><a class="footer__contacts-link" href="tel:+73517507750">+7 351 750 77 50</a></div>
+                        <div class="footer__contacts-item"><span class="footer__contacts-text">Екатеринбург <br> ул.&nbsp;Мамина-Сибиряка,&nbsp;140</span><a class="footer__contacts-link" href="tel:+73433281010">+7 343 328 10 10</a></div>
+                      </div>
+                      <div class="footer__socials">
+                        <div class="footer__socials-list socials socials--light"><a class="socials__item" href="#"><img class="socials__item-icon" src="/local/client-app/dist/img/socials/yt.svg" alt="alt" width="32" height="32" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';"></a><a class="socials__item" href="#"><img class="socials__item-icon" src="/local/client-app/dist/img/socials/vk.svg" alt="alt" width="32" height="32" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';"></a><a class="socials__item" href="#"><img class="socials__item-icon" src="/local/client-app/dist/img/socials/telegram.svg" alt="alt" width="32" height="32" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';"></a><a class="socials__item" href="#"><img class="socials__item-icon" src="/local/client-app/dist/img/socials/dzen.svg" alt="alt" width="32" height="32" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';"></a><a class="socials__item" href="#"><img class="socials__item-icon" src="/local/client-app/dist/img/socials/web.svg" alt="alt" width="32" height="32" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';"></a></div>
+                        <button class="footer__socials-btn btn btn--color-fith" @click="openModal('callback-modal')"><span class="btn__text">Заказать звонок</span></button>
+                      </div>
+                    </div>
+                  </address>
+                  <div class="footer__bottom"><a class="footer__logo logo logo--light" href="#"><img class="logo__img" src="/local/client-app/dist/img/logo-text.svg" alt="electrocars" width="142" height="12" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';"></a>
+                    <div class="footer__links"><a class="footer__links-item link link--color-secondary link--simple" href="#">Пользовательское соглашение</a><a class="footer__links-item link link--color-secondary link--simple" href="#">Политика конфиденциальности</a></div><span class="footer__copyright">&copy; 2023 «Electrocars»</span><a class="footer__dev" href="#">Заряжено в Xpage</a>
+                  </div>
+                </div>
+              </div>
+            </footer>
+          </root-component>
+        </template>
+      </suspense>
+      <div class="modals" id="modals-container">
+        <base-modal id="review-details-1" v-slot="{close}">
+          <div class="modal modal--wide">
+            <button class="modal__close" @click="close">
+                  <svg class="modal__close-icon" aria-hidden="true">
+                    <use xlink:href="/local/client-app/dist/img/icons.svg#icon-close"></use>
+                  </svg>
+            </button>
+            <div class="modal__wrapper">
+              <div class="modal__top">
+                <h3 class="modal__title">Юрий С.</h3>
+                <p class="modal__subtitle">19 Августа 2021</p>
+              </div>
+              <div class="modal__body">
+                <p class="modal__text">Я арендовал HiPhi X на выходные и остался в полном восторге! Этот электрокар не только выглядит современно и стильно, но и обладает потрясающей производительностью. Заряда батареи хватило на все мои поездки, а система быстрой зарядки была настоящим спасением. Рекомендую эту модель всем, кто хочет насладиться комфортом и безупречным управлением электрокара!</p>
+                <p class="modal__text">Я арендовал HiPhi X на выходные и остался в полном восторге! Этот электрокар не только выглядит современно и стильно, но и обладает потрясающей производительностью. Заряда батареи хватило на все мои поездки, а система быстрой зарядки была настоящим спасением. Рекомендую эту модель всем, кто хочет насладиться комфортом и безупречным управлением электрокара!</p>
+              </div>
+              <div class="modal__bottom">
+                <div class="reviews-card__product product-preview"><img class="product-preview__img" src="/local/client-app/dist/img/reviews/product-1.webp" alt="alt" width="120" height="72" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';">
+                  <div class="product-preview__name">HiPhi Y</div><a class="product-preview__link" href="#">Подробнее</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </base-modal>
+        <callback-modal></callback-modal>
+        <review-modal></review-modal>
+        <filter-modal></filter-modal>
+        <cookie-toast v-if="!isCookieConfirmed"></cookie-toast>
+      </div>
+    </div>
+    
+  </body>
+</html>

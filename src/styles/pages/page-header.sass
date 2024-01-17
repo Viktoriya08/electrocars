@@ -1,0 +1,32 @@
+.page-header
+	padding-top: fluid(24, 60)
+
+
+
+	&__breadcrumbs
+		&:not(:last-child)
+			margin-bottom: fluid(24, 60)
+
+	&__content
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		justify-content: space-between
+		gap: fluid(14, 24)
+
+	&__actions
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		justify-content: flex-end
+		gap: fluid(14, 24)
+
+		&--mob
+			+from-mob-xl
+				display: none
+
+	&__search
+		width: 100%
+
+	&:not(:last-child)
+		margin-bottom: fluid(70, 144)

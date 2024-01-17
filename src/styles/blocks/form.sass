@@ -1,0 +1,133 @@
+.form
+	position: relative
+
+	&__title
+		font-size: var(--fontSizeH4)
+		font-weight: 500
+		line-height: var(--lineHeightH6)
+
+		&:not(:last-child)
+			margin-bottom: fluid(24,60)
+
+	&__items
+		display: grid
+		grid-gap: fluid(14, 24) fluid(20, 40)
+		grid-template-columns: 100%
+		margin: 0
+
+		@include while-mob-xl
+			grid-gap:  fluid(14, 24)
+
+		& + .form__items
+			margin-top: fluid(24, 40)
+
+		&--2
+			grid-template-columns: repeat(2, minmax(0,1fr))
+
+			@include while-mob-xl
+				grid-template-columns: 100%
+
+		&--3
+			grid-template-columns: repeat(3, minmax(0,1fr))
+
+		&--4
+			grid-template-columns: repeat(4, minmax(0,1fr))
+
+		&--5
+			grid-template-columns: repeat(5, minmax(0,1fr))
+
+	&__item
+		&--full
+			grid-column: -1/1
+
+		&--2
+			grid-column: span 2
+
+		&--3
+			grid-column: span 3
+
+		&--4
+			grid-column: span 4
+
+		&--checkbox
+			width: max-content
+
+	&__bottom
+		display: flex
+		flex-direction: column
+		align-items: center
+		gap: fluid(6, 12)
+
+		&--row
+			@include from-mob-xl
+				flex-direction: row
+				gap: fluid(14, 24)
+
+			& .form__submit
+				@include from-mob-xl
+					width: auto
+					min-width: rem(168)
+
+			& .form__policy
+				@include from-mob-xl
+					max-width: rem(230)
+					text-align: left
+
+		&:not(:first-child)
+			margin-top: fluid(14, 24)
+
+	&__submit
+		display: flex
+		align-items: center
+		gap: fluid(6, 12)
+		width: 100%
+
+		& > *
+			&:only-child
+				flex: 1 1 auto
+
+	&__policy
+		font-size: var(--fontSizeP3)
+		font-weight: 500
+		line-height: var(--lineHeightP2)
+		text-align: center
+
+		@include while-mob-xl
+			max-width: rem(210)
+
+	&__final
+		position: absolute
+		inset: 0
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		background-color: var(--color-neutral-100)
+		transform: translateZ(1px)
+
+	&__close
+		display: flex
+		align-items: flex-end
+		justify-content: space-between
+		gap: fluid(14, 24)
+
+		&-text
+			color: var(--color-neutral-300)
+			font-size: var(--fontSizeP1)
+			font-weight: 400
+			line-height: var(--lineHeightP1)
+
+			@include while-mob-xl
+				max-width: rem(130)
+
+		&-time
+			padding-bottom: rem(4)
+			font-size: var(--fontSizeH1)
+			font-weight: 400
+			letter-spacing: var(--letterSpacingH1)
+			line-height: var(--lineHeightH1)
+
+			@include while-mob-xl
+				padding-bottom: rem(10)
+				font-size: var(--fontSizeP6)
+				letter-spacing: unset
+				line-height: var(--lineHeightP3)

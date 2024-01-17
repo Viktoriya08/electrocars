@@ -1,0 +1,21 @@
+section.page-section.services-block
+	.wrapper
+		.services-block__list
+			.services-card.services-card--dark
+				.services-card__name Выгодные условия при оформлении лизинга
+				a(href="#").services-card__link.round-btn.round-btn--color-fith
+					+icon('arrow-right').round-btn__icon
+
+			.services-card
+				.services-card__name Аренда <br> автомобилей
+				a(href="#").services-card__link.round-btn.round-btn--color-primary
+					+icon('arrow-right').round-btn__icon
+
+			.form-block
+				.form-block__bg
+					+image('img/form-bg.webp', '1213', '629', ' ', [{file:"img/form-bg-mob.webp", mediaQuery:"max-width", breakpoint:"768"}]).form-block__bg-img
+
+				h2.form-block__title Почувствуйте себя владельцем <br> современного электрокара
+
+				.form-block__form
+					form-test-drive

@@ -1,0 +1,55 @@
+.catalog-filter
+
+	&__items
+		display: flex
+		flex-direction: column
+		gap: fluid(8, 24)
+
+	&__checkboxes
+		display: flex
+		flex-direction: column
+		gap: fluid(8, 12)
+
+	&__bottom
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		gap: rem(6)
+		margin-top: rem(24)
+
+		@include while-mob-xl
+			flex-direction: column
+			align-items: stretch
+
+		& > .btn
+			flex: 1 1 calc(50% - rem(6))
+
+	&__item
+
+		&.selected
+			.accordion__title
+				&::after
+					background-color: var(--color-primary-400)
+
+		.accordion__title
+			display: flex
+			gap: rem(10)
+
+			&::after
+				content: ''
+				position: relative
+				top: rem(4)
+
+				flex-shrink: 0
+
+				width: fluid(6,8)
+				height: fluid(6,8)
+
+				border-radius: 50%
+				background-color: transparent
+
+				transition: background-color .3s ease
+
+				@include until-laptop
+					top: rem(3)
+

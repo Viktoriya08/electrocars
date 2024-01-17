@@ -1,0 +1,181 @@
+.info-block
+
+	&__wrapper 
+		display: grid
+		grid-template-columns: minmax(0,1.55fr) minmax(0,1fr)
+		gap: fluid(14, 40)
+
+		@include until-tablet
+			grid-template-columns: 100%
+
+	&__img 
+		position: relative
+		overflow: hidden
+		border-radius: var(--radius-m)
+		background-color: var(--color-primary-400)
+
+		&::before
+			content: " "
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+
+			display: block
+
+			background-color: var(--color-trans-20)
+
+		&--big
+			height: 100%
+
+			&::after
+				content: " "
+				position: absolute
+				right: 0
+				bottom: 0
+				left: 0
+
+				display: block
+
+				height: rem(100)
+
+				background: var(--gradient-100)
+
+			@include until-tablet
+				height: auto
+				margin-bottom: rem(14)
+
+				&::after
+					display: none
+
+		&--small 
+			max-width: rem(274)
+			aspect-ratio: 274/180
+			margin-top: rem(24)
+
+			@include until-tablet
+				display: none
+
+		img 
+			display: block
+			size: 100%
+			object-fit: cover
+
+			&:not([class])[height]
+				@include until-laptop 
+					height: 100%
+
+	&__info
+		position: relative
+
+	&__title
+		position: absolute
+		top: rem(24)
+		right: rem(24)
+		left: rem(24)
+
+		color: var(--color-neutral-100)
+		font-size: var(--fontSizeH2)
+		font-weight: 500
+		line-height: var(--lineHeightH2)
+
+		@include until-laptop
+			top: rem(10)
+			right: rem(10)
+			left: rem(10)
+
+	&__list
+		position: absolute
+		right: 0
+		bottom: 0
+		left: 0
+
+		display: flex
+		flex-wrap: wrap
+		justify-content: flex-end
+
+		padding: 0 rem(24) rem(24)
+
+		color: var(--color-neutral-100)
+		column-gap: rem(55)
+		row-gap: rem(10)
+
+		@include until-laptop
+			padding: 0 rem(10) rem(10)
+			column-gap: rem(10)
+
+		@include until-tablet
+			position: static
+			justify-content: space-between
+			padding: 0
+			column-gap: 0
+
+
+	&__item 
+		@include while-mob-xl
+			flex: 0 0 50%
+
+
+	&__right
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+
+	&__box
+		align-self: flex-end
+		max-width: rem(280)
+
+		@include until-tablet
+			align-self: flex-start
+			max-width: 100%
+
+	&__text 
+		font-size: var(--fontSizeP2-2)
+		line-height: var(--lineHeightP1)
+
+	&__btn
+		@include until-tablet
+			width: 100%
+
+		&:not(:first-child)
+			margin-top: fluid(24, 40)
+
+	+.info-block
+		margin-top: fluid(14, 40)
+		padding-top: fluid(14, 24)
+		border-top: 1px solid var(--color-neutral-200)
+			
+
+
+.data
+
+	&__title 
+		color: var(--color-neutral-300)
+		font-size: rem(11)
+		font-weight: 500
+		line-height: var(--lineHeightP2)
+
+		@include until-tablet 
+			font-weight: 400
+
+	&__info 
+		font-size: var(--fontSizeH4)
+		font-weight: 500
+		line-height: var(--lineHeightP3)
+
+	&--white 
+		.data
+			&__title 
+				color: var(--color-neutral-100)
+
+				@include until-tablet 
+					color: var(--color-neutral-300)
+
+			&__info 
+				@include until-tablet
+					color: var(--color-primary-500)
+
+	>*
+		&:not(:last-child)
+			margin-bottom: fluid(6, 8)

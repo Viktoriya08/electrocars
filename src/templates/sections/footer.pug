@@ -1,0 +1,52 @@
+footer.footer
+	.wrapper
+		.footer__cont
+			nav.footer__menu
+				ul.footer__menu-list
+					each link, i in ['Каталог', 'Лизинг', 'Аренда', 'Зарядные станции и СТО', 'Оплата и доставка']
+						li.footer__menu-item
+							a(href="#").footer__menu-link=link
+				ul.footer__menu-list
+					each link, i in ['О компании', 'Акции', 'Контакты', 'Медиа']
+						li.footer__menu-item
+							a(href="#").footer__menu-link=link
+
+			address.footer__contacts
+				.footer__contacts-cont
+					.footer__contacts-list
+						.footer__contacts-item
+							span.footer__contacts-text Челябинск <br> Свободы, 91&nbsp;к.&nbsp;1а
+							a(href="tel:+73517507750").footer__contacts-link +7 351 750 77 50
+						.footer__contacts-item
+							span.footer__contacts-text Екатеринбург <br> ул.&nbsp;Мамина-Сибиряка,&nbsp;140
+							a(href="tel:+73433281010").footer__contacts-link +7 343 328 10 10
+
+					.footer__socials
+						.footer__socials-list.socials.socials--light
+							a(href="#").socials__item
+								+image("img/socials/yt.svg",32,32).socials__item-icon
+							a(href="#").socials__item
+								+image("img/socials/vk.svg",32,32).socials__item-icon
+							a(href="#").socials__item
+								+image("img/socials/telegram.svg",32,32).socials__item-icon
+							a(href="#").socials__item
+								+image("img/socials/dzen.svg",32,32).socials__item-icon
+							a(href="#").socials__item
+								+image("img/socials/web.svg",32,32).socials__item-icon
+
+						button(@click="openModal('callback-modal')").footer__socials-btn.btn.btn--color-fith
+							span.btn__text Заказать звонок
+
+			.footer__bottom
+				a(href="#").footer__logo.logo.logo--light
+					+image("img/logo-text.svg",142,12, 'electrocars').logo__img
+
+				.footer__links
+					a(href="#").footer__links-item.link.link--color-secondary.link--simple Пользовательское соглашение
+					a(href="#").footer__links-item.link.link--color-secondary.link--simple Политика конфиденциальности
+
+				span.footer__copyright
+					| &copy; 2023 «Electrocars»
+
+				a(href="#").footer__dev Заряжено в Xpage
+

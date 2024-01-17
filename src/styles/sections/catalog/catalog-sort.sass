@@ -1,0 +1,20 @@
+.catalog-sort
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: fluid(14, 24)
+
+    @include while-mob-xl
+        flex-direction: column
+        align-items: flex-start
+        gap: rem(8)
+
+    &__label
+        color: var(--color-neutral-300)
+        font-size: var(--fontSizeP2)
+        font-weight: 400
+        line-height: var(--lineHeightP1)
+
+        @include while-mob-xl
+            font-size: var(--fontSizeP3)
+            font-weight: 500

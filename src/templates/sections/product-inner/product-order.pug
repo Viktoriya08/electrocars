@@ -1,0 +1,21 @@
+section#order.page-section.content-block.content-block--product
+	.wrapper.content-block__wrapper
+		.content-block__body
+			.content-block__title
+				h2.subtitle Заявка на покупку
+
+			.content-block__cont
+				.product-order
+					.product-order__top
+						.product-order__title HiPhi X
+						span.product-order__price Цена #[span.price от 7 221 000 ₽]
+					.product-order__cont
+						.product-order__photo
+							+image('img/product-inner/order-img.webp', '743', '459', ' ').product-order__photo-img
+						.product-order__form
+							.product-order__subtitle Оставьте заявку на покупку электромобиля. <br> Мы свяжемся с вами в ближайшее время.
+							ul.product-order__advantages.marked-list
+								li.marked-list__item Доступно в лизинг
+								li.marked-list__item В кредит на выгодных условиях
+
+							product-order-form

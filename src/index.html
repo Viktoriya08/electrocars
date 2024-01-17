@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/x-icon" href="/favicons/favicon.ico"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+	<link rel="manifest" href="/favicons/site.webmanifest">
+	<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#ffffff">
+	<meta name="msapplication-TileColor" content="#e9e9e9">
+	<meta name="theme-color" content="#FFFFFF">
+
+	<!-- OpenGraph -->
+	<meta property="og:title" content="%VITE_APP_TITLE%"/>
+	<meta property="og:locale" content="ru_RU"/>
+	<meta property="og:description" content=""/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:url" content=""/>
+	<meta property='og:site_name' content=''>
+
+	<meta property="og:image" content="/img/opengraph-image.jpg"/>
+	<meta property="og:image:width" content="1024"/>
+	<meta property="og:image:height" content="568"/>
+
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:image" content="/img/opengraph-image.jpg"/>
+
+	<title>%VITE_APP_TITLE%</title>
+
+	<style>
+		@import url("/styles/base/preview-styles.sass");
+	</style>
+</head>
+<body>
+<div id="app">
+	<!-- Закомментировать или удалить, если делаешь SPA -->
+	<!-- ---------------------------------------------------------------------------------------- -->
+	<main>
+		<section class="project-view">
+			<div class="wrapper">
+				<div class="pv-title">
+					<a href="/" class="pv-logo pv-title__logo">
+						<img class="pv-logo__image" src="/img/logo.svg" alt="">
+					</a>
+					<h1 class="pv-title__text">%VITE_APP_TITLE%</h1>
+				</div>
+				<div class="pv-blocks pv-blocks--columns">
+					<div class="pv-block">
+						<h3 class="pv-block__title">Первая группа страниц</h3>
+						<nav class="pv-block__nav">
+							<a class="pv-link" href="./views/main.html">Главная страница</a>
+						</nav>
+					</div>
+                    <div class="pv-block">
+                        <h3 class="pv-block__title">Вторая группа страниц</h3>
+                        <nav class="pv-block__nav">
+                            <a class="pv-link" href="./views/catalog.html">Каталог</a>
+                            <a class="pv-link" href="./views/product-inner.html">Детальная авто</a>
+                            <a class="pv-link">...</a>
+                        </nav>
+                    </div>
+					<div class="pv-block">
+						<h3 class="pv-block__title">Третья группа страниц</h3>
+						<nav class="pv-block__nav">
+							<a class="pv-link" href="./views/media.html">Медиа</a>
+							<a class="pv-link" href="./views/media-selected.html">Медиа - выбран раздел</a>
+							<a class="pv-link" href="./views/media-search.html">Медиа - Результаты поиска</a>
+							<a class="pv-link" href="./views/media-no-search.html">Медиа - Ничего не найдено
+							<a class="pv-link" href="./views/media-detal.html">Медиа(детальная)
+							<a class="pv-link" href="./views/media-detal-2.html">Медиа(детальная + видео)
+							<a class="pv-link" href="./views/stock.html">Акции
+							<a class="pv-link" href="./views/search.html">Результаты поиска
+							<a class="pv-link" href="./views/search-not.html">Результаты поиска - Ничего не найдено
+						</nav>
+					</div>
+					<div class="pv-block">
+						<h3 class="pv-block__title">Четвертая группа страниц</h3>
+						<nav class="pv-block__nav">
+							<a class="pv-link" href="./views/delivery.html">Оплата и доставка</a>
+							<a class="pv-link" href="./views/about.html">О компании</a>
+							<a class="pv-link" href="./views/leasing.html">Лизинг</a>
+							<a class="pv-link" href="./views/rent.html">Аренда</a>
+						</nav>
+					</div>
+					<div class="pv-block">
+						<h3 class="pv-block__title">Пятая группа страниц</h3>
+						<nav class="pv-block__nav">
+							<a class="pv-link" href="./views/stations.html">Зарядные станции и сервис (Зарядные станции)</a>
+							<a class="pv-link" href="./views/service.html">Зарядные станции и сервис (Сервис)</a>
+							<a class="pv-link" href="./views/contacts.html">Контакты</a>
+						</nav>
+					</div>
+					<div class="pv-block">
+						<h3 class="pv-block__title">Шестая группа страниц</h3>
+						<nav class="pv-block__nav">
+							<a class="pv-link" href="./views/compare-empty.html">Сравнение - нет товаров</a>
+							<a class="pv-link" href="./views/compare-one.html">Сравнение - один товар</a>
+							<a class="pv-link" href="./views/compare-all.html">Сравнение - не один товар (максимум 3)</a>
+						</nav>
+					</div>
+					<div class="pv-block">
+						<h3 class="pv-block__title">Письма</h3>
+						<nav class="pv-block__nav">
+							<a class="pv-link" href="./views/emails/main.html">Шаблон письма</a>
+							<a class="pv-link" href="./views/emails/main-table.html">Шаблон письма с таблицей</a>
+						</nav>
+					</div>
+					<div class="pv-block">
+						<h3 class="pv-block__title">Разное</h3>
+						<nav class="pv-block__nav">
+							<a class="pv-link" href="./views/ui.html">UI Элементы</a>
+							<a class="pv-link" href="./views/content.html">Типовая страница</a>
+							<a class="pv-link" href="./views/404.html">404 страница</a>
+							<a class="pv-link" href="./views/502.html">502 страница</a>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<!-- ---------------------------------------------------------------------------------------- -->
+</div>
+
+
+<script type="module" src="/scripts/main.ts"></script>
+</body>
+</html>

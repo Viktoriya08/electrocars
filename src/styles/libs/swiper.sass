@@ -1,0 +1,171 @@
+\:root
+	--swiper-theme-color: var(--color-primary-500)
+
+body
+	.swiper-container
+		position: relative
+		width: 100%
+		overflow: hidden
+
+	.swiper-buttons
+		display: flex
+		gap: rem(6)
+
+	.swiper-pagination-bullets
+		--swiper-pagination-bullet-horizontal-gap: 0
+		--swiper-pagination-bullet-width: #{fluid(32,48)}
+		--swiper-pagination-bullet-height: #{fluid(32,48)}
+		--swiper-pagination-bullet-inactive-color: transparent
+		--swiper-pagination-bullet-inactive-opacity: 1
+		--swiper-pagination-bullet-inactive-border: var(--color-neutral-100-trans-10)
+		--swiper-pagination-color: var(--color-neutral-100-trans-30)
+		--swiper-pagination-bullet-opacity: 1
+		--swiper-pagination-bullet-border: transparent
+
+		display: flex
+		gap: rem(6)
+		counter-reset: list
+
+		& .swiper-pagination-bullet
+			display: flex
+			align-items: center
+			justify-content: center
+
+			border: 1px solid var(--swiper-pagination-bullet-inactive-border)
+
+			color: var(--color-neutral-100)
+
+			font-size: var(--fontSizeP1)
+			font-weight: 400
+			line-height: var(--lineHeightP1)
+
+			transition: background-color .3s ease, border-color .3s ease
+
+			cursor: pointer
+			pointer-events: all
+
+			&::before
+				content: counter(list, decimal-leading-zero)
+				counter-increment: list
+
+			@include hover
+				border-color: var(--swiper-pagination-bullet-border)
+				background: var(--swiper-pagination-color)
+
+			&.swiper-pagination-bullet-active
+				border-color: var(--swiper-pagination-bullet-border)
+				background: var(--swiper-pagination-color)
+
+	.swiper-pagination-fraction
+		--swiper-pagination-fraction-color: var(--color-neutral-300)
+
+		position: static
+		width: auto
+		font-size: var(--fontSizeP2)
+		font-weight: 400
+		line-height: var(--lineHeightP2)
+
+	.swiper-button
+		&-next,
+		&-prev
+			--swiper-navigation-top-offset: 0
+			--swiper-navigation-sides-offset: 0
+			--swiper-navigation-size: #{fluid(36,40)}
+			--swiper-navigation-color: var(--color-primary-500)
+			--swiper-navigation-color-hover: var(--color-primary-500)
+			--swiper-navigation-color-active: var(--color-primary-500)
+			--swiper-navigation-color-disabled: var(--color-neutral-300)
+			--swiper-navigation-bg: var(--color-neutral-100)
+			--swiper-navigation-bg-hover: var(--color-neutral-200)
+			--swiper-navigation-bg-active: var(--color-neutral-200)
+			--swiper-navigation-bg-disabled: var(--color-neutral-100-trans-20)
+			--swiper-navigation-border: var(--color-neutral-200)
+			--swiper-navigation-border-hover: var(--color-neutral-200)
+			--swiper-navigation-border-active: var(--color-neutral-200)
+			--swiper-navigation-border-disabled: var(--color-neutral-200)
+
+			position: static
+
+			display: flex
+			align-items: center
+			justify-content: center
+
+			size: var(--swiper-navigation-size)
+
+			margin: 0
+
+			border: 1px solid var(--swiper-navigation-border)
+			border-radius: 50%
+			background-color: var(--swiper-navigation-bg)
+
+			color: var(--swiper-navigation-color)
+
+			transition: background-color .3s ease, border-color .3s ease, color .3s ease
+
+			&::after
+				content: ''
+				position: static
+				size: rem(12)
+				background-color: currentcolor
+				mask-position: center
+				mask-repeat: no-repeat
+				mask-size: contain
+
+			&:focus
+				outline: none
+
+			&:focus-visible
+				outline: 1px solid var(--color-primary-400)
+				outline-offset: -1px
+
+			@include hover
+				--swiper-navigation-color: var(--swiper-navigation-color-hover)
+				--swiper-navigation-bg: var(--swiper-navigation-bg-hover)
+				--swiper-navigation-border: var(--swiper-navigation-border-hover)
+
+			&:active
+				--swiper-navigation-color: var(--swiper-navigation-color-active)
+				--swiper-navigation-bg: var(--swiper-navigation-bg-active)
+				--swiper-navigation-border: var(--swiper-navigation-border-active)
+
+			&:disabled,
+			&.swiper-button-disabled
+				--swiper-navigation-color: var(--swiper-navigation-color-disabled)
+				--swiper-navigation-bg: var(--swiper-navigation-bg-disabled)
+				--swiper-navigation-border: var(--swiper-navigation-border-disabled)
+				opacity: 1
+				pointer-events: none
+
+			&.swiper-button--dark
+				--swiper-navigation-color: var(--color-neutral-100)
+				--swiper-navigation-color-hover: var(--color-neutral-100)
+				--swiper-navigation-color-active: var(--color-neutral-100)
+				--swiper-navigation-color-disabled: var(--color-neutral-300)
+				--swiper-navigation-bg: transparent
+				--swiper-navigation-bg-hover: transparent
+				--swiper-navigation-bg-active: var(--color-neutral-100-trans-30)
+				--swiper-navigation-bg-disabled: var(--color-neutral-100-trans-10)
+				--swiper-navigation-border: var(--color-transparent-10)
+				--swiper-navigation-border-hover: var(--color-neutral-100)
+				--swiper-navigation-border-active: var(--color-neutral-100-trans-30)
+				--swiper-navigation-border-disabled: var(--color-neutral-100-trans-10)
+
+				@include hover
+					--swiper-navigation-color: var(--swiper-navigation-color-hover)
+					--swiper-navigation-bg: var(--swiper-navigation-bg-hover)
+					--swiper-navigation-border: var(--swiper-navigation-border-hover)
+
+			&.swiper-button-lock
+				display: none
+
+		&-next
+			&::after
+				margin-left: rem(2)
+
+				@include icon('chevron-right')
+
+		&-prev
+			&::after
+				margin-right: rem(2)
+
+				@include icon('chevron-left')

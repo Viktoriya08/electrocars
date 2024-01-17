@@ -1,0 +1,57 @@
+section.page-section.map-block
+	.wrapper.map-block__wrapper
+		.map-block__top
+			.map-block__tabs
+				base-tabs(:tabs="[{label: 'Зарядные станции', value: 0}, {label: 'Сервисные центры', value: 1}]" type="switcher" )
+
+			.map-block__city
+				city-select
+
+		if isService
+
+			.content-block.content-block--product.map-block__contacts
+
+				.content-block__body
+
+					.content-block__title 
+						.subtitle Сервисные центры
+					.content-block__cont.content-block__contacts
+						+info-contacts('Челябинск ул. Свободы, 91&nbsp;к.&nbsp;1а', '+7 (351) 750-77-50')
+
+						+info-contacts('Челябинск <br> ул. Мамина-Сибиряка, 140', '+7 (351) 750-77-50')
+
+
+		.map-block__cont.map-block__cont--revers
+			
+			.map-block__aside
+				.banner
+					.banner__title Скачайте приложение <br> для&nbsp;быстрого доступа <br> к&nbsp;зарядным станциям <br> города
+					.banner__bottom
+						.banner__actions
+							.banner__code
+								img(src="../img/code.png" width="120" height="120" loading="lazy").banner__code-img
+
+							.banner__apps
+								a(href="#").banner__apps-link
+									img(src="../img/app-store.svg" width="122" height="36" loading="lazy").banner__apps-img
+								a(href="#").banner__apps-link
+									img(src="../img/google-play.svg" width="122" height="36" loading="lazy").banner__apps-img
+
+						.banner__bg
+							img(src="../img/banner-bg.svg" width="348" height="242" loading="lazy").banner__bg-img
+
+				.banner
+					.banner__title Больше информации о сервисе и вопросы на ответы в нашем телеграм-канале
+					.banner__bottom
+						.banner__actions
+							.banner__icon
+								img(src="../img/socials/telegram-big.svg" width="120" height="120" loading="lazy").banner__icon-img
+
+						a(href="#", target="_blank").banner__btn.btn.btn--color-primary
+							span.btn__text Перейти в канал
+
+
+			.map-block__map
+				//charging-service-map
+				img(src="../img/map.webp" width="1213" height="589" loading="lazy").map-block__map-img
+

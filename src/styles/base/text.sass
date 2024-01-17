@@ -1,0 +1,386 @@
+main,
+.modal
+
+	p:not([class])
+		font-size: var(--fontSizeP)
+		line-height: var(--lineHeightP1)
+
+		&:not(:last-child)
+			margin-bottom: rem(24)
+
+	h2:not([class]), h3:not([class]), h4:not([class]), h5:not([class]), h6:not([class])
+		&:not(.page-section__title)
+			font-weight: 500
+
+			&:not(:last-child)
+				margin-bottom: fluid(24,40)
+
+			&:not(:first-child)
+				margin-top: rem(60)
+
+		+ *
+			margin-top: 0
+
+	h1:not([class])
+		font-size: rem(56)
+		line-height: normal
+
+	h2:not([class])
+		font-size: rem(40)
+		line-height: normal
+
+	h3:not([class])
+		font-size: rem(32)
+		line-height: normal
+
+	h4:not([class])
+		font-size: var(--fontSizeH4)
+		font-weight: 500
+		line-height: var(--lineHeightH4)
+
+	h5:not([class])
+		font-size: rem(20)
+		line-height: normal
+
+	figure:not([class])
+		margin: 0
+
+		&:not(:first-child)
+			margin-top: rem(40)
+
+		&:not(:last-child)
+			margin-bottom: rem(40)
+
+		img:not([class])
+			&:not(:last-child)
+				margin-bottom: rem(12)
+
+			+ figcaption
+				opacity: .5
+				font-size: em(12)
+
+	img
+		&:not([class])
+
+			&[height]
+				height: auto
+
+			&[align]
+				margin-bottom: rem(20)
+
+				@include while-mob
+					display: block
+					float: none
+
+			&[align="left"]
+				margin-right: rem(20)
+
+				@include while-mob
+					margin-right: 0
+
+			&[align="right"]
+				margin-left: rem(20)
+
+				@include while-mob
+					margin-left: 0
+
+	table:not([class])
+		min-width: 100%
+		border-collapse: collapse
+		border: 0
+		background-color: transparent
+		font-size: rem(14)
+
+		@include while-mob
+			font-size: rem(12)
+
+		thead
+			th, td
+				padding-top: rem(18)
+				padding-bottom: rem(18)
+				background-color: var(--color-neutral-100)
+				font-weight: 400
+				text-align: left
+
+		td, th
+			padding: rem(16) rem(20)
+			border: 1px solid var(--color-neutral-300)
+			font-weight: inherit
+
+			&:not([valign]), &[valign="middle"]
+				vertical-align: middle
+
+			&[valign="top"]
+				vertical-align: top
+
+			&[valign="bottom"]
+				vertical-align: bottom
+
+		td
+			transition: background .3s ease
+
+	table[border="1"]:not([class])
+		min-width: 100%
+
+		td, th
+			border: 1px solid
+
+		tbody
+			td
+				&:first-child
+					border-left: 0
+
+				&:last-child
+					border-right: 0
+
+			tr:last-child
+				td
+					border-bottom: 0
+
+	ul, ol
+		&:not([class])
+			&::before
+				display: inline-block
+
+			ul, ol
+				margin-top: rem(20)
+				margin-bottom: rem(20)
+				color: var(--color-neutral-500)
+
+			li
+				font-weight: 500
+
+				&::before
+					margin-right: rem(10)
+
+				&:not(:first-child)
+					margin-top: rem(14)
+
+	ul
+		&:not([class])
+			> li
+				position: relative
+				padding-left: fluid(24,34)
+
+				&::before
+					content: ""
+					position: absolute
+					top: rem(10)
+					left: 0
+
+					display: inline-block
+
+					width: fluid(12,20)
+					height: 2px
+
+					background: var(--color-primary-400)
+
+			ul
+				> li
+					&::before
+						background-color: transparent
+
+	ol:not([class])
+		counter-reset: list
+
+		> li
+			position: relative
+			padding-left: rem(45)
+
+			&::before
+				//content: counter(list, decimal-leading-zero)
+				content: counters(list, ".")
+				position: absolute
+				top: rem(-4)
+				left: 0
+
+				display: flex
+				align-items: center
+				justify-content: center
+
+				width: rem(30)
+				height: rem(30)
+
+				border-radius: 50%
+
+				background-color: var(--color-neutral-100)
+
+				color: var(--color-neutral-900)
+
+				font-size: rem(13)
+
+				font-weight: 400
+
+				counter-increment: list
+
+			> ol
+				> li
+					> ol
+						> li
+							font-size: rem(14)
+
+							&::before
+								top: rem(-6)
+								border-radius: 0
+								background-color: transparent
+
+	a
+		&:not([class])
+			color: var(--color-neutral-300)
+			transition: color .3s ease
+
+			&:focus
+				outline: none
+
+			&:focus-visible
+				border-radius: var(--radius-xs)
+				outline: 2px solid var(--color-primary-300)
+				outline-offset: 3px
+				text-decoration: none
+
+			@include hover
+				color: var(--color-primary-400)
+
+			&:active
+				color: var(--color-primary-600)
+
+	.table-wrap
+		width: 100%
+		overflow: auto
+
+		@include while-mob
+			width: calc(100% + rem(24))
+			margin-right: rem(-12)
+			margin-left: rem(-12)
+			padding-right: rem(12)
+			padding-left: rem(12)
+
+			@include hide-scroll
+
+		&:not(:first-child)
+			margin-top: rem(40)
+
+		&:not(:last-child)
+			margin-bottom: rem(40)
+
+	.video-wrap
+		position: relative
+		aspect-ratio: 290/202
+		overflow: hidden
+
+		&:not(:first-child)
+			margin-top: rem(40)
+
+		&:not(:last-child)
+			margin-bottom: rem(40)
+
+		iframe
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+
+	.text-strong 
+		display: block
+		padding: rem(24)
+		border-radius: var(--radius-m)
+		background-color: var(--color-primary-500)
+		color: var(--color-neutral-100)
+		font-size: rem(16)
+
+		@include while-mob
+			padding: rem(20)
+
+		&:not(:first-child)
+			margin-top: rem(40)
+
+		&:not(:last-child)
+			margin-bottom: rem(40)
+
+		h2:not([class]), h3:not([class]), h4:not([class]), h5:not([class]), h6:not([class])
+			&:not(:last-child)
+				margin-bottom: rem(20)
+
+		p:not([class])
+			color: var(--color-neutral-100)
+
+		figcaption 
+			color: var(--color-neutral-300)
+
+	.text-important
+		display: block
+		padding: rem(24) 0 fluid(24, 40)
+		border-top: 1px solid var(--color-neutral-200)
+		border-bottom: 1px solid var(--color-neutral-200)
+
+		&:not(:first-child)
+			margin-top: fluid(30, 60)
+
+		figcaption
+			color: var(--color-neutral-400)
+			font-size: rem(16)
+
+			@include while-mob
+				font-size: rem(12)
+
+		h2:not([class]), h3:not([class]), h4:not([class]), h5:not([class]), h6:not([class])
+			color: var(--color-neutral-300)
+			font-size: rem(14)
+			font-weight: 500
+			line-height: 1.1
+			text-transform: uppercase
+
+			&:not(:last-child):not(.page-section__title)
+				margin-bottom: fluid(24, 40)
+
+		p:not([class])
+			color: var(--color-primary-500)
+			font-size: var(--fontSizeH3)
+			font-weight: 500
+			line-height: 1.1
+
+		+.text-blockquote:not(:first-child)
+			margin-top: 0
+			border-top: none
+
+	.text-blockquote
+		display: block
+		padding: rem(24) 0 fluid(24, 40)
+		border-top: 1px solid var(--color-neutral-200)
+		border-bottom: 1px solid var(--color-neutral-200)
+
+		&:not(:first-child)
+			margin-top: rem(40)
+
+		blockquote
+			&:not(:last-child)
+				margin-bottom: rem(24)
+
+		figcaption
+			color: var(--color-neutral-300)
+			font-size: rem(16)
+			line-height: 1.3
+
+			@include while-mob
+				font-size: rem(12)
+
+		h2:not([class]), h3:not([class]), h4:not([class]), h5:not([class]), h6:not([class])
+			color: var(--color-neutral-300)
+			font-size: rem(14)
+			font-weight: 500
+			line-height: 1.1
+			text-transform: uppercase
+
+			&:not(:last-child):not(.page-section__title)
+				margin-bottom: fluid(24, 40)
+
+		p:not([class])
+			color: var(--color-primary-500)
+			font-size: var(--fontSizeH3)
+			font-weight: 500
+			line-height: 1.1
+
+		+.text-important:not(:first-child)
+			margin-top: 0
+			border-top: none

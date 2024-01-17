@@ -1,0 +1,35 @@
+mobile-header(v-slot="{shouldBeHidden}")
+	header(:class="{'mobile-header--hidden' : shouldBeHidden}" ).mobile-header
+		.wrapper
+			.mobile-header__body
+				.mobile-header__actions
+					burger-dropdown(id="mobile-burger")
+						header-actions
+							template(#default="{searchShown, showSearch, hideSearch}")
+								.burger-menu__top
+									a(v-show="!searchShown" href="#" data-count="3").icon-btn.icon-btn--color-primary
+										+icon('compare').icon-btn__icon
+
+									button(v-show="!searchShown" @click="showSearch").header__action.icon-btn.icon-btn--color-primary
+										+icon('search').icon-btn__icon
+
+									site-search(v-if="searchShown" label="Поиск" class="burger-menu__search" @clear="hideSearch")
+
+						.burger-menu__links
+							a(href="#").burger-menu__link.link.link--simple.link--size-l.link--color-tertiary Каталог #[span.count 24]
+							a(href="#").burger-menu__link.link.link--simple.link--size-l Лизинг
+							a(href="#").burger-menu__link.link.link--simple.link--size-l Аренда
+							a(href="#").burger-menu__link.link.link--simple.link--size-l Зарядные станции и СТО
+
+						.burger-menu__links.burger-menu__links--sm
+							a(href="#").burger-menu__link.link.link--simple.link--size-m Оплата и доставка
+							a(href="#").burger-menu__link.link.link--simple.link--size-m О компании
+							a(href="#").burger-menu__link.link.link--simple.link--size-m Медиа
+							a(href="#").burger-menu__link.link.link--simple.link--size-m Акции
+							a(href="#").burger-menu__link.link.link--simple.link--size-m Контакты
+
+				a.mobile-header__logo.logo(href="#")
+					+image('img/logo.svg', 28, 28, 'electrocars', null, false).logo__img
+
+				.mobile-header__actions
+					button(@click="openModal('callback-modal')").link.link--simple Позвонить

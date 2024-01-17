@@ -1,0 +1,26 @@
+section.page-section.media
+	.wrapper 
+
+		.section-control
+
+			.section-control__box.section-control__box--border.section-control__box--flex
+				.section-control__left
+					base-tabs(:tabs="[{label: 'Все медиа', value: 0}, {label: 'Статьи', value: 1}, {label: 'Новости', value: 2}, {label: 'Обзоры', value: 3}]" type="switcher" )
+				.section-control__search
+					input-search(placeholder="Поиск" id="media-search" label='Поиск')
+
+
+		.media__select.catalog-sort
+			span.catalog-sort__label Сортировка:
+			base-dropdown(show-on-click).catalog-sort__dropdown
+				template(#trigger-text)
+					| По популярности
+				template(#dropdown)
+					.dropdown__items
+						a.dropdown__item(href="#") По популярности
+						a.dropdown__item(href="#") Новые
+
+		include media-list
+
+		include media-pagination
+

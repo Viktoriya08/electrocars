@@ -1,0 +1,107 @@
+.data-block
+	display: flex
+	flex-wrap: wrap
+	padding: rem(10) rem(24)
+	border-radius: var(--radius-m)
+	background-color: var(--color-primary-300)
+
+	@include until-tablet
+		flex-direction: column
+		padding: rem(14)
+
+	&__box
+		display: flex
+		flex: 0 0 50%
+		align-items: center
+		justify-content: space-between
+		padding: rem(14) 0
+
+		@include until-tablet
+			flex: 0 0 100%
+			padding-top: 0
+
+		&--btn 
+			@include until-tablet
+				order: 2
+				padding: 0
+
+			.btn
+				margin-left: auto
+
+				@include until-tablet
+					width: 100%
+
+	&__logo
+		display: flex
+		align-items: center
+
+	&__icon 
+		display: flex
+		align-items: center
+		justify-content: center
+
+		size: rem(64)
+		margin-right: fluid(12, 14)
+		padding: rem(10)
+
+		overflow: hidden
+
+		border-radius: 50%
+		background-color: var(--color-neutral-100)
+
+		@include until-tablet
+			size: rem(44)
+
+		img 
+			display: block
+			width: auto
+
+	&__name 
+		font-size: var(--fontSizeH4)
+		font-weight: 500
+		line-height: var(--lineHeightH2)
+
+	&__row
+		display: grid
+		grid-template-columns: repeat(10, minmax(0,1fr))
+		flex: 0 0 100%
+		padding: rem(14) 0
+		column-gap: rem(15)
+
+		@include until-tablet
+			grid-template-columns: 100%
+			row-gap: rem(12)
+
+		&:not(:first-child)
+			border-top: 1px solid var(--color-neutral-300-trans-30)
+
+		
+		.data__info
+			font-size: var(--fontSizeH3)
+
+		.data__title
+			font-size: var(--fontSizeP2-2)
+
+	&__title
+		grid-column: span 3
+		color: var(--color-neutral-300)
+		font-size: var(--fontSizeP2)
+		font-weight: 500
+		line-height: var(--lineHeightH2)
+		text-transform: uppercase
+
+		@include until-tablet
+			grid-column: auto
+
+	&__info
+		grid-column: span 2
+
+		@include until-tablet
+			grid-column: auto
+
+	+.data-block
+		margin-top: fluid(24,40)
+
+	> *
+		&:not(:last-child)
+			margin-bottom: fluid(0, 26)

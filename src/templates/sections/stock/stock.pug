@@ -1,0 +1,84 @@
+section.page-section
+	.wrapper 
+
+		article.stock.stock__wrapper
+			.stock__left 
+				.stock__box 
+					.media-info.stock__day
+						.media-info__item
+							+icon('calendar').media-info__icon
+							span.media-info__text до 11 сентября 2023
+					.stock__title При покупке авто зимняя резина в подарок
+					.stock__text HiPhi X — это элегантный и передовой электрокар, который является настоящим воплощением технологического прогресса в мире автомобилей.
+					a(href="#").stock__btn.btn.btn--color-primary 
+							span.btn__text Перейти в каталог
+					
+			.stock__right
+				.stock__img 
+					+image('img/stock/stock-1.jpg', 1215, 630, ' ', '', 'lazy', 'img/product.svg')
+
+		article.stock.stock__wrapper
+			.stock__left 
+				.stock__box 
+					.media-info.stock__day
+						.media-info__item
+							+icon('calendar').media-info__icon
+							span.media-info__text до 11 сентября 2023
+					.stock__title Выгодное предложение от&nbsp;Альфа-Лизинг
+					.stock__text HiPhi X — это элегантный и передовой электрокар, который является настоящим воплощением технологического прогресса в мире автомобилей.
+
+					.stock__list 
+						.data 
+							.data__title Срок договора лизинга
+							.data__info до 36 мес
+						.data 
+							.data__title Общая стоимость
+							.data__info до 20 млн.руб
+					
+			//- цвет можно поменять или так (style="background-color: #EF3124") или положить  .stock__img с цветным баннером 
+			//- сделает текст белым stock__right--white
+			.stock__right.stock__right--info.stock__right--white(style="background-color: #EF3124")
+
+				.stock__info 
+					.stock__logo 
+						+image('img/stock/alfa.png', 413, 55, 'alt')
+					.stock__list 
+						.data 
+							.data__title Срок договора лизинга
+							.data__info до 36 мес
+						.data 
+							.data__title Общая стоимость
+							.data__info до 20 млн.руб
+
+		article.stock.stock__wrapper
+			.stock__left 
+				.stock__box 
+					.media-info.stock__day
+						.media-info__item
+							+icon('calendar').media-info__icon
+							span.media-info__text до 11 сентября 2023
+					.stock__title Выгодное предложение от&nbsp;Сбер Лизинг
+					.stock__text HiPhi X — это элегантный и передовой электрокар, который является настоящим воплощением технологического прогресса в мире автомобилей.
+
+					.stock__list 
+						.data 
+							.data__title Срок договора лизинга
+							.data__info до 36 мес
+						.data 
+							.data__title Общая стоимость
+							.data__info до 20 млн.руб
+					
+			.stock__right.stock__right--info
+
+				.stock__info 
+					.stock__logo 
+						+image('img/stock/sber.png', 413, 55, 'alt')
+					.stock__list 
+						.data 
+							.data__title Срок договора лизинга
+							.data__info до 36 мес
+						.data 
+							.data__title Общая стоимость
+							.data__info до 20 млн.руб
+
+

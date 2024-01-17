@@ -1,0 +1,227 @@
+.btn
+	--btn-px: #{fluid(7,19)}
+	--btn-py: #{fluid(10,19)}
+	--btn-gap: #{fluid(4, 6)}
+	--btn-font-family: var(--font-primary)
+	--btn-font-size: var(--fontSizeP2)
+	--btn-line-height: 1
+	--btn-font-weight: 400
+	--btn-text-transform: none
+	--btn-color: inherit
+	--btn-color-hover: inherit
+	--btn-color-active: inherit
+	--btn-color-disabled: inherit
+	--btn-bg: transparent
+	--btn-bg-hover: transparent
+	--btn-bg-active: transparent
+	--btn-bg-disabled: transparent
+	--btn-border-size: 1px
+	--btn-border-color: transparent
+	--btn-border-color-hover: transparent
+	--btn-border-color-active: transparent
+	--btn-border-color-disabled: transparent
+	--btn-outline-color: var(--color-primary-400)
+	--btn-radius: var(--radius-m)
+	--btn-loader-color: inherit
+	--btn-loader-ring-color: transparent
+	--btn-icon-size: #{fluid(12, 14)}
+
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	gap: var(--btn-gap)
+
+	min-height: calc(var(--btn-font-size) * var(--btn-line-height) + var(--btn-py) * 2 + var(--btn-border-size) * 2)
+	padding: var(--btn-py) var(--btn-px)
+
+	border: var(--btn-border-size) solid var(--btn-border-color)
+	border-radius: var(--btn-radius)
+
+	background-color: var(--btn-bg)
+
+	color: var(--btn-color)
+
+	font-family: var(--btn-font-family)
+	font-size: var(--btn-font-size)
+	font-weight: var(--btn-font-weight)
+	line-height: 1
+
+	text-align: center
+	text-decoration: none
+	text-transform: var(--btn-text-transform)
+
+	transition: color .3s ease, border-color .3s ease, background-color .3s ease
+
+	cursor: pointer
+
+	&:focus
+		outline: none
+
+	&:focus-visible
+		outline: 2px solid var(--btn-outline-color)
+		outline-offset: -2px
+
+	@include hover
+		--btn-color: var(--btn-color-hover)
+		--btn-bg: var(--btn-bg-hover)
+		--btn-border-color: var(--btn-border-color-hover)
+
+	&:active
+		--btn-color: var(--btn-color-active)
+		--btn-bg: var(--btn-bg-active)
+		--btn-border-color: var(--btn-border-color-active)
+
+	&:disabled,
+	&.disabled
+		--btn-color: var(--btn-color-disabled)
+		--btn-bg: var(--btn-bg-disabled)
+		--btn-border-color: var(--btn-border-color-disabled)
+
+		cursor: not-allowed
+
+		&:focus-visible
+			outline: none
+
+	&.disabled
+		pointer-events: none
+
+	&.loading
+		cursor: wait
+
+		&::before
+			content: ''
+
+			display: block
+			flex: none
+
+			size: var(--btn-icon-size)
+
+			border-width: 2px
+			border-style: solid
+
+			border-radius: 50%
+			border-color: var(--btn-loader-color) var(--btn-loader-color) var(--btn-loader-ring-color)
+
+			transition: border-color .3s ease
+			animation: spin360 .7s linear infinite
+
+		& > *
+			display: none
+
+	&__text
+		display: block
+		flex: none
+
+	&__icon
+		display: block
+		flex: none
+		size: var(--btn-icon-size)
+		color: currentcolor
+
+	&--size
+		&-medium
+			--btn-px: #{fluid(7,19)}
+			--btn-py: #{fluid(10,14)}
+
+	&--color
+		&-primary
+			--btn-color: var(--color-neutral-100)
+			--btn-color-hover: var(--color-neutral-100)
+			--btn-color-active: var(--color-neutral-100)
+			--btn-color-disabled: var(--color-neutral-300)
+			--btn-bg: var(--color-primary-500)
+			--btn-bg-hover: var(--color-primary-600)
+			--btn-bg-active: var(--color-primary-600)
+			--btn-bg-disabled: var(--color-neutral-200)
+			--btn-border-color: transparent
+			--btn-border-color-hover: transparent
+			--btn-border-color-active: transparent
+			--btn-border-color-disabled: transparent
+			--btn-loader-color: var(--color-primary-400)
+			--btn-loader-ring-color: var(--color-primary-300)
+
+		&-secondary
+			--btn-color: var(--color-primary-500)
+			--btn-color-hover: var(--color-primary-500)
+			--btn-color-active: var(--color-primary-500)
+			--btn-color-disabled: var(--color-neutral-200)
+			--btn-bg: transparent
+			--btn-bg-hover: transparent
+			--btn-bg-active: transparent
+			--btn-bg-disabled: transparent
+			--btn-border-color: var(--color-neutral-200)
+			--btn-border-color-hover: var(--color-neutral-300)
+			--btn-border-color-active: var(--color-primary-500)
+			--btn-border-color-disabled: var(--color-neutral-200)
+			--btn-loader-color: var(--color-primary-400)
+			--btn-loader-ring-color: var(--color-primary-300)
+
+		&-tertiary
+			--btn-color: var(--color-primary-500)
+			--btn-color-hover: var(--color-neutral-100)
+			--btn-color-active: var(--color-neutral-100)
+			--btn-color-disabled: var(--color-neutral-300)
+			--btn-bg: var(--color-neutral-100)
+			--btn-bg-hover: var(--color-primary-600)
+			--btn-bg-active: var(--color-primary-600)
+			--btn-bg-disabled: var(--color-neutral-100-trans-30)
+			--btn-border-color: transparent
+			--btn-border-color-hover: transparent
+			--btn-border-color-active: transparent
+			--btn-border-color-disabled: transparent
+			--btn-loader-color: var(--color-primary-400)
+			--btn-loader-ring-color: var(--color-primary-300)
+
+		&-fourth
+			--btn-color: var(--color-primary-500)
+			--btn-color-hover: var(--color-primary-500)
+			--btn-color-active: var(--color-primary-500)
+			--btn-color-disabled: var(--color-neutral-300)
+			--btn-bg: var(--color-primary-300)
+			--btn-bg-hover: var(--color-primary-400)
+			--btn-bg-active: var(--color-primary-400)
+			--btn-bg-disabled: var(--color-neutral-200)
+			--btn-border-color: transparent
+			--btn-border-color-hover: transparent
+			--btn-border-color-active: transparent
+			--btn-border-color-disabled: transparent
+			--btn-loader-color: var(--color-primary-400)
+			--btn-loader-ring-color: var(--color-primary-300)
+
+		&-fith
+			--btn-color: var(--color-neutral-100)
+			--btn-color-hover: var(--color-neutral-100)
+			--btn-color-active: var(--color-neutral-100)
+			--btn-color-disabled: var(--color-neutral-200)
+			--btn-bg: transparent
+			--btn-bg-hover: transparent
+			--btn-bg-active: transparent
+			--btn-bg-disabled: transparent
+			--btn-border-color: var(--color-neutral-100-trans-30)
+			--btn-border-color-hover: var(--color-neutral-100-trans-50)
+			--btn-border-color-active: var(--color-neutral-100-trans-50)
+			--btn-border-color-disabled: var(--color-neutral-200)
+			--btn-loader-color: var(--color-primary-400)
+			--btn-loader-ring-color: var(--color-primary-300)
+
+		&-trans-light
+			--btn-color: var(--color-neutral-100)
+			--btn-color-hover: var(--color-neutral-100)
+			--btn-color-active: var(--color-neutral-100)
+			--btn-color-disabled: var(--color-neutral-200)
+			--btn-bg: var(--color-neutral-100-trans-30)
+			--btn-bg-hover: var(--color-neutral-100-trans-50)
+			--btn-bg-active: var(--color-neutral-100-trans-50)
+			--btn-bg-disabled: var(--color-neutral-200)
+			--btn-border-color: transparent
+			--btn-border-color-hover: transparent
+			--btn-border-color-active: transparent
+			--btn-border-color-disabled: var(--color-neutral-200)
+			--btn-loader-color: var(--color-primary-400)
+			--btn-loader-ring-color: var(--color-primary-300)
+
+	&--border 
+		--btn-border-color: var(--color-neutral-200)
+		--btn-border-color-hover: var(--color-primary-500)
+		--btn-border-color-active: var(--color-primary-400)
+		--btn-border-color-disabled: var(--color-neutral-200)

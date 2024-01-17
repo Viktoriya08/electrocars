@@ -1,0 +1,19 @@
+extends /base/_head
+block vars
+	- let title = 'Медиа'
+	- let layoutClass = 'layout'
+	- let bodyClass = null
+	// в    ../sections/media/media-detal    добавляется условие для вывода блока с видео
+	- let isDetalVideo = true
+
+block content
+	include /sections/header
+	include /sections/mobile-header
+
+	main.page.standard-page
+		include /pages/media-detal
+
+	include /sections/footer
+
+	
+

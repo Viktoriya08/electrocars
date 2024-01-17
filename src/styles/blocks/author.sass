@@ -1,0 +1,54 @@
+.author
+
+	&__box 
+		display: flex
+		align-items: center
+
+	&__img 
+		flex: none 
+		size: fluid(54,64)
+		margin-right: rem(14)
+		overflow: hidden
+		border-radius: 50%
+
+		img 
+			display: block
+			size: 100%
+			object-fit: cover
+
+	&__name
+		font-size: var(--fontSizeP1)
+		font-weight: 500
+
+		&:not(:last-child)
+			margin-bottom: rem(12)
+
+	&__subname 
+		color: var(--color-neutral-300)
+		font-size: var(--fontSizeP3)
+		font-weight: 500
+		line-height: var(--lineHeightP2)
+
+	&--column 
+		.author
+
+			&__box
+				flex-direction: column
+				align-items: flex-start
+
+			&__img
+				size: fluid(64,120)
+				margin-bottom: fluid(14, 24)
+				margin-left: 0
+
+			&__name 
+				font-size: var(--fontSizeH4)
+				line-height: var(--lineHeightH2)
+
+				@include until-tablet
+					&:not(:last-child)
+						margin-bottom: rem(8)
+
+			&__subname
+				font-size: var(--fontSizeP2-2)
+				line-height: var(--lineHeightP1)

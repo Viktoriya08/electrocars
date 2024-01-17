@@ -1,0 +1,180 @@
+.footer
+	padding: rem(40) 0 rem(24)
+	background-color: var(--color-primary-500)
+	color: var(--color-white)
+
+	@include until-tablet
+		padding: rem(24) 0 
+
+	&__cont
+		display: flex
+		flex-direction: column
+		gap: fluid(24,134)
+
+	&__menu
+		display: grid
+		grid-template-columns: repeat(12, minmax(0,1fr))
+		gap: fluid(20,40)
+
+		@include until-tablet
+			grid-template-columns: repeat(2, minmax(0,1fr))
+			margin-bottom: rem(16)
+
+		&-list
+			display: flex
+			grid-column: span 2
+			flex-direction: column
+			gap: rem(16)
+
+			@include until-laptop
+				grid-column: span 3
+
+			@include until-tablet
+				grid-column: auto
+
+		&-item
+			line-height: 1
+
+		&-link
+			color: currentcolor
+			font-size: var(--fontSizeP2)
+			line-height: 1
+			text-decoration: none
+			transition: color .3s ease
+
+			@include hover
+				color: var(--color-neutral-300)
+
+	&__contacts
+		display: grid
+		grid-gap: fluid(10,40)
+		grid-template-columns: repeat(12, minmax(0,1fr))
+
+		&-cont
+			display: flex
+			grid-column: 9/13
+			flex-direction: column
+			gap: fluid(14,60)
+
+			@include until-laptop
+				grid-column: 7/13
+
+			@include until-tablet
+				grid-column: -1/1
+
+		&-list
+			border-bottom: 1px solid var(--color-transparent-10)
+
+		&-item
+			display: flex
+			gap: rem(14) fluid(20,40)
+			padding: fluid(14,24) 0 fluid(14,40)
+			border-top: 1px solid var(--color-transparent-10)
+
+			@include until-tablet
+				flex-direction: column
+
+		&-text
+			flex-grow: 1
+			font-size: var(--fontSizeP)
+			line-height: var(--lineHeightP1) 
+
+		&-link
+			color: currentcolor
+			font-size: var(--fontSizeH3)
+			font-weight: 500
+			line-height: var(--lineHeightH3)
+			text-decoration: none
+			transition: color .3s ease
+
+			@include hover
+				color: var(--color-neutral-300)
+
+			@include until-tablet
+				margin-left: auto
+
+	&__socials
+		display: flex
+		align-items: center
+		justify-content: space-between
+		gap: rem(14)
+
+		@include while-mob
+			flex-direction: column
+			align-items: stretch
+
+		&-list
+			justify-content: space-between
+
+	&__bottom
+		display: grid
+		grid-gap: fluid(20,40)
+		grid-template-columns: repeat(12, minmax(0,1fr))
+		align-items: flex-end
+
+		@include until-tablet
+			grid-template-columns: repeat(2, minmax(0,1fr))
+			gap: rem(40)
+
+	&__logo
+		grid-column: 1/7
+
+		@include until-laptop
+			grid-column: 1/4
+
+		@include until-tablet
+			grid-column: -1/1
+			margin-top: rem(30)
+
+		.logo__img
+			max-width: rem(380)
+
+	&__links
+		display: flex
+		grid-column: span 2
+		flex-direction: column
+		gap: fluid(12,18)
+
+		@include until-laptop
+			grid-column: span 3
+
+		@include until-tablet
+			grid-column: -1/1
+			align-items: flex-end
+			order: -1
+			margin-left: auto
+
+	&__copyright
+		grid-column: span 2
+		opacity: .3
+		font-size: var(--fontSizeP2)
+		line-height: 1
+
+		@include until-laptop
+			grid-column: span 3
+
+		@include until-tablet
+			grid-column: auto
+
+	&__dev
+		grid-column: span 2
+
+		opacity: .3
+
+		color: currentcolor
+		font-size: var(--fontSizeP2)
+		line-height: 1
+
+		text-align: right
+		text-decoration: none
+
+		transition: opacity .3s ease
+
+		@include hover
+			opacity: 1
+
+		@include until-laptop
+			grid-column: span 3
+
+		@include until-tablet
+			grid-column: auto

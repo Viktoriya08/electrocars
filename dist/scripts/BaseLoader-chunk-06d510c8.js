@@ -1,0 +1,1 @@
+import{d as a,_ as e,o,c as r,n as s}from"./main-chunk-fdacad84.js";const d=e(a({name:"BaseLoader",props:{colorScheme:{type:String,default:()=>"default"}}}),[["render",function(a,e,d,n,t,c){return o(),r("div",{class:s(["loader",`loader--${a.colorScheme}`])},null,2)}],["__scopeId","data-v-a7544307"]]);export{d as default};

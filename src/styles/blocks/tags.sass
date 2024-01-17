@@ -1,0 +1,42 @@
+.tags
+	display: flex
+	flex-wrap: wrap
+	gap: fluid(2,6)
+
+	&__item
+		display: flex
+		align-items: center
+
+		padding: fluid(6,8) rem(8)
+
+		border: 1px solid var(--color-neutral-200)
+		border-radius: rem(15)
+
+		font-size: var(--fontSizeP3)
+		font-weight: 500
+		line-height: var(--lineHeightP3)
+
+		&.active 
+			background-color: var(--color-primary-500)
+			color: var(--color-neutral-100)
+
+	&--blue 
+		.tags
+			&__item
+				border: 1px solid var(--color-primary-300)
+				background-color: var(--color-primary-300)
+
+	&--size 
+		.tags
+			&__item
+				padding: fluid(8,12) fluid(12,16)
+				border-radius: var(--radius-l)
+				font-size: var(--fontSizeP1)
+				line-height: var(--lineHeightP1)
+
+				@include while-mob-xl 
+					font-size: rem(11)
+					line-height: var(--lineHeightP3)
+
+
+

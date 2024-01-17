@@ -1,0 +1,19 @@
+section.page-section.product-banner
+	.product-banner__bg
+		+image('img/product-inner/banner-1.webp', '1920', '1080', ' ', [{file:"img/product-inner/banner-1-mob.webp", mediaQuery:"max-width", breakpoint:"768"}], false).product-banner__img
+	.product-banner__header
+		+page-header("HiPhi X", ["Главная", "Каталог", "HiPhi X"])
+	.product-banner__cont.wrapper
+		ul.product-banner__advantages.marked-list
+			li.marked-list__item Доступно в лизинг
+			li.marked-list__item В кредит на выгодных условиях
+
+		.product-banner__actions
+			button.btn.btn--color-fith
+				span.btn__text Сравнить
+				+icon('caret').btn__icon
+			a(href="#order").btn.btn--color-tertiary
+				span.btn__text Отправить заявку
+			a(href="#test-drive").btn.btn--color-trans-light
+				span.btn__text Записаться на тест-драйв
+

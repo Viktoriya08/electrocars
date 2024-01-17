@@ -1,0 +1,154 @@
+.story
+
+	&__wrapper
+		position: relative
+
+	&__bg 
+		position: absolute
+		top: 40%
+		left: 50%
+
+		size: rem(2100)
+
+		background-image: url('/img/about/bg.svg')
+		background-repeat: no-repeat
+		background-position: 100%
+		background-size: contain
+
+		transform: translate(-50%, 0)
+
+		@include until-laptop
+			size: rem(1600)
+			background-position: 0 70%
+
+		@include until-tablet
+			background-image: none
+
+		&.circle-right
+			transform: translate(-50%, 0) rotate(360deg)
+			transition: transform .6s cubic-bezier(.87,.85,0,.89)
+
+		&.circle-left
+			transform: translate(-50%, 0) rotate(-360deg)
+			transition: transform .6s cubic-bezier(.87,.85,0,.89)
+
+	&__controls
+		display: flex
+		grid-column: 9/11
+		grid-row: 1
+		flex: none
+		justify-content: space-between
+
+		@include until-laptop-xl 
+			grid-column: 10/12
+
+		@include until-laptop
+			grid-column: 11/-1
+
+		@include until-tablet
+			grid-column: auto
+			grid-row: auto
+			margin-bottom: rem(24)
+
+	&__box
+		display: grid
+		grid-template-columns: repeat(12, minmax(0,1fr))
+		column-gap: fluid(24, 40)
+
+		@include until-tablet 	
+			grid-template-columns: 100%
+
+	&__slider
+		grid-column: 5/9
+		grid-row: 1
+		width: 100%
+
+		@include until-laptop-xl 
+			grid-column: 4/10
+
+		@include until-laptop
+			grid-column: 3/11
+
+		@include until-tablet
+			grid-column: auto
+			grid-row: auto
+
+	&__img 
+		max-width: rem(587)
+		aspect-ratio: 587/390
+		margin-bottom: fluid(14, 40)
+		overflow: hidden
+		border-radius: var(--radius-m)
+		background-color: var(--color-neutral-300)
+
+		@include until-laptop-xl 
+			max-width: none
+
+		@include until-tablet
+			aspect-ratio: 262/174
+
+		&-img 
+			display: block
+			size: 100%
+			object-fit: cover
+			object-position: center
+
+	&__content
+		display: flex
+		justify-content: space-between
+
+		@include until-tablet
+			flex-direction: column
+
+		.data__info
+			font-size: var(--fontSizeH2)
+
+		.data__title
+			font-size: var(--fontSizeP2-2)
+
+	&__text 
+		font-size: var(--fontSizeH4)
+		font-weight: 500
+		line-height: var(--lineHeightH2)
+
+		&:not(:last-child)
+			margin-bottom: fluid(14, 24)
+
+	&__subtext 
+		color: var(--color-neutral-300)
+		font-size: var(--fontSizeP)
+		line-height: var(--lineHeightP1)
+
+	&__descr
+		max-width: 75%
+		margin-left: rem(20)
+
+		@include until-tablet
+			max-width: 100%
+			margin-top: rem(14)
+			margin-left: 0
+
+	.swiper-slide
+		background-color: var(--color-primary-300)
+
+	.color-block
+		&__cont
+			padding-top: fluid(24, 85)
+			padding-right: rem(20)
+			padding-left: rem(20)
+
+			@include until-tablet
+				padding-right: 0
+				padding-left: 0
+
+		&__body
+			display: block
+
+		&__title
+			max-width: rem(240)
+
+			@include until-tablet
+				max-width: 50%
+
+	
+

@@ -1,0 +1,108 @@
+@import 'vue-toastification/dist/index.css'
+
+.toast-container
+	bottom: fluid(14, 40)
+	display: flex
+	align-items: center
+	padding: 0 rem(15)
+
+.toast
+	min-width: unset
+	max-width: rem(254)
+	padding: rem(14)
+	border-radius: var(--radius-m)
+
+	background-color: var(--color-primary-500)
+	font-family: var(--font-primary)
+
+	&__body
+		display: flex
+		align-items: center
+		color: var(--color-neutral-100)
+
+		font-size: var(--fontSizeP0)
+		line-height: var(--lineHeightP1)
+
+		@include while-mob-xl
+			line-height: var(--lineHeightP4)
+
+	&__close
+		align-self: center
+
+		size: rem(16)
+		margin-left: rem(14)
+
+		background-color: var(--color-neutral-100)
+		mask-position: center
+		mask-repeat: no-repeat
+		opacity: 1
+
+		font-size: 0
+
+		transition: background-color 0.2s ease-in-out
+
+		@include hover
+			background-color: var(--color-neutral-100-trans-50)
+
+		@include icon('close')
+
+	&__icon
+		position: relative
+
+		display: flex
+		align-items: center
+		justify-content: center
+
+		size: rem(30)
+		margin-right: rem(14)
+
+		border-radius: var(--radius-m)
+
+		background-color: var(--color-info)
+
+		&::before
+			content: ''
+			display: block
+			size: rem(14)
+			background-color: var(--color-primary-500)
+			mask-position: center
+			mask-repeat: no-repeat
+
+		&--compare
+			&::before
+				@include icon('compare')
+
+			&::after
+				content: '+'
+
+				position: absolute
+				top: rem(3)
+				right: rem(3)
+
+				display: flex
+				align-items: center
+				justify-content: center
+
+				width: rem(8)
+				height: rem(8)
+
+				font-size: var(--fontSizeP3)
+				line-height: 1
+
+	&--success,
+	&--warning,
+	&--error,
+	&--info
+		background-color: var(--color-primary-500)
+
+	&--success
+		color: var(--color-positive)
+
+	&--warning
+		color: var(--color-warning)
+
+	&--error
+		color: var(--color-negative)
+
+	&--info
+		color: var(--color-info)

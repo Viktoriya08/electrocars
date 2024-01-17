@@ -1,0 +1,14 @@
+extends /base/_head
+block vars
+	- let title = 'Что-то пошло не так'
+	- let layoutClass = 'layout'
+	- let bodyClass = null
+
+block content
+	include /sections/header
+	include /sections/mobile-header
+
+	main.page.page-error
+		include /pages/502
+
+	include /sections/footer

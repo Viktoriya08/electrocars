@@ -1,0 +1,33 @@
+//- +info-block(['HiPhi X', 'Li 9'])
+
+mixin info-block(items = [])
+
+	each item, i in items
+		article.info-block
+			.info-block__wrapper 
+				.info-block__info
+					.info-block__img.info-block__img--big 
+						+image(`img/spotlight/spotlight-${i + 1 }.jpg`, 430, 293, ' ', '', 'lazy', 'img/product.svg').info-block__img-img
+					.info-block__title=item
+					ul.info-block__list 
+						li.info-block__item.data.data--white
+							.data__title Год выпуска
+							.data__info 2023
+						li.info-block__item.data.data--white 
+							.data__title Емкость батареи
+							.data__info 42,8 кВт
+						li.info-block__item.data.data--white 
+							.data__title Запас хода
+							.data__info 210 км
+						li.info-block__item.data.data--white 
+							.data__title Разгон 0-100 км/ч
+							.data__info 5,3 сек
+
+				.info-block__right 
+					.info-block__box 
+						.info-block__text Компания является экспертом в области электромобилей и обладает глубокими знаниями о последних разработках и трендах в этой области.
+						button.info-block__btn.btn.btn--color-primary 
+							span.btn__text Подробнее
+
+					.info-block__img.info-block__img--small
+						+image(`img/spotlight/spotlight-${i + 1}_${i+ 1}.jpg`, 274, 180, ' ', '', 'lazy', 'img/product.svg')

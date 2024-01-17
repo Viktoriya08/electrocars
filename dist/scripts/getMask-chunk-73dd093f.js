@@ -1,0 +1,1 @@
+const e={mask:"+7 (###) ###-##-##",eager:!0},t={mask:"0.9",eager:!0,tokens:{0:{pattern:/\d/,multiple:!0},9:{pattern:/\d/,optional:!0,multiple:!0}}},a={mask:"0",tokens:{0:{pattern:/\d/,multiple:!0}}},r={computed:{getMask:()=>r=>{switch(r){case"phoneMask":return e;case"decimalMask":return t;case"integerMask":return a;default:return null}}}};export{r as g};

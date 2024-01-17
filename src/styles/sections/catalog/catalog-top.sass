@@ -1,0 +1,41 @@
+.catalog-top
+    display: grid
+    grid-template-columns: repeat(9, minmax(0, 1fr))
+    align-items: center
+    gap: fluid(20,40)
+
+    @include until-tablet
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+        gap: rem(24)
+
+    &__filter
+        @include from-tablet
+            display: none
+
+    &__total
+        grid-column: span 3
+        color: var(--color-neutral-300)
+
+        font-size: var(--fontSizeP2)
+        font-weight: 400
+        line-height: var(--lineHeightP1)
+
+        @include until-laptop
+            grid-column: span 4
+
+        @include until-tablet
+            grid-column: auto
+            grid-row: 2
+
+        @include while-mob-xl
+            line-height: var(--lineHeightP2)
+
+    &__sort
+        grid-column: 7 / -1
+
+        @include until-laptop
+            grid-column: 6 / -1
+
+        @include until-tablet
+            grid-column: 2
+

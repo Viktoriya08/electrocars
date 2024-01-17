@@ -1,0 +1,50 @@
+@use "sass:math"
+
+.mobile-header
+	position: fixed
+	right: 0
+	bottom: rem(math.div($containerPadding, 2))
+	left: 0
+	z-index: var(--z-index-header)
+
+	display: none
+
+	opacity: 1
+
+	transition: opacity .3s, z-index .3s
+
+	@include until-tablet
+		display: block
+
+	&__body
+		display: flex
+		align-items: center
+		justify-content: space-between
+		gap: rem(12)
+
+		padding: rem(6) rem(8)
+
+		border-radius: var(--radius-m)
+
+		background: var(--color-neutral-100-trans-70)
+		backdrop-filter: blur(5px)
+
+	&__logo
+		width: rem(28)
+		height: rem(28)
+
+	&__actions
+		display: flex
+		flex: 1 1 50%
+		align-items: center
+		gap: rem(8)
+
+		&:first-child
+			justify-content: flex-start
+
+		&:last-child
+			justify-content: flex-end
+
+	&--hidden 
+		z-index: -1
+		opacity: 0

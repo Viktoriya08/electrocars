@@ -1,0 +1,110 @@
+.product-feature
+	&__top
+		display: grid
+		grid-template-columns: repeat(9, minmax(0,1fr))
+		align-items: flex-start
+		gap: fluid(20,40)
+		margin-bottom: fluid(24,60)
+
+		@include until-tablet
+			align-items: stretch
+			gap: rem(14)
+
+	&__sort
+		grid-column: 1/5
+
+		@include until-tablet
+			grid-column: -1/1
+
+	&__btn
+		display: flex
+		grid-column: 6/10
+		justify-content: flex-end
+
+		@include until-tablet
+			grid-column: -1/1
+			justify-content: stretch
+
+			.btn
+				width: 100%
+
+				&.btn--border
+					--btn-color: var(--color-primary-500)
+					--btn-color-hover: var(--color-primary-500)
+					--btn-color-active: var(--color-primary-500)
+					--btn-color-disabled: var(--color-neutral-300)
+					--btn-bg: var(--color-primary-300)
+					--btn-bg-hover: var(--color-primary-400)
+					--btn-bg-active: var(--color-primary-400)
+					--btn-bg-disabled: var(--color-neutral-200)
+					--btn-border-color: transparent
+					--btn-border-color-hover: transparent
+					--btn-border-color-active: transparent
+					--btn-border-color-disabled: transparent
+					--btn-loader-color: var(--color-primary-400)
+					--btn-loader-ring-color: var(--color-primary-300)
+
+	&__row
+		display: grid
+		grid-gap: fluid(20,40)
+		grid-template-columns: repeat(9, minmax(0,1fr))
+
+	&__col
+		display: flex
+		flex-direction: column
+		gap: fluid(14,24)
+
+		&:nth-child(odd)
+			grid-column: 1/5
+
+			@include until-laptop
+				grid-column: -1/1
+
+		&:nth-child(even)
+			grid-column: 6/10
+
+			@include until-laptop
+				grid-column: -1/1
+
+	&__el
+		display: flex
+		justify-content: space-between
+		gap: fluid(14,24)
+		padding-top: fluid(8,14)
+		border-top: 1px solid var(--color-neutral-200)
+
+		@include while-mob-xl
+			flex-direction: column
+
+	&__label
+		color: var(--color-neutral-300)
+
+		@include while-mob-xl
+			font-size: var(--fontSizeP5)
+			font-weight: 500
+			line-height: var(--lineHeightP2)
+
+	&__text
+		text-align: right
+
+		@include until-laptop
+			text-align: left
+
+.product-sort
+	display: flex
+	flex-direction: column
+	gap: fluid(8,16)
+
+	&__label
+		font-size: var(--fontSizeP3)
+		font-weight: 500
+		line-height: var(--lineHeightP2)
+
+	.dropdown
+		&__trigger
+			justify-content: space-between
+			padding-bottom: var(--di-py)
+			border-bottom: 1px solid var(--color-primary-400)
+
+		&__body
+			max-width: 100%

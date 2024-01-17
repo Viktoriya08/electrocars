@@ -1,0 +1,86 @@
+.compare
+	&__row
+		display: grid
+		grid-template-columns: repeat(4, minmax(0,1fr))
+		gap: fluid(24,40)
+
+	&__col
+		display: flex
+
+		&--all
+			grid-column: span 3
+
+		&--2
+			grid-column: span 2
+
+		&--align-bottom
+			align-self: flex-end
+
+			@include until-laptop
+				align-self: stretch
+
+		&--differences
+			@include until-laptop
+				order: 2
+
+		&--label
+			.compare__feature-el
+				padding-left: rem(14)
+
+	&__top
+		margin-bottom: fluid(24,40)
+
+		@include until-laptop
+			display: flex
+			flex-direction: column
+
+	&__header
+		.compare__row
+			align-items: center
+
+	&__differences
+		display: flex
+		align-items: center
+		gap: rem(12)
+
+		.default-input
+			&__input
+				min-width: max-content !important
+
+	&__list
+		&--all
+			display: grid
+			grid-template-columns: repeat(3, minmax(0,1fr))
+			gap: fluid(24,40)
+
+	&__feature
+		display: flex
+		flex-direction: column
+		width: 100%
+
+		&-el
+			padding: rem(14) 0 rem(24)
+
+	&__bottom
+		margin-top: fluid(14,40)
+
+	&__btn
+		width: 100%
+
+	.compare__list
+		width: 100%
+
+		&--all
+			grid-template-columns: repeat(3, minmax(0,1fr))
+
+.compare-label
+	color: var(--color-neutral-300)
+	font-size: var(--fontSizeP2)
+	line-height: var(--lineHeightP2)
+
+.compare-text
+	font-size: var(--fontSizeP)
+	line-height: var(--lineHeightP1)
+
+	&__icon
+		size: fluid(18,24)

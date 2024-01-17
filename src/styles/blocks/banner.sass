@@ -1,0 +1,89 @@
+.banner
+	position: relative
+
+	display: flex
+	flex-direction: column
+	gap: rem(40)
+
+	height: 100%
+	padding: rem(24)
+
+	border-radius: var(--radius-m)
+	background-color: var(--color-primary-300)
+
+	@include until-tablet
+		padding: rem(14)
+
+	&__title
+		font-size: var(--fontSizeH3)
+		font-weight: 500
+		line-height: var(--lineHeightH)
+
+	&__bottom
+		display: flex
+		align-items: flex-end
+		justify-content: space-between
+		gap: fluid(20,40)
+		margin-top: auto
+
+	&__actions
+		flex-shrink: 0
+
+	&__apps
+		display: none
+		flex-direction: column
+		gap: rem(6)
+
+		@include until-tablet
+			display: flex
+
+		&-link
+			width: rem(122)
+			border-radius: var(--radius-m)
+			background-color: var(--color-primary-500)
+
+		&-img
+			display: block
+			width: 100%
+			height: auto
+
+	&__code
+		display: flex
+		width: fluid(80,160)
+		height: fluid(80,160)
+		padding: fluid(8,20)
+		border-radius: var(--radius-m)
+		background-color: var(--color-white)
+
+		@include until-tablet
+			display: none
+
+		&-img
+			display: block
+			width: 100%
+			height: auto
+			aspect-ratio: 1/1
+			object-fit: contain
+
+	&__bg
+		width: 100%
+		max-width: 64%
+		margin-right: rem(-24)
+		margin-bottom: rem(-24)
+
+		@include until-tablet
+			max-width: 60%
+			margin-right: rem(-14)
+			margin-bottom: rem(-14)
+
+		&-img
+			display: block
+			width: 100%
+			height: auto
+
+	&__icon
+		size: fluid(80, 120)
+
+		img 
+			display: block
+			size: 100%

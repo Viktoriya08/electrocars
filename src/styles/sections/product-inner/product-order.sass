@@ -1,0 +1,76 @@
+.product-order
+	&__top,
+	&__cont
+		display: grid
+		grid-template-columns: repeat(9, minmax(0,1fr))
+		align-items: flex-start
+
+	&__top
+		align-items: flex-end
+		gap: fluid(20,40)
+		margin-bottom: fluid(24,60)
+
+		@include until-tablet
+			gap: fluid(6,12)
+
+	&__cont
+		gap: fluid(20,40)
+
+		@include until-tablet
+			gap: fluid(24,40)
+
+	&__title,
+	&__photo
+		grid-column: 1/6
+
+		@include until-laptop
+			grid-column: -1/1
+
+	&__price,
+	&__form
+		grid-column: 6/10
+
+		@include until-laptop
+			grid-column: -1/1
+
+	&__title
+		font-size: var(--fontSizeH1)
+		letter-spacing: var(--letterSpacingH1)
+		line-height: var(--lineHeightH1)
+
+	&__price
+		font-size: var(--fontSizeH3)
+		font-weight: 500
+		line-height: var(--lineHeightH3)
+
+	&__photo
+		aspect-ratio: 734/459
+		overflow: hidden
+		border-radius: var(--radius-m)
+
+		picture
+			display: block
+			width: 100%
+			height: 100%
+
+		&-img
+			display: block
+			width: 100%
+			height: 100%
+			object-fit: cover
+			object-position: center
+
+	&__form
+		display: flex
+		flex-direction: column
+
+	&__subtitle
+		margin-bottom: fluid(14,40)
+		font-size: var(--fontSizeH4)
+		font-weight: 500
+		line-height: var(--lineHeightH4)
+
+	&__advantages
+		margin-bottom: fluid(24,40)
+		padding-top: fluid(14,24)
+		border-top: 1px solid var(--color-neutral-200)

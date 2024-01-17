@@ -1,0 +1,53 @@
+//- Пример img - +image('img/template.jpg', 'alt')
+//- сниппет: img
+//- Пример imgMedia - +image('img/template.jpg', 375, 250, 'alt', [{file:"img/template.jpg", mediaQuery:"max-width", breakpoint:"768"}], 'img/template.svg')
+//- сниппет: imgMedia
+
+mixin image(file, width, height, alt="alt", items, lazy=true, onerror)
+	if items
+		picture
+			each item in items
+				source(srcset=`${BASE_URL}${item.file}` media=`(${item.mediaQuery}: ${item.mediaQuery === "max-width" ? item.breakpoint / 16 : item.breakpoint / 16}em)`)
+			img(src=`${BASE_URL}${file}` alt=`${alt}` width=`${width}` height=`${height}` loading=`${lazy ? "lazy" : "eager"}` onerror=`this.onerror=null;this.src='${BASE_URL}${onerror}';`)&attributes(attributes)
+	else
+		img(src=`${BASE_URL}${file}` alt=`${alt}` width=`${width}` height=`${height}` loading=`${lazy ? "lazy" : "eager" }` onerror=`this.onerror=null;this.src='${BASE_URL}${onerror}';`)&attributes(attributes)
+//- Пример - +icon('icon-name').i-icon
+//- сниппет: svg
+mixin icon(id)
+	svg(aria-hidden="true")&attributes(attributes)
+		use(xlink:href=`/__spritemap#icon-${id}`)
+
+include /blocks/breadcrumbs
+
+//- Аккордионы
+include /blocks/accordions/base-accordion
+
+//- Табы
+include /blocks/tabs/tabs-template
+
+//- Слайдеры
+include /blocks/sliders/content-slider
+
+//- Галереи
+include /blocks/galleries/base-gallery
+
+//- Товары
+include /blocks/products/product-card
+include /blocks/products/compare-product
+
+//- Медиа
+include /blocks/media/media-card
+include /blocks/media/info-block
+
+//- Заголовок страницы
+include /blocks/page-header
+
+//- Оплата и доставка
+include /blocks/delivery/data-block
+
+//-Forms
+include /blocks/forms/application-form
+include /blocks/forms/callback-form
+
+//-Контакты
+include /blocks/info-contacts

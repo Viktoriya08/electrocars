@@ -1,0 +1,85 @@
+.product-banner
+	position: relative
+
+	display: flex
+	flex-direction: column
+	gap: rem(40)
+
+	width: 100%
+	height: auto
+	aspect-ratio: 1920 / 920
+
+	background-color: var(--color-neutral-300)
+
+	color: var(--color-neutral-100)
+
+	@include until-tablet
+		aspect-ratio: 320 / 420
+
+	@include while-mob-xl
+		aspect-ratio: 320 / 520
+
+	&.page-section
+		margin-bottom: 0
+
+	&__bg
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+
+		&::after
+			content: ''
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			background-color: rgba(0,0,0,.25)
+
+		picture
+			display: block
+			width: 100%
+			height: 100%
+
+	&__img
+		display: block
+		width: 100%
+		height: 100%
+		object-fit: cover
+		object-position: center
+
+	&__header,
+	&__cont
+		position: relative
+
+	&__cont
+		display: flex
+		flex-wrap: wrap
+		align-items: flex-end
+		justify-content: space-between
+		gap: fluid(24,40)
+		margin-top: auto
+		padding-bottom: rem(40)
+
+		@include until-tablet
+			flex-direction: column
+			align-items: stretch
+
+	&__actions
+		display: flex
+		gap: rem(6)
+
+		@include until-tablet
+			flex-wrap: wrap
+			gap: rem(12)
+
+			.btn
+				flex-grow: 1
+
+	.page-header
+		padding-top: fluid(24,40)
+
+	.breadcrumbs__item
+		color: var(--color-neutral-100)

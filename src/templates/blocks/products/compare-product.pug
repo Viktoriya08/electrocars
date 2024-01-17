@@ -1,0 +1,25 @@
+mixin compare-product(item = 'HiPhi X', photoNum = 1)
+	article.compare-product&attributes(attributes)
+			.compare-product__top
+				.compare-product__img
+					+image(`img/compare/product-${photoNum + 1}.webp`, 117, 80, ' ', '', 'lazy', 'img/product.svg').compare-product__img-img
+					a(href="#").compare-product__link=item
+
+				.compare-product__desc
+					a(href="#").compare-product__name=item
+					span.compare-product__price.price от 9 750 000 ₽
+					button.link.link--simple.compare-product__del Удалить
+
+			.compare-product__bottom
+				.compare-equipment
+					span.compare-equipment__label Комплектация
+					base-dropdown(show-on-click).compare-equipment__select
+						template(#trigger-text)
+							span.compare-equipment__name 6 местная
+							span.compare-equipment__price.price 9 750 000 ₽
+						template(#dropdown)
+							.dropdown__items
+								.dropdown__item.active
+									input-checkbox(id="equipment-1" text="6 местная" :model-value="true")
+								.dropdown__item
+									input-checkbox(id="equipment-2" text="4 местная")

@@ -1,0 +1,40 @@
+mixin product-card(item = 'HiPhi X', photoNum = 1)
+	article.product-card&attributes(attributes)
+		.product-card__img
+			+image(`img/products/product-${photoNum + 1}.webp`, 430, 293, ' ', '', 'lazy', 'img/product.svg').product-card__img-img
+			a(href="#").product-card__btn
+				button.btn.btn--color-fith
+					span.btn__text Подробнее
+
+		.product-card__desc
+			.product-card__top
+
+				//теги первые, чтобы при переполнении контента они были сверху
+				.product-card__tags.tags
+					span.tags__item Новинка
+					span.tags__item Лизинг
+					span.tags__item Тест-драйв
+
+				a(href="#").product-card__name=item
+
+			.product-card__info
+				.product-card__info-el
+					span.product-card__info-label Емкость батареи
+					span.product-card__info-cont 42,8 кВт
+				.product-card__info-el
+					span.product-card__info-label Запас хода
+					span.product-card__info-cont 210 км
+				.product-card__info-el
+					span.product-card__info-label Разгон 0-100 км&nbsp;/&nbsp;ч
+					span.product-card__info-cont 5,3 сек
+
+			.product-card__bottom
+				span.product-card__price Цена #[span.price от 7 221 000 ₽]
+
+				if photoNum == 0
+					product-actions(:product-data="{name: 'HiPhi X', id: 12, offers: [{name: 'Комфорт+', id: 13 }, {name: 'Бизнес', id: 11}, {name: 'Стандарт', id: 16}, {name: 'Эконом', id: 53}]}")
+				else if photoNum == 1
+					product-actions(:product-data="{name: 'HiPhi X', id: 17, offers: []}")
+				else
+					product-actions
+

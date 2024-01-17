@@ -1,0 +1,116 @@
+.color-slider
+	position: relative
+	display: flex
+	flex-direction: column
+	gap: fluid(10,20)
+
+	&__photo
+		width: 100%
+		aspect-ratio: 1370/690
+		overflow: hidden
+		border-radius: var(--radius-m)
+		background-color: var(--color-neutral-300)
+		color: var(--color-neutral-100)
+
+		&::after
+			content: ''
+			position: absolute
+			top: 0
+			right: 0
+			left: 0
+			height: 27.5%
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.25) 100%)
+
+			@include while-mob-xl
+				display: none
+
+		picture
+			display: block
+			width: 100%
+			height: 100%
+
+		img
+			display: block
+			width: 100%
+			height: 100%
+			object-fit: cover
+			object-position: center
+
+		&-text
+			position: absolute
+			top: fluid(14,24)
+			right: 0
+			left: 0
+			z-index: var(--z-index-above)
+
+			width: 100%
+			max-width: 50%
+			margin-right: auto
+			margin-left: auto
+
+			font-size: var(--fontSizeP2)
+			font-weight: 500
+			line-height: var(--lineHeightP3)
+
+			text-align: center
+			text-transform: uppercase
+
+			@include while-mob-xl
+				display: none
+
+	&__thumbs
+		right: 0
+		bottom: fluid(14,24)
+		left: 0
+
+		width: max-content
+		max-width: rem(320)
+		margin-right: auto
+		margin-left: auto
+
+		border-radius: var(--radius-m)
+		background-color: var(--color-neutral-100)
+
+		@include until-tablet
+			bottom: 0
+			width: 100%
+			max-width: 100%
+			border: 1px solid var(--color-neutral-200)
+
+		&.swiper
+			position: absolute
+			z-index: calc(var(--z-index-above) + 1)
+			padding: rem(8) rem(4)
+
+			@include until-tablet
+				position: relative
+
+		.swiper-wrapper
+			width: max-content
+			max-width: 100%
+
+			@include until-tablet
+				margin: 0 auto
+
+	&__thumb
+		cursor: pointer
+
+		&.swiper-slide
+			width: rem(52)
+			padding: 0 rem(4)
+
+			@include until-tablet
+				width: rem(32)
+
+		&.swiper-slide-thumb-active
+			.color-slider__color
+				border-color: var(--color-primary-400)
+
+	&__color
+		display: block
+		width: 100%
+		aspect-ratio: 1/1
+		border: 2px solid transparent
+		border-radius: var(--radius-m)
+		transition: border-color .3s ease
+

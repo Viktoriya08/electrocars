@@ -1,0 +1,33 @@
+section.page-section.color-block.story#story-slider
+	.wrapper.color-block__wrapper
+		.color-block__body.color-block__body--light.story__wrapper 
+			.story__bg
+			.color-block__title
+				h2.subtitle История компании ELECTROCARS RUS
+
+			.color-block__cont
+				.story__box
+					story-slider(id="story-slider")
+						template(#controls)
+							.story__controls
+
+								.swiper-buttons
+									.swiper-button.swiper-button-prev
+									.swiper-button.swiper-button-next
+
+								.swiper-pagination
+
+						template(#default)
+							each item, index in [{data: '2020', img:'about-main.jpg', text: 'Основание компании', subtext: 'Компания ELECTROCARS RUS была основана в Челябинске с целью стимулирования развития и продвижения электромобилей в регионе.'}, {data: '2010', img:'media.jpg', text: 'Подписано Дилерское соглашения с MAN Truck and Bus', subtext: ''}, {data: '2005', img:'about-main.jpg', text: 'Подписано Дилерского соглашения', subtext: ''}]
+								.swiper-slide
+									.story__slide
+										.story__img
+											+image(`img/about/${item.img}`, 587, 390, ' ', '', 'lazy', 'img/product.svg').story__img-img
+										.story__content 
+											.story__data.data 
+												.data__info=item.data
+												.data__title сентябрь
+
+											.story__descr
+												.story__text=item.text
+												.story__subtext=item.subtext 

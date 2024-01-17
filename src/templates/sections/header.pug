@@ -1,0 +1,50 @@
+sticky-header
+	template(#default)
+		header.header
+			.wrapper.header__wrapper
+				a.header__logo.logo(href="../")
+					+image('img/logo-text.svg', 142, 12, 'electrocars', null, false).logo__img
+
+				.header__block.header__block--left
+					nav.header__nav
+						button(@click="openModal('callback-modal')").header__link.link.link--simple Заказать звонок
+						a(href="#").header__link.link.link--simple Контакты
+
+				.header__block.header__block--center
+					button(href="#").btn.btn--color-secondary.btn--size-medium
+						span.btn__text Каталог
+						+icon('catalog').btn__icon
+
+
+				header-actions
+					template(#default="{searchShown, showSearch, hideSearch}")
+						.header__block.header__block--right
+
+							nav.header__nav(v-show="!searchShown")
+								a(href="#").header__link.link.link--simple Лизинг
+								a(href="#").header__link.link.link--simple Аренда
+								a(href="#").header__link.link.link--simple Зарядные станции и СТО
+
+							.header__actions
+
+								site-search(v-show="searchShown" class="header__search" @clear="hideSearch")
+
+								a(v-show="!searchShown" href="#" data-count="3").header__action.icon-btn.icon-btn--color-primary
+									+icon('compare').icon-btn__icon
+
+								button(v-show="!searchShown" @click="showSearch").header__action.icon-btn.icon-btn--color-primary
+									+icon('search').icon-btn__icon
+
+								burger-dropdown.header__action
+									.burger-menu__links
+										a(href="#").burger-menu__link.link.link--simple.link--size-l.link--color-tertiary Каталог #[span.count 24]
+										a(href="#").burger-menu__link.link.link--simple.link--size-l Лизинг
+										a(href="#").burger-menu__link.link.link--simple.link--size-l Аренда
+										a(href="#").burger-menu__link.link.link--simple.link--size-l Зарядные станции и СТО
+
+									.burger-menu__links.burger-menu__links--sm
+										a(href="#").burger-menu__link.link.link--simple.link--size-m Оплата и доставка
+										a(href="#").burger-menu__link.link.link--simple.link--size-m О компании
+										a(href="#").burger-menu__link.link.link--simple.link--size-m Медиа
+										a(href="#").burger-menu__link.link.link--simple.link--size-m Акции
+										a(href="#").burger-menu__link.link.link--simple.link--size-m Контакты

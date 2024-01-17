@@ -1,0 +1,41 @@
+.video
+	position: relative
+
+	&__video
+		width: 100%
+		overflow: hidden
+		border-radius: var(--radius-m)
+
+	&__btn
+		position: absolute
+		top: 50%
+		left: 50%
+		z-index: 1
+
+		width: rem(95)
+		height: rem(65)
+		padding: 0
+
+		background-image: url('/img/icons/youtube.svg')
+		background-repeat: no-repeat
+		background-position: center
+		background-size: contain
+		opacity: 1
+
+		transform: translate(-50%, -50%)
+		transition: opacity .3s
+
+		@include hover 
+			opacity: .8
+
+		@include while-mob-xl 
+			width: rem(65)
+			height: rem(45)
+
+	&--playing
+		& .video
+			&__btn
+				z-index: 0
+				opacity: 0
+				pointer-events: none
+

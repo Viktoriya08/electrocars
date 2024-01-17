@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <link rel="preload" as="font" type="font/woff" href="/local/client-app/dist/fonts/Inter/Inter-Medium.woff" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/local/client-app/dist/fonts/Inter/Inter-Medium.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff" href="/local/client-app/dist/fonts/Inter/Inter-Regular.woff" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/local/client-app/dist/fonts/Inter/Inter-Regular.woff2" crossorigin>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/local/client-app/dist/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/local/client-app/dist/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/local/client-app/dist/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/local/client-app/dist/favicons/favicon-16x16.png">
+    <!--link(rel="manifest" href="/favicons/site.webmanifest")-->
+    <!--link(rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#ffffff")-->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="Детальная авто">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:image" content="https://html.xpager.ru/electrocars/img/opengraph-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="660">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://html.xpager.ru/electrocars/img/opengraph-image.jpg">
+    <meta name="format-detection" content="telephone=no">
+    <title>Детальная авто</title>
+    <script type="module" crossorigin src="/local/client-app/dist/scripts/main-chunk-fdacad84.js"></script>
+    <link rel="stylesheet" href="/local/client-app/dist/styles/index-dbfe154b.css">
+  </head>
+  <body>
+    <div class="layout" id="app">
+      <suspense>
+        <template #default>
+          <root-component>
+            <sticky-header>
+              <template #default>
+                <header class="header">
+                  <div class="wrapper header__wrapper"><a class="header__logo logo" href="../"><img class="logo__img" src="/local/client-app/dist/img/logo-text.svg" alt="electrocars" width="142" height="12" loading="eager" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';"></a>
+                    <div class="header__block header__block--left">
+                      <nav class="header__nav">
+                        <button class="header__link link link--simple" @click="openModal('callback-modal')">Заказать звонок</button><a class="header__link link link--simple" href="#">Контакты</a>
+                      </nav>
+                    </div>
+                    <div class="header__block header__block--center">
+                      <button class="btn btn--color-secondary btn--size-medium" href="#"><span class="btn__text">Каталог</span>
+                            <svg class="btn__icon" aria-hidden="true">
+                              <use xlink:href="/local/client-app/dist/img/icons.svg#icon-catalog"></use>
+                            </svg>
+                      </button>
+                    </div>
+                    <header-actions>
+                      <template #default="{searchShown, showSearch, hideSearch}">
+                        <div class="header__block header__block--right">
+                          <nav class="header__nav" v-show="!searchShown"><a class="header__link link link--simple" href="#">Лизинг</a><a class="header__link link link--simple" href="#">Аренда</a><a class="header__link link link--simple" href="#">Зарядные станции и СТО</a></nav>
+                          <div class="header__actions">
+                            <site-search class="header__search" v-show="searchShown" @clear="hideSearch"></site-search><a class="header__action icon-btn icon-btn--color-primary" v-show="!searchShown" href="#" data-count="3">
+                                  <svg class="icon-btn__icon" aria-hidden="true">
+                                    <use xlink:href="/local/client-app/dist/img/icons.svg#icon-compare"></use>
+                                  </svg></a>
+                            <button class="header__action icon-btn icon-btn--color-primary" v-show="!searchShown" @click="showSearch">
+                                  <svg class="icon-btn__icon" aria-hidden="true">
+                                    <use xlink:href="/local/client-app/dist/img/icons.svg#icon-search"></use>
+                                  </svg>
+                            </button>
+                            <burger-dropdown class="header__action">
+                              <div class="burger-menu__links"><a class="burger-menu__link link link--simple link--size-l link--color-tertiary" href="#">Каталог <span class="count">24</span></a><a class="burger-menu__link link link--simple link--size-l" href="#">Лизинг</a><a class="burger-menu__link link link--simple link--size-l" href="#">Аренда</a><a class="burger-menu__link link link--simple link--size-l" href="#">Зарядные станции и СТО</a></div>
+                              <div class="burger-menu__links burger-menu__links--sm"><a class="burger-menu__link link link--simple link--size-m" href="#">Оплата и доставка</a><a class="burger-menu__link link link--simple link--size-m" href="#">О компании</a><a class="burger-menu__link link link--simple link--size-m" href="#">Медиа</a><a class="burger-menu__link link link--simple link--size-m" href="#">Акции</a><a class="burger-menu__link link link--simple link--size-m" href="#">Контакты</a></div>
+                            </burger-dropdown>
+                          </div>
+                        </div>
+                      </template>
+                    </header-actions>
+                  </div>
+                </header>
+              </template>
+            </sticky-header>
+            <mobile-header v-slot="{shouldBeHidden}">
+              <header class="mobile-header" :class="{'mobile-header--hidden' : shouldBeHidden}">
+                <div class="wrapper">
+                  <div class="mobile-header__body">
+                    <div class="mobile-header__actions">
+                      <burger-dropdown id="mobile-burger">
+                        <header-actions>
+                          <template #default="{searchShown, showSearch, hideSearch}">
+                            <div class="burger-menu__top"><a class="icon-btn icon-btn--color-primary" v-show="!searchShown" href="#" data-count="3">
+                                    <svg class="icon-btn__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-compare"></use>
+                                    </svg></a>
+                              <button class="header__action icon-btn icon-btn--color-primary" v-show="!searchShown" @click="showSearch">
+                                    <svg class="icon-btn__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-search"></use>
+                                    </svg>
+                              </button>
+                              <site-search class="burger-menu__search" v-if="searchShown" label="Поиск" @clear="hideSearch"></site-search>
+                            </div>
+                          </template>
+                        </header-actions>
+                        <div class="burger-menu__links"><a class="burger-menu__link link link--simple link--size-l link--color-tertiary" href="#">Каталог <span class="count">24</span></a><a class="burger-menu__link link link--simple link--size-l" href="#">Лизинг</a><a class="burger-menu__link link link--simple link--size-l" href="#">Аренда</a><a class="burger-menu__link link link--simple link--size-l" href="#">Зарядные станции и СТО</a></div>
+                        <div class="burger-menu__links burger-menu__links--sm"><a class="burger-menu__link link link--simple link--size-m" href="#">Оплата и доставка</a><a class="burger-menu__link link link--simple link--size-m" href="#">О компании</a><a class="burger-menu__link link link--simple link--size-m" href="#">Медиа</a><a class="burger-menu__link link link--simple link--size-m" href="#">Акции</a><a class="burger-menu__link link link--simple link--size-m" href="#">Контакты</a></div>
+                      </burger-dropdown>
+                    </div><a class="mobile-header__logo logo" href="#"><img class="logo__img" src="/local/client-app/dist/img/logo.svg" alt="electrocars" width="28" height="28" loading="eager" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';"></a>
+                    <div class="mobile-header__actions">
+                      <button class="link link--simple" @click="openModal('callback-modal')">Позвонить</button>
+                    </div>
+                  </div>
+                </div>
+              </header>
+            </mobile-header>
+            <main class="page">
+              <!--product-banner-->
+              <section class="page-section product-banner">
+                <div class="product-banner__bg">
+                      <picture>
+                        <source srcset="/local/client-app/dist/img/product-inner/banner-1-mob.webp" media="(max-width: 48em)"><img class="product-banner__img" src="/local/client-app/dist/img/product-inner/banner-1.webp" alt=" " width="1920" height="1080" loading="eager" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';">
+                      </picture>
+                </div>
+                <div class="product-banner__header">
+                      <section class="page-header">
+                        <div class="wrapper page-header__wrapper">
+                              <nav class="breadcrumbs page-header__breadcrumbs">
+                                <div class="breadcrumbs__wrapper">
+                                  <ol class="breadcrumbs__items">
+                                    <li class="breadcrumbs__item"><a class="breadcrumbs__link link" href="#" aria-current="page">Главная</a></li>
+                                    <li class="breadcrumbs__item"><a class="breadcrumbs__link link" href="#">Каталог</a></li>
+                                    <li class="breadcrumbs__item">HiPhi X</li>
+                                  </ol>
+                                </div>
+                              </nav>
+                          <div class="page-header__content">
+                            <h1 class="page-title">HiPhi X</h1>
+                          </div>
+                        </div>
+                      </section>
+                </div>
+                <div class="product-banner__cont wrapper">
+                  <ul class="product-banner__advantages marked-list">
+                    <li class="marked-list__item">Доступно в лизинг</li>
+                    <li class="marked-list__item">В кредит на выгодных условиях</li>
+                  </ul>
+                  <div class="product-banner__actions">
+                    <button class="btn btn--color-fith"><span class="btn__text">Сравнить</span>
+                          <svg class="btn__icon" aria-hidden="true">
+                            <use xlink:href="/local/client-app/dist/img/icons.svg#icon-caret"></use>
+                          </svg>
+                    </button><a class="btn btn--color-tertiary" href="#order"><span class="btn__text">Отправить заявку</span></a><a class="btn btn--color-trans-light" href="#test-drive"><span class="btn__text">Записаться на тест-драйв</span></a>
+                  </div>
+                </div>
+              </section>
+              <section class="page-section product-inner">
+                <!--product-header-->
+                <section class="product-header">
+                  <div class="wrapper product-header__cont">
+                    <div class="product-header__actions"><a class="btn btn--size-medium btn--color-primary" href="#test-drive"><span class="btn__text">Записаться на тест-дравйв</span></a><a class="btn btn--size-medium btn--color-secondary" href="#order"><span class="btn__text">Отправить заявку</span></a>
+                      <button class="btn btn--size-medium btn--color-fourth"><span class="btn__text">Сравнить</span>
+                            <svg class="btn__icon" aria-hidden="true">
+                              <use xlink:href="/local/client-app/dist/img/icons.svg#icon-caret"></use>
+                            </svg>
+                      </button>
+                    </div>
+                    <nav class="product-header__nav"><a class="link link--simple" href="#product-desc">Описание</a><a class="link link--simple" href="#product-color">Цвет</a><a class="link link--simple" href="#product-exterior">Экстерьер</a><a class="link link--simple" href="#product-interior">Комплектации</a><a class="link link--simple" href="#product-feature">Характеристики</a><a class="link link--simple" href="#product-media">Статьи и обзоры</a></nav>
+                  </div>
+                </section>
+                <!--Описание-->
+                <section class="page-section content-block content-block--product" id="product-desc">
+                  <div class="wrapper content-block__wrapper">
+                    <div class="content-block__body">
+                      <div class="content-block__title">
+                        <h2 class="subtitle">Описание</h2>
+                      </div>
+                      <div class="content-block__cont">
+                        <article class="product-desc">
+                          <div class="product-desc__text">
+                            <h3>HiPhi X</h3>
+                            <p>HiPhi X — это элегантный и передовой электрокар, который является настоящим воплощением технологического прогресса в мире автомобилей.  Этот автомобиль предлагает не только прекрасный дизайн, но и передовые функции, которые сделают вашу поездку удобнее и безопаснее.</p>
+                            <p>Одна из ключевых особенностей HiPhi X - это его автономная система, которая позволяет автомобилю управляться самостоятельно. Система использует передовые датчики и камеры, чтобы обеспечить безопасность и точность движения, а также предоставляет возможность владельцу отдохнуть, работать или развлекаться во время поездки.</p>
+                          </div>
+                          <div class="product-desc__card info-card">
+                            <div class="info-card__top">
+                              <ul class="info-card__advantages marked-list">
+                                <li class="marked-list__item">Доступно в лизинг</li>
+                                <li class="marked-list__item">В кредит на выгодных условиях</li>
+                              </ul>
+                            </div>
+                            <div class="info-card__bottom"><span class="info-card__price">Цена <span class="price">от 7 221 000 ₽</span></span>
+                              <div class="info-card__btn">
+                                <button class="btn btn--color-primary"><span class="btn__text">Отправить заявку</span></button>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <!--Цвет-->
+                <section class="page-section content-block content-block--product" id="product-color">
+                  <div class="wrapper content-block__wrapper">
+                    <div class="content-block__body content-block__body--product-color">
+                      <div class="content-block__title">
+                        <h2 class="subtitle">Цвет</h2>
+                      </div>
+                      <div class="content-block__cont">
+                        <div class="product-color">
+                          <tabs-template>
+                            <template #tabs="{changeTab}">
+                              <div class="product-color__tabs">
+                                <base-tabs :initial-value="'exterior'" :tabs="[{label: 'Экстерьер', value: 'exterior'}, {label: 'Салон', value: 'interior'}]" type="switcher" @change="changeTab"></base-tabs>
+                              </div>
+                            </template>
+                            <template #content="{currentTab}">
+                              <div class="product-color__list">
+                                <template v-if="currentTab === 'exterior'">
+                                  <div class="product-color__item">
+                                    <product-color-slider>
+                                      <template #default>
+                                        <div class="swiper-slide color-slider__photo">
+                                              <picture>
+                                                <source srcset="/local/client-app/dist/img/product-inner/color-1-mob.webp" media="(max-width: 48em)"><img class="color-slider__photo-img" src="/local/client-app/dist/img/product-inner/color-1.webp" alt=" " width="1370" height="690" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';">
+                                              </picture><span class="color-slider__photo-text">леденцовый <br> оранжевый</span>
+                                        </div>
+                                        <div class="swiper-slide color-slider__photo">
+                                              <picture>
+                                                <source srcset="/local/client-app/dist/img/product-inner/color-2-mob.webp" media="(max-width: 48em)"><img class="color-slider__photo-img" src="/local/client-app/dist/img/product-inner/color-2.webp" alt=" " width="1370" height="690" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';">
+                                              </picture><span class="color-slider__photo-text">фиолетовый</span>
+                                        </div>
+                                        <div class="swiper-slide color-slider__photo">
+                                              <picture>
+                                                <source srcset="/local/client-app/dist/img/product-inner/color-3-mob.webp" media="(max-width: 48em)"><img class="color-slider__photo-img" src="/local/client-app/dist/img/product-inner/color-3.webp" alt=" " width="1370" height="690" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';">
+                                              </picture><span class="color-slider__photo-text">серебряный <br> серый</span>
+                                        </div>
+                                      </template>
+                                      <template #thumbs>
+                                        <div class="swiper-slide color-slider__thumb"><span class="color-slider__color" style="background-color: #FF471F"></span></div>
+                                        <div class="swiper-slide color-slider__thumb"><span class="color-slider__color" style="background-color: #42394F"></span></div>
+                                        <div class="swiper-slide color-slider__thumb"><span class="color-slider__color" style="background-color: #A9A9A9"></span></div>
+                                      </template>
+                                    </product-color-slider>
+                                  </div>
+                                </template>
+                                <template v-if="currentTab === 'interior'">
+                                  <div class="product-color__item">
+                                    <product-color-slider>
+                                      <template #default>
+                                        <div class="swiper-slide color-slider__photo">
+                                              <picture>
+                                                <source srcset="/local/client-app/dist/img/product-inner/color-3-mob.webp" media="(max-width: 48em)"><img class="color-slider__photo-img" src="/local/client-app/dist/img/product-inner/color-3.webp" alt=" " width="1370" height="690" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';">
+                                              </picture><span class="color-slider__photo-text">серебряный <br> серый</span>
+                                        </div>
+                                        <div class="swiper-slide color-slider__photo">
+                                              <picture>
+                                                <source srcset="/local/client-app/dist/img/product-inner/color-1-mob.webp" media="(max-width: 48em)"><img class="color-slider__photo-img" src="/local/client-app/dist/img/product-inner/color-1.webp" alt=" " width="1370" height="690" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';">
+                                              </picture><span class="color-slider__photo-text">леденцовый <br> оранжевый</span>
+                                        </div>
+                                        <div class="swiper-slide color-slider__photo">
+                                              <picture>
+                                                <source srcset="/local/client-app/dist/img/product-inner/color-2-mob.webp" media="(max-width: 48em)"><img class="color-slider__photo-img" src="/local/client-app/dist/img/product-inner/color-2.webp" alt=" " width="1370" height="690" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';">
+                                              </picture><span class="color-slider__photo-text">фиолетовый</span>
+                                        </div>
+                                      </template>
+                                      <template #thumbs>
+                                        <div class="swiper-slide color-slider__thumb"><span class="color-slider__color" style="background-color: #A9A9A9"></span></div>
+                                        <div class="swiper-slide color-slider__thumb"><span class="color-slider__color" style="background-color: #FF471F"></span></div>
+                                        <div class="swiper-slide color-slider__thumb"><span class="color-slider__color" style="background-color: #42394F"></span></div>
+                                      </template>
+                                    </product-color-slider>
+                                  </div>
+                                </template>
+                              </div>
+                            </template>
+                          </tabs-template>
+                        </div>
+                      </div>
+                      <div class="content-block__info">
+                        <div class="product-info">
+                          <div class="product-info__item">
+                            <div class="product-info__el"><span class="product-info__label">Год выпуска</span><span class="product-info__cont">2022</span></div>
+                            <div class="product-info__el"><span class="product-info__label">Емкость батареи</span><span class="product-info__cont">320 кВт</span></div>
+                          </div>
+                          <div class="product-info__item">
+                            <div class="product-info__el"><span class="product-info__label">Запас хода</span><span class="product-info__cont">560 км</span></div>
+                            <div class="product-info__el"><span class="product-info__label">Разгон 0-100 км/ч</span><span class="product-info__cont">3,9 сек</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <!--Экстерьер-->
+                <section class="page-section content-block content-block--product" id="product-exterior">
+                  <div class="wrapper content-block__wrapper">
+                    <div class="content-block__body">
+                      <div class="content-block__title">
+                        <h2 class="subtitle">Экстерьер</h2>
+                      </div>
+                      <div class="content-block__cont">
+                        <article class="product-item">
+                          <div class="product-item__photo"><img class="product-item__photo-img" src="/local/client-app/dist/img/product-inner/exterior-1.webp" alt=" " width="744" height="420" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';">
+                          </div>
+                          <div class="product-item__desc">
+                            <div class="product-item__text"><span class="product-item__title">Надежный и крепкий кузов. <br> Большой салон, способный <br> вместить большую семью</span></div>
+                            <div class="product-item__cont">
+                              <div class="product-info">
+                                <div class="product-info__item">
+                                  <div class="product-info__el"><span class="product-info__label">Длина кузова</span><span class="product-info__cont">245 см</span></div>
+                                  <div class="product-info__el"><span class="product-info__label">Кол-во мест</span><span class="product-info__cont">4 или 6 мест</span></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                        <article class="product-item">
+                          <div class="product-item__photo"><img class="product-item__photo-img" src="/local/client-app/dist/img/product-inner/exterior-2.webp" alt=" " width="744" height="420" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';">
+                          </div>
+                          <div class="product-item__desc">
+                            <div class="product-item__text"><span class="product-item__title">Вместительный <br> багажник</span></div>
+                            <div class="product-item__cont">
+                              <div class="product-info">
+                                <div class="product-info__item">
+                                  <div class="product-info__el"><span class="product-info__label">Объем</span><span class="product-info__cont">315 л</span></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <!--Интерьер-->
+                <section class="page-section content-block content-block--product" id="product-interior">
+                  <div class="wrapper content-block__wrapper">
+                    <div class="content-block__body">
+                      <div class="content-block__title">
+                        <h2 class="subtitle">Интерьер</h2>
+                      </div>
+                      <div class="content-block__cont">
+                        <article class="product-item">
+                          <div class="product-item__photo"><img class="product-item__photo-img" src="/local/client-app/dist/img/product-inner/interior-1.webp" alt=" " width="744" height="420" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';"><span class="product-item__photo-text">белый салон <br> с серой строчкой</span>
+                          </div>
+                          <div class="product-item__desc">
+                            <div class="product-item__text"><span class="product-item__title">Салон из натуральной кожи. <br> Прослужит долгие годы</span></div>
+                            <div class="product-item__cont">
+                              <div class="product-info">
+                                <div class="product-info__item">
+                                  <div class="product-info__el"><span class="product-info__label">Цвет салона</span>
+                                    <div class="product-info__color"><span class="product-info__color-el" style="background-color: #CDC5B3"></span><span class="product-info__color-el" style="background-color: #292929"></span><span class="product-info__color-el" style="background-color: #A7A7A7"></span></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                        <article class="product-item">
+                          <div class="product-item__photo"><img class="product-item__photo-img" src="/local/client-app/dist/img/product-inner/interior-2.webp" alt=" " width="744" height="420" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';">
+                          </div>
+                          <div class="product-item__desc">
+                            <div class="product-item__text"><span class="product-item__title">Многофункциональная <br> сенсорная панель приборов</span></div>
+                            <div class="product-item__cont">
+                              <div class="product-info">
+                                <div class="product-info__item">
+                                  <div class="product-info__el"><span class="product-info__label">Навигация</span><span class="product-info__cont">GPS</span></div>
+                                  <div class="product-info__el"><span class="product-info__label">Мультимедиа</span><span class="product-info__cont">Apple CarPlay</span></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <!--Запись на тест-драйв-->
+                <section class="page-section" id="test-drive">
+                  <div class="wrapper">
+                    <div class="form-block">
+                      <div class="form-block__bg">
+                            <picture>
+                              <source srcset="/local/client-app/dist/img/form-bg-mob.webp" media="(max-width: 48em)"><img class="form-block__bg-img" src="/local/client-app/dist/img/form-bg-xl.webp" alt=" " width="1213" height="629" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';">
+                            </picture>
+                      </div>
+                      <h2 class="form-block__title">Почувствуйте себя владельцем <br> современного электрокара</h2>
+                      <div class="form-block__form">
+                        <form-test-drive></form-test-drive>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <!--Характеристики-->
+                <section class="page-section content-block content-block--product" id="product-feature">
+                  <div class="wrapper content-block__wrapper">
+                    <div class="content-block__body">
+                      <div class="content-block__title">
+                        <h2 class="subtitle">Комплектации <br> и&nbsp;характеристики</h2>
+                      </div>
+                      <div class="content-block__cont">
+                        <article class="product-feature">
+                          <div class="product-feature__top">
+                            <div class="product-feature__sort">
+                              <div class="product-sort"><span class="product-sort__label">Комплектация</span>
+                                <base-dropdown class="product-feature__dropdown" show-on-click>
+                                  <template #trigger-text>6 местная</template>
+                                  <template #dropdown>
+                                    <div class="dropdown__items"><a class="dropdown__item" href="#">6 местная</a><a class="dropdown__item" href="#">4 местная</a></div>
+                                  </template>
+                                </base-dropdown>
+                              </div>
+                              <!--equipment-select-->
+                            </div>
+                            <div class="product-feature__btn">
+                              <button class="btn btn--border"><span class="btn__text">Сравнить</span>
+                                    <svg class="btn__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-caret"></use>
+                                    </svg>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="product-feature__list">
+                            <base-accordion class="product-feature__item">
+                              <template #title>
+                                Основные <br>
+                                характеристики
+                              </template>
+                              <template #body>
+                                <div class="product-feature__row">
+                                  <div class="product-feature__col">
+                                    <div class="product-feature__el"><span class="product-feature__label">Длина&nbsp;(мм)</span><span class="product-feature__text">5 200</span></div>
+                                    <div class="product-feature__el"><span class="product-feature__label">Ширина (мм)</span><span class="product-feature__text">2198 / 2062 (сложенное зеркало)</span></div>
+                                    <div class="product-feature__el"><span class="product-feature__label">Высота&nbsp;(мм)</span><span class="product-feature__text">1618</span></div>
+                                    <div class="product-feature__el"><span class="product-feature__label">Колесная база&nbsp;(мм)</span><span class="product-feature__text">3150</span></div>
+                                    <div class="product-feature__el"><span class="product-feature__label">Радиус разворота&nbsp;(м)</span><span class="product-feature__text">5,8</span></div>
+                                  </div>
+                                  <div class="product-feature__col">
+                                    <div class="product-feature__el"><span class="product-feature__label">Коэффициент сопротивления&nbsp;(Cd)</span><span class="product-feature__text">0,27</span></div>
+                                    <div class="product-feature__el"><span class="product-feature__label">Вес кузова&nbsp;(кг)</span><span class="product-feature__text">2580</span></div>
+                                    <div class="product-feature__el"><span class="product-feature__label">Сиденья</span><span class="product-feature__text">6</span></div>
+                                    <div class="product-feature__el"><span class="product-feature__label">Емкость багажника&nbsp;(л)</span><span class="product-feature__text">204 (616 третий ряд разложен)</span></div>
+                                    <div class="product-feature__el"><span class="product-feature__label">Емкость переднего багажного <br> отделения&nbsp;(л)</span><span class="product-feature__text">29</span></div>
+                                  </div>
+                                </div>
+                              </template>
+                            </base-accordion>
+                            <base-accordion class="product-feature__item">
+                              <template #title>
+                                Силовые <br>
+                                характеристики
+                              </template>
+                              <template #body>
+                                <div class="product-feature__row">
+                                  <div class="product-feature__col">
+                                    <div class="product-feature__el"><span class="product-feature__label">Длина&nbsp;(мм)</span><span class="product-feature__text">5 200</span></div>
+                                    <div class="product-feature__el"><span class="product-feature__label">Ширина (мм)</span><span class="product-feature__text">2198 / 2062 (сложенное зеркало)</span></div>
+                                    <div class="product-feature__el"><span class="product-feature__label">Высота&nbsp;(мм)</span><span class="product-feature__text">1618</span></div>
+                                    <div class="product-feature__el"><span class="product-feature__label">Колесная база&nbsp;(мм)</span><span class="product-feature__text">3150</span></div>
+                                    <div class="product-feature__el"><span class="product-feature__label">Радиус разворота&nbsp;(м)</span><span class="product-feature__text">5,8</span></div>
+                                  </div>
+                                  <div class="product-feature__col">
+                                    <div class="product-feature__el"><span class="product-feature__label">Коэффициент сопротивления&nbsp;(Cd)</span><span class="product-feature__text">0,27</span></div>
+                                    <div class="product-feature__el"><span class="product-feature__label">Вес кузова&nbsp;(кг)</span><span class="product-feature__text">2580</span></div>
+                                    <div class="product-feature__el"><span class="product-feature__label">Сиденья</span><span class="product-feature__text">6</span></div>
+                                    <div class="product-feature__el"><span class="product-feature__label">Емкость багажника&nbsp;(л)</span><span class="product-feature__text">204 (616 третий ряд разложен)</span></div>
+                                    <div class="product-feature__el"><span class="product-feature__label">Емкость переднего багажного <br> отделения&nbsp;(л)</span><span class="product-feature__text">29</span></div>
+                                  </div>
+                                </div>
+                              </template>
+                            </base-accordion>
+                            <base-accordion class="product-feature__item">
+                              <template #title>
+                                Управление <br>
+                                энергией
+                              </template>
+                              <template #body>
+                                <p>Гарантия распространяется на лакокрасочное покрытие и основные узлы и агрегаты:
+                                  <ul>
+                                    <li>Тяговая батарея</li>
+                                    <li>Электрические компоненты (детали и системы, которые должны находиться под напряжением для выполнения своих функций, за исключением расходных материалов)</li>
+                                    <li>Элементы кузова</li>
+                                    <li>Двигатель</li>
+                                    <li>Рулевой механизм в сборе</li>
+                                    <li>и другие</li>
+                                  </ul>
+                                </p>
+                              </template>
+                            </base-accordion>
+                            <base-accordion class="product-feature__item">
+                              <template #title>
+                                Система <br>
+                                шасси
+                              </template>
+                              <template #body>
+                                <p>Гарантия распространяется на лакокрасочное покрытие и основные узлы и агрегаты:
+                                  <ul>
+                                    <li>Тяговая батарея</li>
+                                    <li>Электрические компоненты (детали и системы, которые должны находиться под напряжением для выполнения своих функций, за исключением расходных материалов)</li>
+                                    <li>Элементы кузова</li>
+                                    <li>Двигатель</li>
+                                    <li>Рулевой механизм в сборе</li>
+                                    <li>и другие</li>
+                                  </ul>
+                                </p>
+                              </template>
+                            </base-accordion>
+                            <base-accordion class="product-feature__item">
+                              <template #title>
+                                Системы <br>
+                                безопасности
+                              </template>
+                              <template #body>
+                                <p>Гарантия распространяется на лакокрасочное покрытие и основные узлы и агрегаты:
+                                  <ul>
+                                    <li>Тяговая батарея</li>
+                                    <li>Электрические компоненты (детали и системы, которые должны находиться под напряжением для выполнения своих функций, за исключением расходных материалов)</li>
+                                    <li>Элементы кузова</li>
+                                    <li>Двигатель</li>
+                                    <li>Рулевой механизм в сборе</li>
+                                    <li>и другие</li>
+                                  </ul>
+                                </p>
+                              </template>
+                            </base-accordion>
+                            <base-accordion class="product-feature__item">
+                              <template #title>Освещение</template>
+                              <template #body>
+                                <p>Гарантия распространяется на лакокрасочное покрытие и основные узлы и агрегаты:
+                                  <ul>
+                                    <li>Тяговая батарея</li>
+                                    <li>Электрические компоненты (детали и системы, которые должны находиться под напряжением для выполнения своих функций, за исключением расходных материалов)</li>
+                                    <li>Элементы кузова</li>
+                                    <li>Двигатель</li>
+                                    <li>Рулевой механизм в сборе</li>
+                                    <li>и другие</li>
+                                  </ul>
+                                </p>
+                              </template>
+                            </base-accordion>
+                            <base-accordion class="product-feature__item">
+                              <template #title>
+                                Внешняя <br>
+                                конфигурация
+                              </template>
+                              <template #body>
+                                <p>Гарантия распространяется на лакокрасочное покрытие и основные узлы и агрегаты:
+                                  <ul>
+                                    <li>Тяговая батарея</li>
+                                    <li>Электрические компоненты (детали и системы, которые должны находиться под напряжением для выполнения своих функций, за исключением расходных материалов)</li>
+                                    <li>Элементы кузова</li>
+                                    <li>Двигатель</li>
+                                    <li>Рулевой механизм в сборе</li>
+                                    <li>и другие</li>
+                                  </ul>
+                                </p>
+                              </template>
+                            </base-accordion>
+                            <base-accordion class="product-feature__item">
+                              <template #title>Сиденья</template>
+                              <template #body>
+                                <p>Гарантия распространяется на лакокрасочное покрытие и основные узлы и агрегаты:
+                                  <ul>
+                                    <li>Тяговая батарея</li>
+                                    <li>Электрические компоненты (детали и системы, которые должны находиться под напряжением для выполнения своих функций, за исключением расходных материалов)</li>
+                                    <li>Элементы кузова</li>
+                                    <li>Двигатель</li>
+                                    <li>Рулевой механизм в сборе</li>
+                                    <li>и другие</li>
+                                  </ul>
+                                </p>
+                              </template>
+                            </base-accordion>
+                            <base-accordion class="product-feature__item">
+                              <template #title>
+                                Настройки <br>
+                                кабины
+                              </template>
+                              <template #body>
+                                <p>Гарантия распространяется на лакокрасочное покрытие и основные узлы и агрегаты:
+                                  <ul>
+                                    <li>Тяговая батарея</li>
+                                    <li>Электрические компоненты (детали и системы, которые должны находиться под напряжением для выполнения своих функций, за исключением расходных материалов)</li>
+                                    <li>Элементы кузова</li>
+                                    <li>Двигатель</li>
+                                    <li>Рулевой механизм в сборе</li>
+                                    <li>и другие</li>
+                                  </ul>
+                                </p>
+                              </template>
+                            </base-accordion>
+                            <base-accordion class="product-feature__item">
+                              <template #title>
+                                HiPhi ассистент <br>
+                                водителя
+                              </template>
+                              <template #body>
+                                <p>Гарантия распространяется на лакокрасочное покрытие и основные узлы и агрегаты:
+                                  <ul>
+                                    <li>Тяговая батарея</li>
+                                    <li>Электрические компоненты (детали и системы, которые должны находиться под напряжением для выполнения своих функций, за исключением расходных материалов)</li>
+                                    <li>Элементы кузова</li>
+                                    <li>Двигатель</li>
+                                    <li>Рулевой механизм в сборе</li>
+                                    <li>и другие</li>
+                                  </ul>
+                                </p>
+                              </template>
+                            </base-accordion>
+                          </div>
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <!--Заявка на покупку-->
+                <section class="page-section content-block content-block--product" id="order">
+                  <div class="wrapper content-block__wrapper">
+                    <div class="content-block__body">
+                      <div class="content-block__title">
+                        <h2 class="subtitle">Заявка на покупку</h2>
+                      </div>
+                      <div class="content-block__cont">
+                        <div class="product-order">
+                          <div class="product-order__top">
+                            <div class="product-order__title">HiPhi X</div><span class="product-order__price">Цена <span class="price">от 7 221 000 ₽</span></span>
+                          </div>
+                          <div class="product-order__cont">
+                            <div class="product-order__photo"><img class="product-order__photo-img" src="/local/client-app/dist/img/product-inner/order-img.webp" alt=" " width="743" height="459" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';">
+                            </div>
+                            <div class="product-order__form">
+                              <div class="product-order__subtitle">Оставьте заявку на покупку электромобиля. <br> Мы свяжемся с вами в ближайшее время.</div>
+                              <ul class="product-order__advantages marked-list">
+                                <li class="marked-list__item">Доступно в лизинг</li>
+                                <li class="marked-list__item">В кредит на выгодных условиях</li>
+                              </ul>
+                              <product-order-form></product-order-form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <!--Новости-->
+                <section class="page-section media-block" id="product-media">
+                  <div class="wrapper">
+                    <div class="page-section__top">
+                      <h2 class="page-section__title-mini"><span class="subtitle">статьи и обзоры</span></h2>
+                      <div class="page-section__controls">
+                        <div class="swiper-buttons">
+                          <div class="swiper-button swiper-button-prev"></div>
+                          <div class="swiper-button swiper-button-next"></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                      </div>
+                    </div>
+                    <media-slider class="media-block__slider" id="product-media">
+                      <template #default>
+                        <div class="media-block__slide swiper-slide">
+                              <article class="media-card">
+                                <div class="media-card__img"><img class="media-card__img-img" src="/local/client-app/dist/img/media/media-1.webp" alt=" " width="587" height="342" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/media.svg';">
+                                </div>
+                                <div class="media-card__desc">
+                                  <div class="media-card__tags tags"><span class="tags__item">Новости салона</span><span class="tags__item">Новинки</span></div><a class="media-card__name" href="#">Electrocars привозит в Россию автомобили RISING</a>
+                                  <div class="media-info">
+                                    <div class="media-info__item">
+                                          <svg class="media-info__icon" aria-hidden="true">
+                                            <use xlink:href="/local/client-app/dist/img/icons.svg#icon-calendar"></use>
+                                          </svg><span class="media-info__text">4 октября</span>
+                                    </div>
+                                    <div class="media-info__item">
+                                          <svg class="media-info__icon" aria-hidden="true">
+                                            <use xlink:href="/local/client-app/dist/img/icons.svg#icon-views-icon"></use>
+                                          </svg><span class="media-info__text">1 231</span>
+                                    </div>
+                                    <div class="media-info__item">
+                                          <svg class="media-info__icon" aria-hidden="true">
+                                            <use xlink:href="/local/client-app/dist/img/icons.svg#icon-time-icon"></use>
+                                          </svg><span class="media-info__text">3 мин</span>
+                                    </div>
+                                  </div>
+                                </div><a class="media-card__link" href="#">Подробнее</a>
+                              </article>
+                        </div>
+                        <div class="media-block__slide swiper-slide">
+                              <article class="media-card">
+                                <div class="media-card__img"><img class="media-card__img-img" src="/local/client-app/dist/img/media/media-2.webp" alt=" " width="587" height="342" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/media.svg';">
+                                </div>
+                                <div class="media-card__desc">
+                                  <div class="media-card__tags tags"><span class="tags__item">Новости салона</span><span class="tags__item">Новинки</span></div><a class="media-card__name" href="#">Сколько служат батарея и мотор электромобиля?</a>
+                                  <div class="media-info">
+                                    <div class="media-info__item">
+                                          <svg class="media-info__icon" aria-hidden="true">
+                                            <use xlink:href="/local/client-app/dist/img/icons.svg#icon-calendar"></use>
+                                          </svg><span class="media-info__text">4 октября</span>
+                                    </div>
+                                    <div class="media-info__item">
+                                          <svg class="media-info__icon" aria-hidden="true">
+                                            <use xlink:href="/local/client-app/dist/img/icons.svg#icon-views-icon"></use>
+                                          </svg><span class="media-info__text">1 231</span>
+                                    </div>
+                                    <div class="media-info__item">
+                                          <svg class="media-info__icon" aria-hidden="true">
+                                            <use xlink:href="/local/client-app/dist/img/icons.svg#icon-time-icon"></use>
+                                          </svg><span class="media-info__text">3 мин</span>
+                                    </div>
+                                  </div>
+                                </div><a class="media-card__link" href="#">Подробнее</a>
+                              </article>
+                        </div>
+                        <div class="media-block__slide swiper-slide">
+                              <article class="media-card">
+                                <div class="media-card__img"><img class="media-card__img-img" src="/local/client-app/dist/img/media/media-3.webp" alt=" " width="587" height="342" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/media.svg';">
+                                </div>
+                                <div class="media-card__desc">
+                                  <div class="media-card__tags tags"><span class="tags__item">Новости салона</span><span class="tags__item">Новинки</span></div><a class="media-card__name" href="#">HiPhi X – главная перчинка ресторанного форума</a>
+                                  <div class="media-info">
+                                    <div class="media-info__item">
+                                          <svg class="media-info__icon" aria-hidden="true">
+                                            <use xlink:href="/local/client-app/dist/img/icons.svg#icon-calendar"></use>
+                                          </svg><span class="media-info__text">4 октября</span>
+                                    </div>
+                                    <div class="media-info__item">
+                                          <svg class="media-info__icon" aria-hidden="true">
+                                            <use xlink:href="/local/client-app/dist/img/icons.svg#icon-views-icon"></use>
+                                          </svg><span class="media-info__text">1 231</span>
+                                    </div>
+                                    <div class="media-info__item">
+                                          <svg class="media-info__icon" aria-hidden="true">
+                                            <use xlink:href="/local/client-app/dist/img/icons.svg#icon-time-icon"></use>
+                                          </svg><span class="media-info__text">3 мин</span>
+                                    </div>
+                                  </div>
+                                </div><a class="media-card__link" href="#">Подробнее</a>
+                              </article>
+                        </div>
+                        <div class="media-block__slide swiper-slide">
+                              <article class="media-card">
+                                <div class="media-card__img"><img class="media-card__img-img" src="/local/client-app/dist/img/media/media-1.webp" alt=" " width="587" height="342" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/media.svg';">
+                                </div>
+                                <div class="media-card__desc">
+                                  <div class="media-card__tags tags"><span class="tags__item">Новости салона</span><span class="tags__item">Новинки</span></div><a class="media-card__name" href="#">Electrocars привозит в Россию автомобили RISING</a>
+                                  <div class="media-info">
+                                    <div class="media-info__item">
+                                          <svg class="media-info__icon" aria-hidden="true">
+                                            <use xlink:href="/local/client-app/dist/img/icons.svg#icon-calendar"></use>
+                                          </svg><span class="media-info__text">4 октября</span>
+                                    </div>
+                                    <div class="media-info__item">
+                                          <svg class="media-info__icon" aria-hidden="true">
+                                            <use xlink:href="/local/client-app/dist/img/icons.svg#icon-views-icon"></use>
+                                          </svg><span class="media-info__text">1 231</span>
+                                    </div>
+                                    <div class="media-info__item">
+                                          <svg class="media-info__icon" aria-hidden="true">
+                                            <use xlink:href="/local/client-app/dist/img/icons.svg#icon-time-icon"></use>
+                                          </svg><span class="media-info__text">3 мин</span>
+                                    </div>
+                                  </div>
+                                </div><a class="media-card__link" href="#">Подробнее</a>
+                              </article>
+                        </div>
+                        <div class="media-block__slide swiper-slide">
+                              <article class="media-card">
+                                <div class="media-card__img"><img class="media-card__img-img" src="/local/client-app/dist/img/media/media-2.webp" alt=" " width="587" height="342" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/media.svg';">
+                                </div>
+                                <div class="media-card__desc">
+                                  <div class="media-card__tags tags"><span class="tags__item">Новости салона</span><span class="tags__item">Новинки</span></div><a class="media-card__name" href="#">Сколько служат батарея и мотор электромобиля?</a>
+                                  <div class="media-info">
+                                    <div class="media-info__item">
+                                          <svg class="media-info__icon" aria-hidden="true">
+                                            <use xlink:href="/local/client-app/dist/img/icons.svg#icon-calendar"></use>
+                                          </svg><span class="media-info__text">4 октября</span>
+                                    </div>
+                                    <div class="media-info__item">
+                                          <svg class="media-info__icon" aria-hidden="true">
+                                            <use xlink:href="/local/client-app/dist/img/icons.svg#icon-views-icon"></use>
+                                          </svg><span class="media-info__text">1 231</span>
+                                    </div>
+                                    <div class="media-info__item">
+                                          <svg class="media-info__icon" aria-hidden="true">
+                                            <use xlink:href="/local/client-app/dist/img/icons.svg#icon-time-icon"></use>
+                                          </svg><span class="media-info__text">3 мин</span>
+                                    </div>
+                                  </div>
+                                </div><a class="media-card__link" href="#">Подробнее</a>
+                              </article>
+                        </div>
+                        <div class="media-block__slide swiper-slide">
+                              <article class="media-card">
+                                <div class="media-card__img"><img class="media-card__img-img" src="/local/client-app/dist/img/media/media-3.webp" alt=" " width="587" height="342" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/media.svg';">
+                                </div>
+                                <div class="media-card__desc">
+                                  <div class="media-card__tags tags"><span class="tags__item">Новости салона</span><span class="tags__item">Новинки</span></div><a class="media-card__name" href="#">HiPhi X – главная перчинка ресторанного форума</a>
+                                  <div class="media-info">
+                                    <div class="media-info__item">
+                                          <svg class="media-info__icon" aria-hidden="true">
+                                            <use xlink:href="/local/client-app/dist/img/icons.svg#icon-calendar"></use>
+                                          </svg><span class="media-info__text">4 октября</span>
+                                    </div>
+                                    <div class="media-info__item">
+                                          <svg class="media-info__icon" aria-hidden="true">
+                                            <use xlink:href="/local/client-app/dist/img/icons.svg#icon-views-icon"></use>
+                                          </svg><span class="media-info__text">1 231</span>
+                                    </div>
+                                    <div class="media-info__item">
+                                          <svg class="media-info__icon" aria-hidden="true">
+                                            <use xlink:href="/local/client-app/dist/img/icons.svg#icon-time-icon"></use>
+                                          </svg><span class="media-info__text">3 мин</span>
+                                    </div>
+                                  </div>
+                                </div><a class="media-card__link" href="#">Подробнее</a>
+                              </article>
+                        </div>
+                        <div class="media-block__slide swiper-slide">
+                              <article class="media-card">
+                                <div class="media-card__img"><img class="media-card__img-img" src="/local/client-app/dist/img/media/media-4.webp" alt=" " width="587" height="342" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/media.svg';">
+                                </div>
+                                <div class="media-card__desc">
+                                  <div class="media-card__tags tags"><span class="tags__item">Новости салона</span><span class="tags__item">Новинки</span></div><a class="media-card__name" href="#">Electrocars привозит в Россию автомобили RISING</a>
+                                  <div class="media-info">
+                                    <div class="media-info__item">
+                                          <svg class="media-info__icon" aria-hidden="true">
+                                            <use xlink:href="/local/client-app/dist/img/icons.svg#icon-calendar"></use>
+                                          </svg><span class="media-info__text">4 октября</span>
+                                    </div>
+                                    <div class="media-info__item">
+                                          <svg class="media-info__icon" aria-hidden="true">
+                                            <use xlink:href="/local/client-app/dist/img/icons.svg#icon-views-icon"></use>
+                                          </svg><span class="media-info__text">1 231</span>
+                                    </div>
+                                    <div class="media-info__item">
+                                          <svg class="media-info__icon" aria-hidden="true">
+                                            <use xlink:href="/local/client-app/dist/img/icons.svg#icon-time-icon"></use>
+                                          </svg><span class="media-info__text">3 мин</span>
+                                    </div>
+                                  </div>
+                                </div><a class="media-card__link" href="#">Подробнее</a>
+                              </article>
+                        </div>
+                        <div class="media-block__slide swiper-slide">
+                              <article class="media-card">
+                                <div class="media-card__img"><img class="media-card__img-img" src="/local/client-app/dist/img/media/media-5.webp" alt=" " width="587" height="342" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/media.svg';">
+                                </div>
+                                <div class="media-card__desc">
+                                  <div class="media-card__tags tags"><span class="tags__item">Новости салона</span><span class="tags__item">Новинки</span></div><a class="media-card__name" href="#">HiPhi X – главная перчинка ресторанного форума</a>
+                                  <div class="media-info">
+                                    <div class="media-info__item">
+                                          <svg class="media-info__icon" aria-hidden="true">
+                                            <use xlink:href="/local/client-app/dist/img/icons.svg#icon-calendar"></use>
+                                          </svg><span class="media-info__text">4 октября</span>
+                                    </div>
+                                    <div class="media-info__item">
+                                          <svg class="media-info__icon" aria-hidden="true">
+                                            <use xlink:href="/local/client-app/dist/img/icons.svg#icon-views-icon"></use>
+                                          </svg><span class="media-info__text">1 231</span>
+                                    </div>
+                                    <div class="media-info__item">
+                                          <svg class="media-info__icon" aria-hidden="true">
+                                            <use xlink:href="/local/client-app/dist/img/icons.svg#icon-time-icon"></use>
+                                          </svg><span class="media-info__text">3 мин</span>
+                                    </div>
+                                  </div>
+                                </div><a class="media-card__link" href="#">Подробнее</a>
+                              </article>
+                        </div>
+                      </template>
+                    </media-slider>
+                  </div>
+                </section>
+              </section>
+              <!--Отзывы-->
+              <section class="page-section color-block" id="reviews-slider">
+                <div class="wrapper color-block__wrapper">
+                  <div class="color-block__body color-block__body--dark">
+                    <div class="color-block__title">
+                      <h2 class="subtitle">Отзывы клиентов</h2>
+                    </div>
+                    <div class="color-block__cont">
+                      <article class="reviews-block">
+                        <div class="reviews-block__top">
+                          <div class="reviews-block__btn">
+                            <button class="btn btn--color-fith" @click="openModal('review-modal')"><span class="btn__text">Оставить отзыв</span></button>
+                          </div>
+                          <div class="reviews-block__controls">
+                            <div class="swiper-buttons">
+                              <div class="swiper-button swiper-button-prev swiper-button--dark"></div>
+                              <div class="swiper-button swiper-button-next swiper-button--dark"></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                          </div>
+                        </div>
+                        <reviews-slider class="reviews-block__slider" id="reviews-slider">
+                          <template #default>
+                            <div class="reviews-block__slide swiper-slide">
+                              <div class="reviews-card">
+                                <div class="reviews-card__top"><span class="reviews-card__name">Юрий С.</span><span class="reviews-card__date">19 Августа 2021</span></div>
+                                <div class="reviews-card__cont">
+                                  <div class="reviews-card__text">
+                                    <p>
+                                      Я арендовал HiPhi X на выходные и остался в полном восторге! Этот электрокар не только выглядит современно и стильно, но и обладает потрясающей производительностью. Заряда батареи хватило на все мои поездки, а система быстрой зарядки была настоящим спасением. Рекомендую эту модель всем...<br> Я арендовал HiPhi X на выходные и остался в полном восторге! Этот электрокар не только выглядит современно и стильно, но и обладает потрясающей производительностью. Заряда батареи хватило на все мои поездки, а система быстрой зарядки была настоящим спасением. Рекомендую эту модель всем...</p>
+                                  </div>
+                                  <div class="reviews-card__link">
+                                    <button class="link" @click="openModal('review-details-1')">подробнее</button>
+                                  </div>
+                                </div>
+                                <div class="reviews-card__bottom">
+                                  <div class="reviews-card__product product-preview"><img class="product-preview__img" src="/local/client-app/dist/img/reviews/product-1.webp" alt="alt" width="120" height="72" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';">
+                                    <div class="product-preview__name">HiPhi Y</div><a class="product-preview__link" href="#">Подробнее</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="reviews-block__slide swiper-slide">
+                              <div class="reviews-card">
+                                <div class="reviews-card__top"><span class="reviews-card__name">Елена Д.</span><span class="reviews-card__date">19 Августа 2021</span></div>
+                                <div class="reviews-card__cont">
+                                  <div class="reviews-card__text">
+                                    <p>Я арендовал HiPhi X на выходные и остался в полном восторге! Этот электрокар не только выглядит современно и стильно, но и обладает потрясающей производительностью. Заряда батареи хватило на все мои поездки, а система быстрой зарядки была настоящим спасением. Рекомендую эту модель всем, кто хочет насладиться комфортом и безупречным управлением электрокара!</p>
+                                  </div>
+                                </div>
+                                <div class="reviews-card__bottom">
+                                  <div class="reviews-card__product product-preview"><img class="product-preview__img" src="/local/client-app/dist/img/reviews/product-1.webp" alt="alt" width="120" height="72" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';">
+                                    <div class="product-preview__name">HiPhi Y</div><a class="product-preview__link" href="#">Подробнее</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="reviews-block__slide swiper-slide">
+                              <div class="reviews-card">
+                                <div class="reviews-card__top"><span class="reviews-card__name">Александр Л.</span><span class="reviews-card__date">19 Августа 2021</span></div>
+                                <div class="reviews-card__cont">
+                                  <div class="reviews-card__text">
+                                    <p>Я арендовал HiPhi X на выходные и остался в полном восторге! Этот электрокар не только выглядит современно и стильно, но и обладает потрясающей производительностью. Заряда батареи хватило на все мои поездки, а система быстрой зарядки была настоящим спасением. Рекомендую эту модель всем, кто хочет насладиться комфортом и безупречным управлением электрокара!</p>
+                                  </div>
+                                </div>
+                                <div class="reviews-card__bottom">
+                                  <div class="reviews-card__product product-preview"><img class="product-preview__img" src="/local/client-app/dist/img/reviews/product-3.webp" alt="alt" width="120" height="72" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';">
+                                    <div class="product-preview__name">HiPhi Y</div><a class="product-preview__link" href="#">Подробнее</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="reviews-block__slide swiper-slide">
+                              <div class="reviews-card">
+                                <div class="reviews-card__top"><span class="reviews-card__name">Александр Л.</span><span class="reviews-card__date">19 Августа 2021</span></div>
+                                <div class="reviews-card__cont">
+                                  <div class="reviews-card__text">
+                                    <p>Я арендовал HiPhi X на выходные и остался в полном восторге! Этот электрокар не только выглядит современно и стильно, но и обладает потрясающей производительностью. Заряда батареи хватило на все мои поездки, а система быстрой зарядки была настоящим спасением. Рекомендую эту модель всем, кто хочет насладиться комфортом и безупречным управлением электрокара!</p>
+                                  </div>
+                                </div>
+                                <div class="reviews-card__bottom">
+                                  <div class="reviews-card__product product-preview"><img class="product-preview__img" src="/local/client-app/dist/img/reviews/product-3.webp" alt="alt" width="120" height="72" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';">
+                                    <div class="product-preview__name">HiPhi Y</div><a class="product-preview__link" href="#">Подробнее</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </template>
+                        </reviews-slider>
+                      </article>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <!--калькулятор выгоды-->
+              <section class="page-section">
+                <div class="wrapper">
+                  <div class="page-section__top">
+                    <h2 class="page-section__title">Рассчитайте выгоду<br> от владения электрокаром</h2>
+                  </div>
+                  <benefit-form :fuel-consumption="9.8" :battery-capacity="78" :range-reserve="380" v-slot="{results, params, setElectricityCost, setFuelCost, setMileage, resultsShown, showResults}">
+                    <article class="benefit-calculator">
+                      <div class="benefit-calculator__form">
+                        <div class="benefit-calculator__item bc-item"><span class="bc-item__label">Средняя стоимость <br> 1 кВт электроэнергии</span><span class="bc-item__value">{{ params.electricityCostHuman }} руб/кВт</span>
+                          <div class="bc-item__action">
+                            <base-tabs class="bc-item__tabs" :tabs="[{label: 'Домашняя зарядная станция', value: 'home'}, {label: 'Общественная зарядная станция', value: 'public'}]" type="switcher" @change="setElectricityCost"></base-tabs>
+                          </div>
+                        </div>
+                        <div class="benefit-calculator__item bc-item"><span class="bc-item__label">Средняя стоимость <br> 1 л. топлива</span><span class="bc-item__value">{{ params.fuelCostHuman }} руб</span>
+                          <div class="bc-item__action">
+                            <input-range :model-value="params.fuelCost" :lazy="false" :min="40" :max="85" :step=".1" slider-only @update:model-value="setFuelCost"></input-range>
+                          </div>
+                        </div>
+                        <div class="benefit-calculator__item bc-item"><span class="bc-item__label">Ваш пробег в год, км</span><span class="bc-item__value">{{ params.mileageHuman }} км</span>
+                          <div class="bc-item__action">
+                            <input-range :model-value="params.mileage" :lazy="false" :min="1000" :max="100000" :step="100" slider-only @update:model-value="setMileage"></input-range>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="benefit-calculator__right">
+                        <button class="benefit-calculator__action btn btn--color-secondary" v-show="!resultsShown" @click="showResults">Рассчитать выгоду</button>
+                        <div class="benefit-calculator__result bc-result" v-show="resultsShown">
+                          <h3 class="bc-result__title">Экономия</h3>
+                          <ul class="bc-result__values">
+                            <li class="bc-result__value"><span class="bc-result__label">Экономия в год</span><span class="bc-result__num">от {{ results.perYearEconomy }} руб</span></li>
+                            <li class="bc-result__value"><span class="bc-result__label">Экономия на 100 км</span><span class="bc-result__num">от {{ results.perKmEconomy }} руб</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </article>
+                  </benefit-form>
+                </div>
+              </section>
+              <!--Специальные предложения-->
+              <section class="page-section products-block">
+                <div class="wrapper products-block__wrapper">
+                  <div class="page-section__top">
+                    <h2 class="page-section__title-mini"><span class="subtitle">Специальные предложения</span></h2>
+                  </div>
+                  <div class="products-block__list">
+                    <div class="products-block__item">
+                          <article class="product-card">
+                            <div class="product-card__img"><img class="product-card__img-img" src="/local/client-app/dist/img/products/product-1.webp" alt=" " width="430" height="293" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/product.svg';"><a class="product-card__btn" href="#">
+                                <button class="btn btn--color-fith"><span class="btn__text">Подробнее</span></button></a>
+                            </div>
+                            <div class="product-card__desc">
+                              <div class="product-card__top">
+                                <!--теги первые, чтобы при переполнении контента они были сверху-->
+                                <div class="product-card__tags tags"><span class="tags__item">Новинка</span><span class="tags__item">Лизинг</span><span class="tags__item">Тест-драйв</span></div><a class="product-card__name" href="#">HiPhi X</a>
+                              </div>
+                              <div class="product-card__info">
+                                <div class="product-card__info-el"><span class="product-card__info-label">Емкость батареи</span><span class="product-card__info-cont">42,8 кВт</span></div>
+                                <div class="product-card__info-el"><span class="product-card__info-label">Запас хода</span><span class="product-card__info-cont">210 км</span></div>
+                                <div class="product-card__info-el"><span class="product-card__info-label">Разгон 0-100 км&nbsp;/&nbsp;ч</span><span class="product-card__info-cont">5,3 сек</span></div>
+                              </div>
+                              <div class="product-card__bottom"><span class="product-card__price">Цена <span class="price">от 7 221 000 ₽</span></span>
+                                <product-actions :product-data="{name: 'HiPhi X', id: 12, offers: [{name: 'Комфорт+', id: 13 }, {name: 'Бизнес', id: 11}, {name: 'Стандарт', id: 16}, {name: 'Эконом', id: 53}]}"></product-actions>
+                              </div>
+                            </div>
+                          </article>
+                    </div>
+                    <div class="products-block__item">
+                          <article class="product-card">
+                            <div class="product-card__img"><img class="product-card__img-img" src="/local/client-app/dist/img/products/product-2.webp" alt=" " width="430" height="293" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/product.svg';"><a class="product-card__btn" href="#">
+                                <button class="btn btn--color-fith"><span class="btn__text">Подробнее</span></button></a>
+                            </div>
+                            <div class="product-card__desc">
+                              <div class="product-card__top">
+                                <!--теги первые, чтобы при переполнении контента они были сверху-->
+                                <div class="product-card__tags tags"><span class="tags__item">Новинка</span><span class="tags__item">Лизинг</span><span class="tags__item">Тест-драйв</span></div><a class="product-card__name" href="#">Li9</a>
+                              </div>
+                              <div class="product-card__info">
+                                <div class="product-card__info-el"><span class="product-card__info-label">Емкость батареи</span><span class="product-card__info-cont">42,8 кВт</span></div>
+                                <div class="product-card__info-el"><span class="product-card__info-label">Запас хода</span><span class="product-card__info-cont">210 км</span></div>
+                                <div class="product-card__info-el"><span class="product-card__info-label">Разгон 0-100 км&nbsp;/&nbsp;ч</span><span class="product-card__info-cont">5,3 сек</span></div>
+                              </div>
+                              <div class="product-card__bottom"><span class="product-card__price">Цена <span class="price">от 7 221 000 ₽</span></span>
+                                <product-actions :product-data="{name: 'HiPhi X', id: 17, offers: []}"></product-actions>
+                              </div>
+                            </div>
+                          </article>
+                    </div>
+                    <div class="products-block__item">
+                          <article class="product-card">
+                            <div class="product-card__img"><img class="product-card__img-img" src="/local/client-app/dist/img/products/product-3.webp" alt=" " width="430" height="293" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/product.svg';"><a class="product-card__btn" href="#">
+                                <button class="btn btn--color-fith"><span class="btn__text">Подробнее</span></button></a>
+                            </div>
+                            <div class="product-card__desc">
+                              <div class="product-card__top">
+                                <!--теги первые, чтобы при переполнении контента они были сверху-->
+                                <div class="product-card__tags tags"><span class="tags__item">Новинка</span><span class="tags__item">Лизинг</span><span class="tags__item">Тест-драйв</span></div><a class="product-card__name" href="#">Neta S</a>
+                              </div>
+                              <div class="product-card__info">
+                                <div class="product-card__info-el"><span class="product-card__info-label">Емкость батареи</span><span class="product-card__info-cont">42,8 кВт</span></div>
+                                <div class="product-card__info-el"><span class="product-card__info-label">Запас хода</span><span class="product-card__info-cont">210 км</span></div>
+                                <div class="product-card__info-el"><span class="product-card__info-label">Разгон 0-100 км&nbsp;/&nbsp;ч</span><span class="product-card__info-cont">5,3 сек</span></div>
+                              </div>
+                              <div class="product-card__bottom"><span class="product-card__price">Цена <span class="price">от 7 221 000 ₽</span></span>
+                                <product-actions></product-actions>
+                              </div>
+                            </div>
+                          </article>
+                    </div>
+                    <div class="products-block__item">
+                          <article class="product-card">
+                            <div class="product-card__img"><img class="product-card__img-img" src="/local/client-app/dist/img/products/product-4.webp" alt=" " width="430" height="293" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/product.svg';"><a class="product-card__btn" href="#">
+                                <button class="btn btn--color-fith"><span class="btn__text">Подробнее</span></button></a>
+                            </div>
+                            <div class="product-card__desc">
+                              <div class="product-card__top">
+                                <!--теги первые, чтобы при переполнении контента они были сверху-->
+                                <div class="product-card__tags tags"><span class="tags__item">Новинка</span><span class="tags__item">Лизинг</span><span class="tags__item">Тест-драйв</span></div><a class="product-card__name" href="#">Rising R7</a>
+                              </div>
+                              <div class="product-card__info">
+                                <div class="product-card__info-el"><span class="product-card__info-label">Емкость батареи</span><span class="product-card__info-cont">42,8 кВт</span></div>
+                                <div class="product-card__info-el"><span class="product-card__info-label">Запас хода</span><span class="product-card__info-cont">210 км</span></div>
+                                <div class="product-card__info-el"><span class="product-card__info-label">Разгон 0-100 км&nbsp;/&nbsp;ч</span><span class="product-card__info-cont">5,3 сек</span></div>
+                              </div>
+                              <div class="product-card__bottom"><span class="product-card__price">Цена <span class="price">от 7 221 000 ₽</span></span>
+                                <product-actions></product-actions>
+                              </div>
+                            </div>
+                          </article>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <!--Сео блок-->
+              <section class="page-section seo-block">
+                <div class="wrapper">
+                  <div class="seo-block__cont">
+                    <div class="seo-block__item">
+                      <p>Electrocars предлагает не только премиальные бренды, но и более доступные автомобили. Ярким примером выступает Neta – марка, стоящая на стыке масс-маркета и люксового сегмента. Она имеет наиболее широкую модельную линейку, начиная с простого сити-кара и заканчивая ярким и динамичным купе.</p>
+                    </div>
+                    <div class="seo-block__item">
+                      <p>Electrocars предлагает не только премиальные бренды, но и более доступные автомобили. Ярким примером выступает Neta – марка, стоящая на стыке масс-маркета и люксового сегмента. Она имеет наиболее широкую модельную линейку, начиная с простого сити-кара и заканчивая ярким и динамичным купе.</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </main>
+            <footer class="footer">
+              <div class="wrapper">
+                <div class="footer__cont">
+                  <nav class="footer__menu">
+                    <ul class="footer__menu-list">
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">Каталог</a></li>
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">Лизинг</a></li>
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">Аренда</a></li>
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">Зарядные станции и СТО</a></li>
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">Оплата и доставка</a></li>
+                    </ul>
+                    <ul class="footer__menu-list">
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">О компании</a></li>
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">Акции</a></li>
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">Контакты</a></li>
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">Медиа</a></li>
+                    </ul>
+                  </nav>
+                  <address class="footer__contacts">
+                    <div class="footer__contacts-cont">
+                      <div class="footer__contacts-list">
+                        <div class="footer__contacts-item"><span class="footer__contacts-text">Челябинск <br> Свободы, 91&nbsp;к.&nbsp;1а</span><a class="footer__contacts-link" href="tel:+73517507750">+7 351 750 77 50</a></div>
+                        <div class="footer__contacts-item"><span class="footer__contacts-text">Екатеринбург <br> ул.&nbsp;Мамина-Сибиряка,&nbsp;140</span><a class="footer__contacts-link" href="tel:+73433281010">+7 343 328 10 10</a></div>
+                      </div>
+                      <div class="footer__socials">
+                        <div class="footer__socials-list socials socials--light"><a class="socials__item" href="#"><img class="socials__item-icon" src="/local/client-app/dist/img/socials/yt.svg" alt="alt" width="32" height="32" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';"></a><a class="socials__item" href="#"><img class="socials__item-icon" src="/local/client-app/dist/img/socials/vk.svg" alt="alt" width="32" height="32" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';"></a><a class="socials__item" href="#"><img class="socials__item-icon" src="/local/client-app/dist/img/socials/telegram.svg" alt="alt" width="32" height="32" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';"></a><a class="socials__item" href="#"><img class="socials__item-icon" src="/local/client-app/dist/img/socials/dzen.svg" alt="alt" width="32" height="32" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';"></a><a class="socials__item" href="#"><img class="socials__item-icon" src="/local/client-app/dist/img/socials/web.svg" alt="alt" width="32" height="32" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';"></a></div>
+                        <button class="footer__socials-btn btn btn--color-fith" @click="openModal('callback-modal')"><span class="btn__text">Заказать звонок</span></button>
+                      </div>
+                    </div>
+                  </address>
+                  <div class="footer__bottom"><a class="footer__logo logo logo--light" href="#"><img class="logo__img" src="/local/client-app/dist/img/logo-text.svg" alt="electrocars" width="142" height="12" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';"></a>
+                    <div class="footer__links"><a class="footer__links-item link link--color-secondary link--simple" href="#">Пользовательское соглашение</a><a class="footer__links-item link link--color-secondary link--simple" href="#">Политика конфиденциальности</a></div><span class="footer__copyright">&copy; 2023 «Electrocars»</span><a class="footer__dev" href="#">Заряжено в Xpage</a>
+                  </div>
+                </div>
+              </div>
+            </footer>
+          </root-component>
+        </template>
+      </suspense>
+      <div class="modals" id="modals-container">
+        <base-modal id="review-details-1" v-slot="{close}">
+          <div class="modal modal--wide">
+            <button class="modal__close" @click="close">
+                  <svg class="modal__close-icon" aria-hidden="true">
+                    <use xlink:href="/local/client-app/dist/img/icons.svg#icon-close"></use>
+                  </svg>
+            </button>
+            <div class="modal__wrapper">
+              <div class="modal__top">
+                <h3 class="modal__title">Юрий С.</h3>
+                <p class="modal__subtitle">19 Августа 2021</p>
+              </div>
+              <div class="modal__body">
+                <p class="modal__text">Я арендовал HiPhi X на выходные и остался в полном восторге! Этот электрокар не только выглядит современно и стильно, но и обладает потрясающей производительностью. Заряда батареи хватило на все мои поездки, а система быстрой зарядки была настоящим спасением. Рекомендую эту модель всем, кто хочет насладиться комфортом и безупречным управлением электрокара!</p>
+                <p class="modal__text">Я арендовал HiPhi X на выходные и остался в полном восторге! Этот электрокар не только выглядит современно и стильно, но и обладает потрясающей производительностью. Заряда батареи хватило на все мои поездки, а система быстрой зарядки была настоящим спасением. Рекомендую эту модель всем, кто хочет насладиться комфортом и безупречным управлением электрокара!</p>
+              </div>
+              <div class="modal__bottom">
+                <div class="reviews-card__product product-preview"><img class="product-preview__img" src="/local/client-app/dist/img/reviews/product-1.webp" alt="alt" width="120" height="72" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';">
+                  <div class="product-preview__name">HiPhi Y</div><a class="product-preview__link" href="#">Подробнее</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </base-modal>
+        <callback-modal></callback-modal>
+        <review-modal></review-modal>
+        <filter-modal></filter-modal>
+        <cookie-toast v-if="!isCookieConfirmed"></cookie-toast>
+      </div>
+    </div>
+    
+  </body>
+</html>

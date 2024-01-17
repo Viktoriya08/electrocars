@@ -1,0 +1,85 @@
+.benefits
+
+	&__grid 
+		display: grid
+		grid-template-columns: repeat(10, minmax(0,1fr))
+		column-gap: fluid(24, 40)
+		row-gap: rem(24)
+
+		@include until-tablet
+			grid-template-columns: 100%
+
+		&--chess
+			row-gap: fluid(24, 120)
+
+			.benefits
+				&__elem 
+					&:nth-child(4n-1)
+						grid-column: 4/7
+
+						@include until-laptop
+							grid-column: 2/6
+
+						@include until-tablet
+							grid-column: auto
+
+					@include until-laptop
+						grid-column: span 4
+
+					@include until-tablet
+						grid-column: auto
+
+		+ .benefits__grid
+			margin-top: fluid(40, 120)
+
+	&__elem 
+		grid-column: span 3
+
+		@include until-tablet
+			grid-column: auto
+
+
+.benefits-card 
+	display: flex
+	flex-direction: column
+
+	&__title 
+		max-width: 70%
+		min-height: rem(52)
+		font-size: var(--fontSizeH4-2)
+		font-weight: 500
+		line-height: var(--lineHeightH2)
+
+		@include until-tablet
+			min-height: auto
+
+	&__text 
+		color: var(--color-neutral-300)
+		font-size: var(--fontSizeP)
+		line-height: var(--lineHeightP1)
+
+		p:not([class]):not(:last-child)
+			margin-bottom: 0
+
+	&--border 
+		padding-top: fluid(8, 40)
+		border-top: 1px solid var(--color-neutral-200)
+
+	&--size 
+		> *
+			&:not(:first-child)
+				margin-top: fluid(8, 14)
+
+		.benefits-card
+			&__title
+				max-width: 100%
+				font-size: var(--fontSizeH2)
+
+			&__text
+				font-size: rem(11)
+				font-weight: 500
+
+	> *
+		&:not(:first-child)
+			margin-top: fluid(14, 24)
+

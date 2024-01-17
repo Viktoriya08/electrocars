@@ -1,0 +1,8 @@
+.section-control.section-control--gap
+	.section-control__box.section-control__box--flex.section-control__box--gap
+		.section-control__left
+			button.btn.btn--border.btn--size--medium
+				span.btn__text Показать больше
+
+		.section-control__right
+			base-pagination(arrows-style="simple" :total="100" :limit="10" :max-buttons="4")

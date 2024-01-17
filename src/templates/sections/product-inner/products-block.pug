@@ -1,0 +1,10 @@
+section.page-section.products-block
+	.wrapper.products-block__wrapper
+		.page-section__top
+			h2.page-section__title-mini
+				span.subtitle Специальные предложения
+
+		.products-block__list
+			each item, index in ['HiPhi X', 'Li9', 'Neta S', 'Rising R7']
+				.products-block__item
+					+product-card(item, index)

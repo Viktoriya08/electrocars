@@ -1,0 +1,38 @@
+section.page-section.media
+	.wrapper 
+
+		.section-control
+
+			.section-control__box.section-control__box--border.section-control__box--flex
+				.section-control__left
+					base-tabs(:tabs="[{label: 'Все медиа', value: 0}, {label: 'Статьи', value: 1}, {label: 'Новости', value: 2}, {label: 'Обзоры', value: 3}]" type="switcher" )
+				.section-control__search
+					input-search(placeholder="Поиск" id="media-search" label='Поиск')
+
+			.section-control__box
+				.tabs
+					.tab.active
+						span.tab__text #Новости салона
+					.tab.active
+						span.tab__text #Технологии
+					-for (let i = 0; i < 5; i++)
+						.tab
+							span.tab__text #Новости салона
+						.tab
+							span.tab__text #Технологии
+						.tab
+							span.tab__text #Модели
+						.tab
+							span.tab__text #События
+					.tabs__box-btn
+						button.tab.tab--btn
+							span.btn__text Показать больше
+
+
+		.media__select 
+			row-select(:model-value="['По популярности']" placeholder="" id="media-select" label="Сортировка:" :options="['По популярности', 'Extremely По популярности', 'Новые']")
+
+		include media-list
+
+		include media-pagination
+

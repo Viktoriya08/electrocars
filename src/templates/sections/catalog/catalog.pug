@@ -1,0 +1,47 @@
+section.page-section.catalog
+    .wrapper.catalog__wrapper
+        .catalog__filters
+            each filter in ['Седан', 'до 15 000 000 ₽', 'до 200 л.с.', 'до 7 л/10', 'до 820 км', 'Задний', 'До 5 сек', '2021', 'Серый', 'Искусственная кожа', 'Система предотвращения заноса']
+                .tab
+                    span.tab__text=filter
+                    +icon('close').tab__icon
+
+            button.tab.tab--type-reset
+                span.tab__text сбросить фильтры
+
+        .catalog__body
+            .catalog__left
+                catalog-filter
+
+            .catalog__right
+                .catalog__top.catalog-top
+                    button(@click="openModal('filter-modal')").btn.btn--type--round.btn--color-primary.catalog-top__filter
+                        span.btn__text Параметры поиска
+
+                    span.catalog-top__total Найдено: 32
+
+                    .catalog-top__sort.catalog-sort
+                        span.catalog-sort__label Сортировка:
+                        base-dropdown(show-on-click).catalog-sort__dropdown
+                            template(#trigger-text)
+                                | По популярности
+                            template(#dropdown)
+                                .dropdown__items
+                                    a.dropdown__item(href="#") По популярности
+                                    a.dropdown__item(href="#") По возрастанию цены
+                                    a.dropdown__item(href="#") По убыванию цены
+                                    a.dropdown__item(href="#") По названию A-Z
+                                    a.dropdown__item(href="#") По названию Z-A
+
+
+                .catalog__items
+                    each item, index in ['HiPhi X', 'Li9', 'Neta S', 'Rising R7', 'HiPhi X', 'Li9']
+                        +product-card(item, index).catalog__item
+
+                .catalog__nav.catalog-nav
+                    button.btn.btn--color-secondary.catalog-nav__more
+                        span.btn__text Показать больше
+
+                    base-pagination(arrows-style="simple" :total="75" ).catalog-nav__pagination
+
+

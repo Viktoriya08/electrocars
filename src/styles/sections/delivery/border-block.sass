@@ -1,0 +1,54 @@
+.border-block
+
+	&__grid 
+		display: grid
+		grid-template-columns: minmax(0,1fr) minmax(0,1fr)
+		column-gap: rem(40)
+
+		@include until-tablet
+			grid-template-columns: 100%
+
+	&__top
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		min-height: rem(130)
+		padding: fluid(8, 24) 0
+		border-top: 1px solid var(--color-neutral-300-trans-30)
+
+		@include until-tablet
+			min-height: rem(65)
+
+	&__btn
+		margin-left: auto
+
+	&__title
+		font-size: var(--fontSizeH4)
+		font-weight: 500
+		line-height: var(--lineHeightH2)
+
+	&__elem
+
+		&:nth-child(n+3)
+
+			&:last-child
+				.border-block
+					&__top
+						@include until-tablet
+							border-bottom: 1px solid var(--color-neutral-300-trans-30)
+
+			.border-block
+				&__top
+					border-bottom: 1px solid var(--color-neutral-300-trans-30)
+
+					@include until-tablet
+						border-bottom: none
+
+	&__info 
+		padding-top: fluid(24, 40)
+		color: var(--color-neutral-300)
+
+		p:not([class])
+			font-size: var(--fontSizeP2-2)
+			line-height: var(--lineHeightP1)
+

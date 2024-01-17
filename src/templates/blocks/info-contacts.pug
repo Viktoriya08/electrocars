@@ -1,0 +1,12 @@
+mixin info-contacts(address, tel)
+
+	.info-contact
+		.info-contact__elem.info-contact__elem--grow
+			address.info-contact__info !{address}
+			.info-contact__text Сервисный центр Свободы
+		.info-contact__elem 
+			a(href="tel:+73517507750").info-contact__info !{tel}
+			.info-contact__text пн-пт: 09:00–18:00, сб-вс: выходной
+		.info-contact__btns 
+			button.btn.btn--color-fourth Показать на карте
+			button.btn.btn--color-primary Записаться

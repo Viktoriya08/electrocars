@@ -1,0 +1,14 @@
+extends /base/_head
+block vars
+	- let title = 'Оплата и доставка'
+	- let layoutClass = 'layout'
+	- let bodyClass = null
+
+block content
+	include /sections/header
+	include /sections/mobile-header
+
+	main.page.page-delivery
+		include /pages/delivery
+
+	include /sections/footer

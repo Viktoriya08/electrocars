@@ -1,0 +1,50 @@
+.info-contact
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	column-gap: rem(24)
+	row-gap: rem(24)
+
+	&__elem 
+		&--grow 
+			flex: 0 0 45%
+
+			@include until-tablet
+				flex: 0 0 auto
+
+	&__info 
+		display: block
+		color: var(--color-primary-500)
+		font-size: var(--fontSizeH3)
+		font-weight: 500
+		line-height: var(--lineHeightH2)
+		text-decoration: none
+
+		&[href]
+			transition: color .3s
+
+			@include hover 
+				color: var(--color-primary-400)
+
+		&:not(:last-child)
+			margin-bottom: fluid(8, 14)
+
+	&__text 
+		color: var(--color-neutral-300)
+		font-size: var(--fontSizeP2-2)
+		line-height: var(--lineHeightP1)
+
+	&__btns 
+		display: flex
+		flex-grow: 1
+		flex-wrap: wrap
+
+		align-items: flex-start
+		justify-content: flex-end
+		gap: rem(10)
+
+		@include until-tablet
+
+			& > .btn
+				flex: 1 1 calc(50% - rem(5))
+

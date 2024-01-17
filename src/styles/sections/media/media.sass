@@ -1,0 +1,70 @@
+.media
+
+	&__subtitle 
+		font-size: var(--fontSizeH2)
+		font-weight: 500
+		line-height: var(--lineHeightH2)
+
+		@include while-mob-xl
+			margin-top: rem(24)
+
+	&__list
+		display: grid
+		grid-template-columns: repeat(3, minmax(0,1fr))
+		gap: fluid(24, 40)
+
+		@include until-tablet
+			grid-template-columns: repeat(2, minmax(0,1fr))
+
+		@include while-mob-xl
+			grid-template-columns: 100%
+
+		.media-card__name
+			@include cut-string(4)
+
+		.media-info
+			@include while-mob-xl
+				gap: rem(24)
+
+	&__select 
+		max-width: rem(300)
+
+		&.catalog-sort
+			justify-content: flex-start
+
+			@include while-mob-xl
+				flex-direction: row
+				justify-content: space-between
+
+	.tabs 
+		.tab
+			&:nth-child(n+18)
+				display: none
+
+			@include while-mob-xl 
+				&:nth-child(n+9)
+					display: none
+
+	.wrapper 
+		> *
+			&:not(:last-child)
+				margin-bottom: rem(55)
+
+				@include while-mob-xl
+					margin-bottom: rem(24)
+
+		.section-control
+			@include while-mob-xl
+				margin-bottom: rem(14)
+
+	.section-control
+
+		&__search
+			@include while-mob-xl
+				display: none
+
+		.tab
+			@include while-mob-xl
+				font-size: rem(11)
+
+

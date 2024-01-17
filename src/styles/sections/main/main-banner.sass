@@ -1,0 +1,137 @@
+@use "sass:math"
+
+.main-banner
+	background-color: var(--color-neutral-300)
+	color: var(--color-white)
+
+	&__pagination
+		--swiper-pagination-bottom: #{rem(40)}
+		--swiper-pagination-top: auto
+
+		right: 0
+		left: 0
+		padding-right: 35%
+		pointer-events: none
+
+		@include until-laptop
+			padding-right: 44%
+
+		@include until-tablet
+			--swiper-pagination-bottom: auto
+			--swiper-pagination-top: #{rem(24)}
+
+			padding-right: rem(math.div($containerPadding, 2))
+
+		@if ($maxWidthContainer > 0)
+			max-width: rem($maxWidthContainer)
+			margin: 0 auto
+
+		@if ($containerPadding > 0)
+			padding-left: rem(math.div($containerPadding, 2))
+
+		& .swiper-pagination-bullet
+			--swiper-pagination-color: var(--color-neutral-100-trans-20)
+
+.mb-slide
+	position: relative
+
+	&__bg
+		position: relative
+
+		&::after
+			content: ''
+			position: absolute
+			right: 0
+			bottom: 0
+			left: 0
+			height: 27.5%
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.6) 100%)
+
+	&__img
+		display: block
+		width: 100%
+		height: auto
+		aspect-ratio: 1920 / 920
+
+		@include until-tablet
+			aspect-ratio: 320 / 420
+
+		@include while-mob-xl
+			aspect-ratio: 320 / 520
+
+	&__wrapper
+		position: absolute
+		inset: 0
+		padding-top: rem(40)
+		padding-bottom: rem(40)
+
+		@extend %base-grid
+
+		@include until-tablet
+			padding-top: calc(rem(48) + fluid(32,48))
+
+	&__cont
+		display: flex
+		grid-column: 9/13
+		flex-direction: column
+		justify-content: space-between
+
+		@include until-laptop-xxl
+			grid-column: 8/13
+
+		@include until-laptop
+			grid-column: 8/13
+
+		@include until-tablet
+			grid-column: -1/1
+
+	&__top
+		margin-bottom: fluid(20,40)
+
+	&__title
+		font-size: var(--fontSizeH1)
+		font-weight: 400
+		letter-spacing: var(--letterSpacingH1)
+		line-height: var(--lineHeightH1)
+
+		&:not(:last-child)
+			margin-bottom: rem(24)
+
+	&__subtitle
+		font-size: var(--fontSizeP1)
+		line-height: var(--lineHeightP1)
+
+	&__info
+		margin-top: auto
+
+	&__bottom
+		display: flex
+		align-items: center
+		justify-content: space-between
+		gap: rem(24)
+		margin-top: fluid(14,40)
+		padding-top: fluid(14,40)
+		border-top: 1px solid var(--color-neutral-100-trans-50)
+
+	&__offer
+		font-size: var(--fontSizeH3)
+		font-weight: 500
+		line-height: var(--lineHeightH3)
+		white-space: nowrap
+
+	&__actions
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		gap: rem(14)
+
+	&--text
+		.mb-slide__bg
+			&::before
+				content: ''
+				position: absolute
+				top: 0
+				right: 0
+				left: 0
+				height: 27.5%
+				background: linear-gradient(0deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.6) 100%)

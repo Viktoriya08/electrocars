@@ -1,0 +1,120 @@
+.benefit-calculator
+	@extend %base-grid
+
+	&__form
+		display: grid
+		grid-column: span 8
+		grid-gap: fluid(24,40) fluid(20, 40)
+		grid-template-columns: repeat(2, minmax(0, 1fr))
+
+		@include until-laptop
+			grid-column: span 6
+			grid-template-columns: 100%
+
+		@include while-mob-xl
+			grid-column: 1/-1
+
+	&__right
+		grid-column: span 4
+		height: 100%
+
+		@include until-laptop
+			grid-column: 8 / span 5
+
+		@include until-tablet
+			grid-column: span 6
+
+		@include while-mob-xl
+			grid-column: 1/-1
+
+	&__result
+		height: 100%
+
+	&__action
+		width: 100%
+
+		&:not(:last-child)
+			margin-bottom: fluid(12, 14)
+
+.bc-item
+	&__label
+		display: block
+		opacity: .5
+		font-size: var(--fontSizeP4)
+		font-weight: 400
+		line-height: var(--lineHeightP2)
+
+		&:not(:last-child)
+			margin-bottom: fluid(12, 14)
+
+	&__value
+		display: block
+		font-size: var(--fontSizeP6)
+		font-weight: 500
+		line-height: var(--lineHeightP3)
+
+	&__action
+		&:not(:first-child)
+			margin-top: fluid(14, 24)
+
+
+	&__tabs
+		& .tab--type-switcher
+			white-space: normal
+
+.bc-result
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	padding: fluid(14, 24)
+	border-radius: var(--radius-m)
+	background-color: var(--color-primary-300)
+
+	&__title
+		font-size: var(--fontSizeH3)
+		font-weight: 500
+		line-height: var(--lineHeightH3)
+
+		&:not(:last-child)
+			margin-bottom: fluid(24, 40)
+
+	&__values
+		display: flex
+		align-items: flex-start
+		gap: fluid(14, 24)
+		padding-top: fluid(14, 24)
+		border-top: 1px solid var(--color-neutral-300-trans-30)
+
+		@include while-mob-xl
+			flex-direction: column
+			padding-top: 0
+			border-top: none
+
+	&__value
+		display: flex
+		flex: 1 1 50%
+		flex-direction: column
+
+		@include while-mob-xl
+			flex: unset
+			width: 100%
+
+			&:not(:first-child)
+				padding-top: fluid(14, 24)
+				border-top: 1px solid var(--color-neutral-300-trans-30)
+
+	&__label
+		display: block
+		opacity: .5
+		font-size: var(--fontSizeP4)
+		font-weight: 400
+		line-height: var(--lineHeightP2)
+
+		&:not(:last-child)
+			margin-bottom: rem(12)
+
+	&__num
+		display: block
+		font-size: var(--fontSizeH4)
+		font-weight: 500
+		line-height: var(--lineHeightH4)

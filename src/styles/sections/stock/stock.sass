@@ -1,0 +1,94 @@
+.stock
+
+	&__wrapper 
+		display: grid
+		grid-template-columns: minmax(0, 1fr) minmax(0, 2fr)
+		gap: rem(24)
+
+		@include until-tablet
+			grid-template-columns: 100%
+
+	&__right 
+		aspect-ratio: 1210/630
+		overflow: hidden
+		border-radius: var(--radius-m)
+		background-color: var(--color-neutral-200)
+
+		&--info 
+			position: relative
+
+		&--white 
+			color: var(--color-neutral-100)
+
+			.stock__info
+				.data__title
+					color: var(--color-neutral-100)
+
+		
+		img 
+			display: block
+			size: 100%
+			object-fit: contain
+
+	&__info
+		position: absolute
+		top: 50%
+		left: 50%
+		max-width: 50%
+		transform: translate(-50%, -50%)
+
+		.stock__list
+			margin-top: rem(30)
+
+			@include until-tablet
+				display: none
+
+	&__logo 
+		max-width: 100% 
+
+		img 
+			display: block
+			size: 100%
+
+	&__list 
+		display: flex
+		justify-content: space-between
+
+
+	&__title
+		font-size: var(--fontSizeH3)
+		font-weight: 500
+		line-height: var(--lineHeightH2)
+
+	&__box 
+		max-width: rem(445)
+
+		@include until-tablet
+			max-width: 100%
+
+		> *
+			&:not(:last-child)
+				margin-bottom: fluid(14, 24)
+
+		.stock__list
+			justify-content: flex-start
+			margin-top: fluid(24, 60)
+			padding-top: fluid(8, 14)
+			border-top: 1px solid var(--color-neutral-200)
+			column-gap: fluid(24, 90)
+
+	&__text 
+		color: var(--color-neutral-300)
+		font-size: var(--fontSizeP)
+		line-height: var(--lineHeightP1)
+
+	&__btn 
+		@include until-tablet
+			width: 100%
+
+	.data__title
+		color: var(--color-neutral-300)
+
+	&:not(:last-child)
+		margin-bottom: fluid(24, 40)
+

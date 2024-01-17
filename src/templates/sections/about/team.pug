@@ -1,0 +1,30 @@
+-
+	let items = [
+		{name: 'Дмитрий Рудько', sumname: 'Генеральный директор', img: 'team-1.jpg'},
+		{name: 'Андрей Грищенко', sumname: 'Руководитель сервисной станции', img: 'team-2.jpg'},
+		{name: 'Юлия Балакина', sumname: 'Директор по логистике', img: 'team-3.jpg'},
+		{name: 'Иванов Иван Иванович', sumname: 'Генеральный директор', img: 'team-4.jpg'},
+		{name: 'Иванов Иван Иванович', sumname: 'Генеральный директор', img: 'team-5.jpg'},
+	]
+
+section.page-section.content-block.content-block--border-forteams
+	.wrapper
+
+		.content-block__body
+
+			.content-block__title 
+				.subtitle.subtitle--short Команда Electrocars
+
+			.content-block__cont.teams
+
+				.teams__grid
+
+					each item in items
+						.teams__elem
+							.teams__box.team-item.team-item--column
+								.team-item__box 
+									.team-item__img 
+										img(src=`${BASE_URL}img/about/${item.img}`, alt="" loading="lazzy")
+									.team-item__text 
+										.team-item__name=item.name
+										.team-item__subname=item.sumname

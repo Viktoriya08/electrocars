@@ -1,0 +1,21 @@
+.accordion
+	&__body
+		p 
+			font-size: var(--fontSizeP)
+			line-height: var(--lineHeightP1)
+
+
+		ul:not([class])
+			@include while-mob-xl
+				font-size: var(--fontSizeP2)
+				line-height: var(--lineHeightP2)
+			
+			li 
+				line-height: var(--lineHeightH1)
+
+				@include while-mob-xl
+					font-weight: 400
+					line-height: var(--lineHeightP2)
+
+				&:not([class]):not(:first-child)
+					margin-top: fluid(8, 14)

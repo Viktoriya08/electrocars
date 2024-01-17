@@ -1,0 +1,39 @@
+.reviews-card
+	display: flex
+	flex-direction: column
+	height: 100%
+	padding: fluid(14,24)
+	border-radius: var(--radius-m)
+	background-color: var(--color-white)
+	color: var(--color-black)
+
+	&__top
+		display: flex
+		align-items: center
+		justify-content: space-between
+		gap: fluid(14,24)
+		margin-bottom: fluid(24,40)
+
+	&__name
+		font-size: fluid(16,24)
+		font-weight: 500
+		line-height: var(--lineHeightH)
+
+	&__date
+		color: var(--color-neutral-300)
+		font-size: var(--fontSizeP2)
+		line-height: var(--lineHeightP3)
+
+	&__cont
+		margin-bottom: fluid(14,24)
+
+	&__text
+		@include cut-string(8)
+
+	&__link
+		margin-top: fluid(24,40)
+
+	&__bottom
+		margin-top: auto
+		padding-top: fluid(14,24)
+		border-top: 1px solid var(--color-neutral-200)

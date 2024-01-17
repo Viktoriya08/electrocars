@@ -1,0 +1,26 @@
+.compare-header
+	position: fixed
+	top: 0
+	right: 0
+	left: 0
+	z-index: var(--z-index-header)
+
+	padding: rem(20) 0
+
+	border-bottom: 1px solid var(--color-neutral-200)
+	background-color: var(--color-neutral-100)
+
+	@include until-laptop
+		display: none
+
+	.compare-product
+		&__name
+			font-size: var(--fontSizeP2-2)
+			line-height: var(--lineHeightP3)
+
+			&:not(:last-child)
+				margin-bottom: rem(4)
+
+		&__price
+			font-size: var(--fontSizeP3)
+			font-weight: 500

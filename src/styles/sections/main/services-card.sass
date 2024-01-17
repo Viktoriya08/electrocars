@@ -1,0 +1,33 @@
+.services-card
+	position: relative
+
+	display: flex
+	flex-direction: column
+	gap: fluid(20,40)
+
+	aspect-ratio: 1/1
+	padding: fluid(14,24)
+
+	border-radius: var(--radius-m)
+	background-color: var(--color-primary-300)
+
+	&__name
+		font-size: var(--fontSizeH4)
+		font-weight: 500
+		line-height: var(--lineHeightH4)
+
+	&__link
+		margin-top: auto
+		margin-left: auto
+
+		&::after
+			content: ''
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+
+	&--dark
+		background-color: var(--color-primary-500)
+		color: var(--color-white)

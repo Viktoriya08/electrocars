@@ -1,0 +1,14 @@
+extends ../templates/base/_head
+
+block head
+	style.
+		@import url("/styles/base/preview-styles.sass");
+
+block vars
+	- let title = 'UI Kit'
+	- let layoutClass = null
+	- let bodyClass = null
+
+block content
+	main
+		include ../templates/pages/ui

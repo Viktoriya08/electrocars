@@ -1,0 +1,38 @@
+.product-preview
+    position: relative
+    display: flex
+    align-items: center
+    gap: rem(14)
+
+    @include hover
+        .product-preview__img
+            filter: brightness(.8)
+
+    &__img
+        flex-shrink: 0
+
+        width: 100%
+        max-width: fluid(82,120)
+        height: auto
+        aspect-ratio: 120/72
+
+        border-radius: var(--radius-m)
+
+        transition: filter .3s ease
+        will-change: transition
+        object-fit: cover
+        object-position: center
+
+    &__name
+        font-size: var(--fontSizeP2)
+        font-weight: 500
+        line-height: var(--lineHeightH)
+        text-transform: uppercase
+
+    &__link
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        font-size: 0

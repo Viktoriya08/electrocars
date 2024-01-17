@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <link rel="preload" as="font" type="font/woff" href="/local/client-app/dist/fonts/Inter/Inter-Medium.woff" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/local/client-app/dist/fonts/Inter/Inter-Medium.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff" href="/local/client-app/dist/fonts/Inter/Inter-Regular.woff" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/local/client-app/dist/fonts/Inter/Inter-Regular.woff2" crossorigin>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/local/client-app/dist/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/local/client-app/dist/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/local/client-app/dist/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/local/client-app/dist/favicons/favicon-16x16.png">
+    <!--link(rel="manifest" href="/favicons/site.webmanifest")-->
+    <!--link(rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#ffffff")-->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="UI Kit">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:image" content="https://html.xpager.ru/electrocars/img/opengraph-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="660">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://html.xpager.ru/electrocars/img/opengraph-image.jpg">
+    <meta name="format-detection" content="telephone=no">
+    <title>UI Kit</title>
+    <style>@charset "UTF-8";
+/* НАСТРОЙКИ */
+/* Минимальная ширина страницы */
+/* Ширина полотна (макета) */
+/* Ширина ограничивающего контейнера (0 = нет ограничения) */
+/* Общий отступ у контейнера */
+/* (30 = по 15px слева и справа, 0 = нет отступа) */
+/* Ширина срабатывания первого брейкпоинта */
+/* Гайд по em и rem: https://youtu.be/oJuVegSheQs */
+/* Percent */
+/* REM */
+/* EM */
+/* Адаптивное свойство (clamp) */
+/* Сниппет: av */
+/* Пример: */
+/* font-size: fluid(24, 100) */
+/* Оформление горизонтального скроллбара */
+/* Оформление вертикального скроллбара */
+/*	Скрыть отображение скроллбара */
+/*	Кроссбраузерный миксин для плейсхолдеров */
+/* Обрезание строки */
+/* Отключение ховеров в тач устройствах */
+.project-view {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  padding: clamp(1.5rem, 10vw, 4rem) 0;
+}
+.project-view::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+  background-image: radial-gradient(circle at right top, rgba(60, 99, 176, 0.75) 5%, rgba(162, 192, 222, 0.75) 20%, rgba(236, 242, 248, 0.75) 70%);
+  mix-blend-mode: color-burn;
+}
+.project-view .wrapper {
+  max-width: 64rem;
+}
+.wrapper {
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+  width: 100%;
+}
+.pv-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(0.5rem, 1.5vw, 1.5rem);
+  margin-bottom: clamp(1.5rem, 4vw, 3rem);
+}
+.pv-title__text {
+  margin: 0;
+  color: var(--color-primary-500);
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 700;
+}
+.pv-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+}
+.pv-logo picture {
+  display: block;
+  height: 2.5rem;
+}
+.pv-logo__image {
+  width: auto;
+  height: 100%;
+}
+.pv-blocks {
+  width: 100%;
+}
+.pv-blocks--columns {
+  column-count: auto;
+  column-width: clamp(16rem, 45vw, 32rem);
+  column-gap: clamp(0.5rem, 1.5vw, 1.5rem);
+}
+.pv-blocks--columns .pv-block {
+  margin-bottom: clamp(1.5rem, 4vw, 3rem);
+  break-inside: avoid;
+}
+.pv-blocks--list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1.5rem, 5vw, 2rem);
+}
+.pv-block {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: clamp(0.5rem, 1.5vw, 1.5rem);
+  border-radius: 1rem;
+  background-color: var(--color-neutral-100);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  color: var(--color-primary-500);
+}
+.pv-block--dark {
+  background-color: var(--color-primary-500);
+  color: var(--color-neutral-100);
+}
+.pv-block__title {
+  margin: 0 0 clamp(0.5rem, 1.5vw, 1.5rem);
+  padding-bottom: clamp(0.5rem, 1vw, 1rem);
+  border-bottom: 1px solid var(--color-primary-400);
+  color: currentcolor;
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-weight: 400;
+}
+.pv-block__nav {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 1.5vw, 1.5rem);
+}
+.pv-block__preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1rem, 2.5vw, 2rem);
+  width: 100%;
+}
+.pv-block__items {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 1.5vw, 1.5rem);
+  width: 100%;
+  max-width: 100%;
+}
+.pv-block__item {
+  max-width: 100%;
+}
+.pv-block__devider {
+  flex: 1 1 100%;
+  width: 100%;
+  border-bottom: 1px solid var(--color-neutral-400);
+}
+.pv-block__items--row {
+  flex: 1 1 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  column-gap: clamp(1rem, 2.5vw, 2rem);
+}
+.pv-block__items--align-start {
+  align-items: flex-start;
+}
+.pv-link {
+  display: block;
+  margin: 0;
+  padding: 0;
+  color: var(--color-primary-500);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 400;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.pv-link:hover, .pv-link:focus {
+  color: var(--color-primary-400);
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.875rem;
+}
+.gallery__item {
+  display: block;
+  width: 23.4375rem;
+  height: 15.625rem;
+}
+      
+    </style>
+    <script type="module" crossorigin src="/local/client-app/dist/scripts/main-chunk-fdacad84.js"></script>
+    <link rel="stylesheet" href="/local/client-app/dist/styles/index-dbfe154b.css">
+  </head>
+  <body>
+    <div id="app">
+      <suspense>
+        <template #default>
+          <root-component>
+            <main>
+              <section class="project-view">
+                <div class="wrapper">
+                  <div class="pv-title"><a class="pv-logo" href="/"><img class="pv-logo__image" src="/local/client-app/dist/img/logo.svg" alt="alt" width="undefined" height="undefined" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';"></a>
+                    <h1 class="pv-title__text">UI Kit</h1>
+                  </div>
+                  <div class="pv-blocks pv-blocks--list">
+                    <div class="pv-block">
+                      <h3 class="pv-block__title">Breadcrumbs</h3>
+                      <div class="pv-block__preview">
+                            <nav class="breadcrumbs">
+                              <div class="breadcrumbs__wrapper">
+                                <ol class="breadcrumbs__items">
+                                  <li class="breadcrumbs__item"><a class="breadcrumbs__link link" href="#" aria-current="page">Главная</a></li>
+                                  <li class="breadcrumbs__item">UI</li>
+                                </ol>
+                              </div>
+                            </nav>
+                      </div>
+                    </div>
+                    <div class="pv-block">
+                      <h3 class="pv-block__title">Typography & Animations</h3>
+                      <div class="pv-block__preview">
+                        <div class="pv-block__items">
+                          <div class="pv-block__item" v-animate="{animationClass: 'fadeInUp'}">
+                            <h3 style="fontFamily: var(--font-primary); font-Size: var(--fontSizeH3); line-height: var(--lineHeightH1)">Primary Font Family - Helvetica Regular</h3>
+                          </div>
+                          <div class="pv-block__item" v-animate="{animationClass: 'fadeInUp'}">
+                            <h3 style="fontFamily: var(--font-primary); font-weight: 700; font-Size: var(--fontSizeH3); line-height: var(--lineHeightH1)">Primary Font Family - Helvetica Bold</h3>
+                          </div>
+                        </div>
+                        <div class="pv-block__items">
+                          <div class="pv-block__item" v-animate="{animationClass: 'fadeInUp'}">
+                            <h3 style="fontFamily: var(--font-secondary); font-Size: var(--fontSizeH3); line-height: var(--lineHeightH1)">Secondary Font Family - Montserrat Regular</h3>
+                          </div>
+                          <div class="pv-block__item" v-animate="{animationClass: 'fadeInUp'}">
+                            <h3 style="fontFamily: var(--font-secondary); font-weight: 700; font-Size: var(--fontSizeH3); line-height: var(--lineHeightH1)">Secondary Font Family - Montserrat Bold</h3>
+                          </div>
+                        </div>
+                        <div class="pv-block__devider"></div>
+                        <div class="pv-block__items pv-block__items--row" v-animate="{animationClass: 'fadeInUp'}">
+                          <div class="pv-block__item">
+                            <h1 style="font-Size: var(--fontSizeH1); line-height: var(--lineHeightH1)">Heading 1</h1>
+                          </div>
+                          <div class="pv-block__item">
+                            <h2 style="font-Size: var(--fontSizeH2); line-height: var(--lineHeightH1)">Heading 2</h2>
+                          </div>
+                          <div class="pv-block__item">
+                            <h3 style="font-Size: var(--fontSizeH3); line-height: var(--lineHeightH1)">Heading 3</h3>
+                          </div>
+                        </div>
+                        <div class="pv-block__items pv-block__items--row" v-animate="{animationClass: 'fadeInUp'}">
+                          <div class="pv-block__item">
+                            <h4 style="font-Size: var(--fontSizeH4); line-height: var(--lineHeightH2)">Heading 4</h4>
+                          </div>
+                          <div class="pv-block__item">
+                            <h5 style="font-Size: var(--fontSizeH5); line-height: var(--lineHeightH2)">Heading 5</h5>
+                          </div>
+                          <div class="pv-block__item">
+                            <h6 style="font-Size: var(--fontSizeH6); line-height: var(--lineHeightH2)">Heading 6</h6>
+                          </div>
+                        </div>
+                        <div class="pv-block__items pv-block__items--row" v-animate="{animationClass: 'fadeInUp'}">
+                          <div class="pv-block__item">
+                            <p style="font-Size: var(--fontSizeP1); line-height: var(--lineHeightP1)">Paragraph 1</p>
+                          </div>
+                          <div class="pv-block__item">
+                            <p style="font-Size: var(--fontSizeP2); line-height: var(--lineHeightP1)">Paragraph 2</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pv-block">
+                      <h3 class="pv-block__title">Buttons</h3>
+                      <div class="pv-block__preview">
+                        <div class="pv-block__items pv-block__items--row">
+                          <div class="pv-block__item">
+                            <button class="btn btn--color-primary">
+                                  <svg class="btn__icon" aria-hidden="true">
+                                    <use xlink:href="/local/client-app/dist/img/icons.svg#icon-arrow-left"></use>
+                                  </svg><span class="btn__text">Button-color</span>
+                                  <svg class="btn__icon" aria-hidden="true">
+                                    <use xlink:href="/local/client-app/dist/img/icons.svg#icon-arrow-right"></use>
+                                  </svg>
+                            </button>
+                          </div>
+                          <div class="pv-block__item">
+                            <button class="btn btn--color-primary disabled"><span class="btn__text">Button-color disabled</span></button>
+                          </div>
+                          <div class="pv-block__item">
+                            <button class="btn btn--color-primary loading"><span class="btn__text">Button-color loading</span></button>
+                          </div>
+                        </div>
+                        <div class="pv-block__items pv-block__items--row">
+                          <div class="pv-block__item">
+                            <button class="btn btn--border">
+                                  <svg class="btn__icon" aria-hidden="true">
+                                    <use xlink:href="/local/client-app/dist/img/icons.svg#icon-arrow-left"></use>
+                                  </svg><span class="btn__text">Button-border</span>
+                                  <svg class="btn__icon" aria-hidden="true">
+                                    <use xlink:href="/local/client-app/dist/img/icons.svg#icon-arrow-right"></use>
+                                  </svg>
+                            </button>
+                          </div>
+                          <div class="pv-block__item">
+                            <button class="btn btn--border disabled"><span class="btn__text">Button-border disabled</span></button>
+                          </div>
+                          <div class="pv-block__item">
+                            <button class="btn btn--border loading"><span class="btn__text">Button-border loading</span></button>
+                          </div>
+                        </div>
+                        <div class="pv-block__items pv-block__items--row">
+                          <div class="pv-block__item">
+                            <button class="btn btn--trans">
+                                  <svg class="btn__icon" aria-hidden="true">
+                                    <use xlink:href="/local/client-app/dist/img/icons.svg#icon-arrow-left"></use>
+                                  </svg><span class="btn__text">Button-trans</span>
+                                  <svg class="btn__icon" aria-hidden="true">
+                                    <use xlink:href="/local/client-app/dist/img/icons.svg#icon-arrow-right"></use>
+                                  </svg>
+                            </button>
+                          </div>
+                          <div class="pv-block__item">
+                            <button class="btn btn--trans disabled"><span class="btn__text">Button-trans disabled</span></button>
+                          </div>
+                          <div class="pv-block__item">
+                            <button class="btn btn--trans loading"><span class="btn__text">Button-trans loading</span></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pv-block pv-block--dark">
+                      <h3 class="pv-block__title">Buttons Revert</h3>
+                      <div class="pv-block__preview">
+                        <div class="pv-block__items pv-block__items--row">
+                          <div class="pv-block__item">
+                            <button class="btn btn--color-revert">
+                                  <svg class="btn__icon" aria-hidden="true">
+                                    <use xlink:href="/local/client-app/dist/img/icons.svg#icon-arrow-left"></use>
+                                  </svg><span class="btn__text">Button-color</span>
+                                  <svg class="btn__icon" aria-hidden="true">
+                                    <use xlink:href="/local/client-app/dist/img/icons.svg#icon-arrow-right"></use>
+                                  </svg>
+                            </button>
+                          </div>
+                          <div class="pv-block__item">
+                            <button class="btn btn--color-revert disabled"><span class="btn__text">Button-color disabled</span></button>
+                          </div>
+                          <div class="pv-block__item">
+                            <button class="btn btn--color-revert loading"><span class="btn__text">Button-color loading</span></button>
+                          </div>
+                        </div>
+                        <div class="pv-block__items pv-block__items--row">
+                          <div class="pv-block__item">
+                            <button class="btn btn--border-revert">
+                                  <svg class="btn__icon" aria-hidden="true">
+                                    <use xlink:href="/local/client-app/dist/img/icons.svg#icon-arrow-left"></use>
+                                  </svg><span class="btn__text">Button-border</span>
+                                  <svg class="btn__icon" aria-hidden="true">
+                                    <use xlink:href="/local/client-app/dist/img/icons.svg#icon-arrow-right"></use>
+                                  </svg>
+                            </button>
+                          </div>
+                          <div class="pv-block__item">
+                            <button class="btn btn--border-revert" disabled><span class="btn__text">Button-border disabled</span></button>
+                          </div>
+                          <div class="pv-block__item">
+                            <button class="btn btn--border-revert loading"><span class="btn__text">Button-border loading</span></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pv-block">
+                      <h3 class="pv-block__title">Links</h3>
+                      <div class="pv-block__preview">
+                        <div class="pv-block__items">
+                          <div class="pv-block__item"><a class="link" href="#">Link</a></div>
+                          <div class="pv-block__item"><a class="link disabled" href="#">Link Disabled</a></div>
+                          <div class="pv-block__item"><a class="link link--underlined" href="#">Link Underlined</a></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pv-block">
+                      <h3 class="pv-block__title">Tabs</h3>
+                      <div class="pv-block__preview">
+                        <div class="pv-block__items">
+                          <div class="pv-block__item">
+                            <!--+tabs-template(-->
+                            <!--	['Tab 1', 'Tab 2'],-->
+                            <!--	[-->
+                            <!--		{-->
+                            <!--			content: 'content 1'-->
+                            <!--		},-->
+                            <!--		{-->
+                            <!--			content: 'content 2'-->
+                            <!--		},-->
+                            <!--	]-->
+                            <!--)-->
+                          </div>
+                          <div class="pv-block__item">
+                            <base-tabs :tabs="[{label: 'Tab 1 Disabled', value: 0, disabled: true}, {label: 'Tab 2', value: 1}, {label: 'Tab 3', value: 2}]"></base-tabs>
+                          </div>
+                          <div class="pv-block__item">
+                            <base-tabs :tabs="['Tab 1', 'Tab 2', 'Tab 3']" color-scheme="light"></base-tabs>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pv-block">
+                      <h3 class="pv-block__title">Loaders</h3>
+                      <div class="pv-block__preview">
+                        <div class="pv-block__items pv-block__items--row">
+                          <div class="pv-block__item">
+                            <button class="btn btn--color" @click="loaderTestShow('firstLoaderShown')"><span class="btn__text">Show Default Loader</span></button>
+                            <fade-transition>
+                              <base-loader v-if="firstLoaderShown"></base-loader>
+                            </fade-transition>
+                          </div>
+                          <div class="pv-block__item">
+                            <button class="btn btn--border" @click="loaderTestShow('secondLoaderShown')"><span class="btn__text">Show Additional Loader</span></button>
+                            <fade-transition>
+                              <base-loader v-if="secondLoaderShown" color-scheme="dark"></base-loader>
+                            </fade-transition>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pv-block">
+                      <h3 class="pv-block__title">Accordion</h3>
+                      <div class="pv-block__preview">
+                        <div class="pv-block__items">
+                          <div class="pv-block__item">
+                                <base-accordion>
+                                  <template #title>Как регулируются в мире конфликты между государствами и какие организации отвечают за их решение?</template>
+                                  <template #body>Рост населения и экономическое развитие стран оказывают существенное влияние на мировой порядок. С ростом населения возрастает потребление природных ресурсов, что приводит к усилению экологических проблем. Экономическое развитие стран ведет к наращиванию экономической мощности и политического влияния на международной арене. Это может приводить к установлению новых правил игры в мировой экономике, заключению новых торговых, политических и военных союзов, а также изменению баланса сил между государствами. Кроме того, в условиях глобализации и международного общения различные тенденции в развитии экономики и демографии одних стран сильно влияют на другие страны.</template>
+                                </base-accordion>
+                                <base-accordion>
+                                  <template #title>Как регулируются в мире конфликты между государствами и какие организации отвечают за их решение?</template>
+                                  <template #body>Рост населения и экономическое развитие стран оказывают существенное влияние на мировой порядок. С ростом населения возрастает потребление природных ресурсов, что приводит к усилению экологических проблем. Экономическое развитие стран ведет к наращиванию экономической мощности и политического влияния на международной арене. Это может приводить к установлению новых правил игры в мировой экономике, заключению новых торговых, политических и военных союзов, а также изменению баланса сил между государствами. Кроме того, в условиях глобализации и международного общения различные тенденции в развитии экономики и демографии одних стран сильно влияют на другие страны.</template>
+                                </base-accordion>
+                          </div>
+                          <div class="pv-block__item">
+                                <base-accordion media-until="tablet">
+                                  <template #title>Как регулируются в мире конфликты между государствами и какие организации отвечают за их решение?</template>
+                                  <template #body>Рост населения и экономическое развитие стран оказывают существенное влияние на мировой порядок. С ростом населения возрастает потребление природных ресурсов, что приводит к усилению экологических проблем. Экономическое развитие стран ведет к наращиванию экономической мощности и политического влияния на международной арене. Это может приводить к установлению новых правил игры в мировой экономике, заключению новых торговых, политических и военных союзов, а также изменению баланса сил между государствами. Кроме того, в условиях глобализации и международного общения различные тенденции в развитии экономики и демографии одних стран сильно влияют на другие страны.</template>
+                                </base-accordion>
+                          </div>
+                          <div class="pv-block__item">
+                                <base-accordion theme="secondary">
+                                  <template #title>Как регулируются в мире конфликты между государствами и какие организации отвечают за их решение?</template>
+                                  <template #body>Рост населения и экономическое развитие стран оказывают существенное влияние на мировой порядок. С ростом населения возрастает потребление природных ресурсов, что приводит к усилению экологических проблем. Экономическое развитие стран ведет к наращиванию экономической мощности и политического влияния на международной арене. Это может приводить к установлению новых правил игры в мировой экономике, заключению новых торговых, политических и военных союзов, а также изменению баланса сил между государствами. Кроме того, в условиях глобализации и международного общения различные тенденции в развитии экономики и демографии одних стран сильно влияют на другие страны.</template>
+                                </base-accordion>
+                          </div>
+                          <div class="pv-block__item">
+                                <base-accordion theme="backdrop">
+                                  <template #title>Как регулируются в мире конфликты между государствами и какие организации отвечают за их решение?</template>
+                                  <template #body>Рост населения и экономическое развитие стран оказывают существенное влияние на мировой порядок. С ростом населения возрастает потребление природных ресурсов, что приводит к усилению экологических проблем. Экономическое развитие стран ведет к наращиванию экономической мощности и политического влияния на международной арене. Это может приводить к установлению новых правил игры в мировой экономике, заключению новых торговых, политических и военных союзов, а также изменению баланса сил между государствами. Кроме того, в условиях глобализации и международного общения различные тенденции в развитии экономики и демографии одних стран сильно влияют на другие страны.</template>
+                                </base-accordion>
+                          </div>
+                          <div class="pv-block__item">
+                                <base-accordion theme="backdrop" pointer-side="ltl">
+                                  <template #title>Как регулируются в мире конфликты между государствами и какие организации отвечают за их решение?</template>
+                                  <template #body><p>Рост населения и экономическое развитие стран оказывают существенное влияние на мировой порядок. С ростом населения возрастает потребление природных ресурсов, что приводит к усилению экологических проблем. Экономическое развитие стран ведет к наращиванию экономической мощности и политического влияния на международной арене. Это может приводить к установлению новых правил игры в мировой экономике, заключению новых торговых, политических и военных союзов, а также изменению баланса сил между государствами. Кроме того, в условиях глобализации и международного общения различные тенденции в развитии экономики и демографии одних стран сильно влияют на другие страны.</p><p>Рост населения и экономическое развитие стран оказывают существенное влияние на мировой порядок. С ростом населения возрастает потребление природных ресурсов, что приводит к усилению экологических проблем. Экономическое развитие стран ведет к наращиванию экономической мощности и политического влияния на международной арене. Это может приводить к установлению новых правил игры в мировой экономике, заключению новых торговых, политических и военных союзов, а также изменению баланса сил между государствами. Кроме того, в условиях глобализации и международного общения различные тенденции в развитии экономики и демографии одних стран сильно влияют на другие страны.</p><p>Рост населения и экономическое развитие стран оказывают существенное влияние на мировой порядок. С ростом населения возрастает потребление природных ресурсов, что приводит к усилению экологических проблем. Экономическое развитие стран ведет к наращиванию экономической мощности и политического влияния на международной арене. Это может приводить к установлению новых правил игры в мировой экономике, заключению новых торговых, политических и военных союзов, а также изменению баланса сил между государствами. Кроме того, в условиях глобализации и международного общения различные тенденции в развитии экономики и демографии одних стран сильно влияют на другие страны.</p><p>Рост населения и экономическое развитие стран оказывают существенное влияние на мировой порядок. С ростом населения возрастает потребление природных ресурсов, что приводит к усилению экологических проблем. Экономическое развитие стран ведет к наращиванию экономической мощности и политического влияния на международной арене. Это может приводить к установлению новых правил игры в мировой экономике, заключению новых торговых, политических и военных союзов, а также изменению баланса сил между государствами. Кроме того, в условиях глобализации и международного общения различные тенденции в развитии экономики и демографии одних стран сильно влияют на другие страны.</p></template>
+                                </base-accordion>
+                          </div>
+                          <div class="pv-block__item">
+                                <base-accordion theme="backdrop" pointer-side="ltl" disabled>
+                                  <template #title>Как регулируются в мире конфликты между государствами и какие организации отвечают за их решение?</template>
+                                  <template #body><p>Рост населения и экономическое развитие стран оказывают существенное влияние на мировой порядок. С ростом населения возрастает потребление природных ресурсов, что приводит к усилению экологических проблем. Экономическое развитие стран ведет к наращиванию экономической мощности и политического влияния на международной арене. Это может приводить к установлению новых правил игры в мировой экономике, заключению новых торговых, политических и военных союзов, а также изменению баланса сил между государствами. Кроме того, в условиях глобализации и международного общения различные тенденции в развитии экономики и демографии одних стран сильно влияют на другие страны.</p></template>
+                                </base-accordion>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pv-block">
+                      <h3 class="pv-block__title">Toasts</h3>
+                      <div class="pv-block__preview">
+                        <div class="pv-block__items pv-block__items--row">
+                          <div class="pv-block__item">
+                            <button class="btn btn--color" @click="showSuccessMessage('All good!')">Success</button>
+                          </div>
+                          <div class="pv-block__item">
+                            <button class="btn btn--border" @click="showErrorMessage('Something wrong')">Error</button>
+                          </div>
+                          <div class="pv-block__item">
+                            <button class="btn btn--border" @click="showWarningMessage('Be careful')">Warning</button>
+                          </div>
+                          <div class="pv-block__item">
+                            <button class="btn btn--border" @click="showInfoMessage('Some info')">Info</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pv-block">
+                      <h3 class="pv-block__title">Modals</h3>
+                      <div class="pv-block__preview">
+                        <div class="pv-block__items pv-block__items--row">
+                          <div class="pv-block__item">
+                            <button class="btn btn--color" @click="openModal('callback-modal')">Show</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pv-block">
+                      <h3 class="pv-block__title">Gallery</h3>
+                      <div class="pv-block__preview">
+                        <div class="pv-block__items pv-block__items--row">
+                          <div class="pv-block__item">
+                                <base-gallery gallery-id="gallery">
+                                  <template #default>
+                                    <div class="gallery" id="gallery"><a class="gallery__item" href="https://images.unsplash.com/photo-1485204261646-2e9f783c88cd?auto=format&amp;fit=crop&amp;q=80&amp;w=375&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" data-pswp-width="375" data-pswp-height="250" target="_blank"><img src="https://images.unsplash.com/photo-1485204261646-2e9f783c88cd?auto=format&amp;fit=crop&amp;q=80&amp;w=375&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="375" height="250"></a><a class="gallery__item" href="https://images.unsplash.com/photo-1539485420953-992679a61975?auto=format&amp;fit=crop&amp;q=80&amp;w=375&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" data-pswp-width="375" data-pswp-height="250" target="_blank"><img src="https://images.unsplash.com/photo-1539485420953-992679a61975?auto=format&amp;fit=crop&amp;q=80&amp;w=375&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="375" height="250"></a><a class="gallery__item" href="https://images.unsplash.com/photo-1539064979941-65df00f5a3b4?auto=format&amp;fit=crop&amp;q=80&amp;w=375&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" data-pswp-width="375" data-pswp-height="250" target="_blank"><img src="https://images.unsplash.com/photo-1539064979941-65df00f5a3b4?auto=format&amp;fit=crop&amp;q=80&amp;w=375&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="375" height="250"></a>
+                                    </div>
+                                  </template>
+                                </base-gallery>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pv-block">
+                      <h3 class="pv-block__title">Slider</h3>
+                      <div class="pv-block__preview">
+                        <div class="pv-block__items pv-block__items--row">
+                          <div class="pv-block__item">
+                                <div class="standard-block__slider">
+                                  <content-slider>
+                                    <template #default>
+                                      <div class="swiper-slide">
+                                        <div class="standard-block__slider-img"><img src="/local/client-app/dist/img/content/banner.jpg" alt="alt" width="undefined" height="undefined" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';" fetchpriority="low">
+                                        </div>
+                                        <div class="standard-block__slider-text">
+                                          <p>Подпись к фотографии, которая может состоять из одной или двух строк</p>
+                                        </div>
+                                      </div>
+                                      <div class="swiper-slide">
+                                        <div class="standard-block__slider-img"><img src="/local/client-app/dist/img/content/banner.jpg" alt="alt" width="undefined" height="undefined" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';" fetchpriority="low">
+                                        </div>
+                                        <div class="standard-block__slider-text">
+                                          <p>Подпись к фотографии, которая может состоять из одной или двух строк Подпись к фотографии, которая может состоять из одной или двух строк</p>
+                                        </div>
+                                      </div>
+                                      <div class="swiper-slide">
+                                        <div class="standard-block__slider-img"><img src="/local/client-app/dist/img/content/banner.jpg" alt="alt" width="undefined" height="undefined" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';" fetchpriority="low">
+                                        </div>
+                                        <div class="standard-block__slider-text">
+                                          <p>Подпись к фотографии, которая может состоять из одной или двух строк</p>
+                                        </div>
+                                      </div>
+                                    </template>
+                                  </content-slider>
+                                </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pv-block">
+                      <h3 class="pv-block__title">Tips</h3>
+                      <div class="pv-block__preview">
+                        <div class="pv-block__items pv-block__items--row">
+                          <div class="pv-block__item">
+                            <base-tooltip><span class="link">Hover Me</span>
+                              <template #tooltip><span>Catch you!</span></template>
+                            </base-tooltip>
+                          </div>
+                          <div class="pv-block__item">
+                            <base-tooltip show-on-click><span class="link">Click Me</span>
+                              <template #tooltip><span>Catch you!</span></template>
+                            </base-tooltip>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pv-block">
+                      <h3 class="pv-block__title">Pagination</h3>
+                      <div class="pv-block__preview">
+                        <div class="pv-block__items">
+                          <div class="pv-block__item">
+                            <base-pagination :total="100" :limit="10" :max-buttons="3"></base-pagination>
+                          </div>
+                          <div class="pv-block__item">
+                            <base-pagination arrows-style="simple" :total="100" :limit="10" :max-buttons="3"></base-pagination>
+                          </div>
+                          <div class="pv-block__item">
+                            <base-pagination arrows-style="small" :total="100" :limit="10" :max-buttons="3"></base-pagination>
+                          </div>
+                          <div class="pv-block__item">
+                            <base-pagination hide-buttons :total="100" :limit="10" :max-buttons="3"></base-pagination>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pv-block pv-block--dark">
+                      <h3 class="pv-block__title">Pagination Revert</h3>
+                      <div class="pv-block__preview">
+                        <div class="pv-block__items">
+                          <div class="pv-block__item">
+                            <base-pagination :total="100" :limit="10" :max-buttons="3" color-scheme="light"></base-pagination>
+                          </div>
+                          <div class="pv-block__item">
+                            <base-pagination arrows-style="simple" :total="100" :limit="10" :max-buttons="3" color-scheme="light"></base-pagination>
+                          </div>
+                          <div class="pv-block__item">
+                            <base-pagination arrows-style="small" :total="100" :limit="10" :max-buttons="3" color-scheme="light"></base-pagination>
+                          </div>
+                          <div class="pv-block__item">
+                            <base-pagination hide-buttons :total="100" :limit="10" :max-buttons="3" color-scheme="light"></base-pagination>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pv-block">
+                      <h3 class="pv-block__title">Input</h3>
+                      <div class="pv-block__preview">
+                        <div class="pv-block__items pv-block__items--row pv-block__items--align-start">
+                          <div class="pv-block__item">
+                            <input-text placeholder="Type here" id="default-input" label="Default Input" autofocus></input-text>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-text placeholder="Type here" id="disabled-input" label="Disabled Input" disabled></input-text>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-text placeholder="Type here" id="readonly-input" label="ReadOnly Input" read-only></input-text>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-text placeholder="Type here" id="unvalid-input" label="Unvalid Input" :errors="['Some Error']"></input-text>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pv-block">
+                      <h3 class="pv-block__title">Select</h3>
+                      <div class="pv-block__preview">
+                        <div class="pv-block__items pv-block__items--row pv-block__items--align-start">
+                          <div class="pv-block__item">
+                            <example-select placeholder="Select option" id="default-select" label="Default Select" :options="['Option 1', 'Extremely Long Option 2', 'Option 3']"></example-select>
+                          </div>
+                          <div class="pv-block__item">
+                            <example-select placeholder="Select option" id="disabled-select" label="Disabled Select" disabled :options="['Option 1', 'Option 2', 'Option 3', { label: 'Option 4', disabled: true }]"></example-select>
+                          </div>
+                          <div class="pv-block__item">
+                            <example-select placeholder="Select option" id="readOnly-select" label="ReadOnly Select" read-only :options="['Option 1', 'Option 2', 'Option 3', { label: 'Option 4', disabled: true }]"></example-select>
+                          </div>
+                          <div class="pv-block__item">
+                            <example-select placeholder="Select option" id="unvalid-select" label="Unvalid Select" :errors="[&quot;Some Other Error&quot;]" :options="['Option 1', 'Option 2', 'Option 3', { label: 'Option 4', disabled: true }]"></example-select>
+                          </div>
+                          <div class="pv-block__item">
+                            <example-select :model-value="['Option 1']" placeholder="Select option" id="tags-select" label="Tags Select" mode="tags" :options="['Option 1', 'Extremely Long Option 2', 'Option 3', { label: 'Option 4', value: 'Option 4', disabled: true }]"></example-select>
+                          </div>
+                          <div class="pv-block__item">
+                            <example-select :model-value="['Option 1', 'Option 3']" placeholder="Select option" id="multiple-select" label="Multiple Select" mode="multiple" :options="['Option 1', 'Extremely Long Option 2', 'Option 3', { label: 'Option 4', value: 'Option 4', disabled: true }]"></example-select>
+                          </div>
+                          <div class="pv-block__item">
+                            <example-select placeholder="Select option" id="loading-select" label="Loading Select" loading :options="['Option 1', 'Extremely Long Option 2', 'Option 3', { label: 'Option 4', disabled: true }]"></example-select>
+                          </div>
+                          <div class="pv-block__item">
+                            <example-select placeholder="Select option" id="group-select" label="Group Select" mode="multiple" groups :options="[{disabled: true, label: 'Group 1', options: ['Option 1', 'Option 2', 'Option 3'] }, { label: 'Group 2', options: ['Option 4', 'Option 5', 'Option 6'] } ]"></example-select>
+                          </div>
+                          <div class="pv-block__item">
+                            <example-select placeholder="Select option" id="searchable-select" label="Searchable Select" searchable :options="['Option 1', 'Extremely Long Option 2', 'Option 3']"></example-select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pv-block">
+                      <h3 class="pv-block__title">Checkbox</h3>
+                      <div class="pv-block__preview">
+                        <div class="pv-block__items pv-block__items--row">
+                          <div class="pv-block__item">
+                            <input-checkbox id="default-checkbox" label="Default Checkbox" text="Default Checkbox"></input-checkbox>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-checkbox id="checked-checkbox" label="Checked Checkbox" :model-value="true" text="Checked Checkbox"></input-checkbox>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-checkbox id="disabled-checkbox" label="Disabled Checkbox" disabled text="Disabled Checkbox"></input-checkbox>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-checkbox id="disabled-checked-checkbox" label="Disabled-checked Checkbox" disabled :model-value="true" text="Disabled-checked Checkbox"></input-checkbox>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-checkbox id="readonly-checkbox" label="Readonly Checkbox" read-only :model-value="true" text="Readonly Checkbox"></input-checkbox>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-checkbox id="unvalid-checkbox" label="Unvalid Checkbox" :errors="['Some error']" text="Unvalid Checkbox"></input-checkbox>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-checkbox id="no-label-checkbox" text="No label Checkbox"></input-checkbox>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pv-block">
+                      <h3 class="pv-block__title">Radio</h3>
+                      <div class="pv-block__preview">
+                        <div class="pv-block__items pv-block__items--row">
+                          <div class="pv-block__item">
+                            <input-radio id="default-radio" name="radio-preview" label="Default Radio" radio-value="Default Radio"></input-radio>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-radio id="checked-radio" model-value="Checked Radio" name="radio-preview" label="Checked Radio" radio-value="Checked Radio"></input-radio>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-radio id="disabled-radio" name="radio-preview" label="Disabled Radio" disabled radio-value="Disabled Radio"></input-radio>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-radio id="readonly-radio" name="radio-preview" label="Readonly Radio" read-only radio-value="Readonly Radio"></input-radio>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-radio id="unvalid-radio" name="radio-preview" label="Unvalid Radio" :errors="['Some error']" radio-value="Unvalid Radio"></input-radio>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-radio id="no-label-radio" name="radio-preview" radio-value="No label Radio"></input-radio>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pv-block">
+                      <h3 class="pv-block__title">Switch</h3>
+                      <div class="pv-block__preview">
+                        <div class="pv-block__items pv-block__items--row pv-block__items--align-start">
+                          <div class="pv-block__item">
+                            <input-switch id="default-switch" label="Default Switch" on-label="On text" off-label="Off text"></input-switch>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-switch id="active-switch" :model-value="true" label="Active Switch" on-label="On text" off-label="Off text"></input-switch>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-switch id="disabled-switch" label="Disabled Switch" disabled on-label="On text" off-label="Off text"></input-switch>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-switch id="unvalid-switch" label="Unvalid Switch" :errors="['Some error']" on-label="On text" off-label="Off text"></input-switch>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-switch id="no-text-switch" label="No text Switch"></input-switch>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-switch id="no-label-switch" on-label="No label Switch"></input-switch>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pv-block">
+                      <h3 class="pv-block__title">Search</h3>
+                      <div class="pv-block__preview">
+                        <div class="pv-block__items pv-block__items--row pv-block__items--align-start">
+                          <div class="pv-block__item">
+                            <input-search placeholder="Search here" id="default-search" :tooltips="[&quot;First tooltip&quot;,&quot;Second tooltip&quot;]"></input-search>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-search placeholder="Disabled search" disabled id="disabled-search" :tooltips="[&quot;First tooltip&quot;,&quot;Second tooltip&quot;]"></input-search>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pv-block">
+                      <h3 class="pv-block__title">Date</h3>
+                      <div class="pv-block__preview">
+                        <div class="pv-block__items pv-block__items--row pv-block__items--align-start">
+                          <div class="pv-block__item">
+                            <input-date placeholder="Select date" id="default-date" label="Default Date"></input-date>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-date placeholder="Select date" id="disabled-date" label="Disabled Date" disabled></input-date>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-date placeholder="Select date" id="unvalid-date" label="Unvalid Date" :errors="['Some error']"></input-date>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-date placeholder="Select date" id="selected-date" label="Selected Date" :model-value="new Date(2020, 1, 1)"></input-date>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-date placeholder="Select date" id="readonly-date" label="Readonly Date" read-only :model-value="new Date(2020, 1, 1)"></input-date>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-date placeholder="Select date" id="custom-date" label="Custom Format (YY/MM/DD)" date-mask="YY/MM/DD" :model-value="new Date(2020, 1, 1)"></input-date>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-date placeholder="Select date" id="maxmin-date" label="Max/Min Date" :max-date="new Date(2020, 1, 15)" :min-date="new Date(2020, 1, 1)" :model-value="new Date(2020, 1, 1)"></input-date>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pv-block">
+                      <h3 class="pv-block__title">File</h3>
+                      <div class="pv-block__preview">
+                        <div class="pv-block__items pv-block__items--row pv-block__items--align-start">
+                          <div class="pv-block__item">
+                            <input-file placeholder="Choose file" id="default-file" label="Default File"></input-file>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-file placeholder="Choose file" id="filled-file" label="Filled File" multiple :model-value="['https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg', 'https://cdn.britannica.com/35/233235-050-8DED07E3/Pug-dog.jpg']"></input-file>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-file placeholder="Choose file" id="disabled-file" label="Disabled File" disabled></input-file>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-file placeholder="Choose file" id="readonly-file" label="Readonly File" read-only :model-value="['https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg', 'https://cdn.britannica.com/35/233235-050-8DED07E3/Pug-dog.jpg']"></input-file>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-file placeholder="Choose file" id="unvalid-file" label="Unvalid File" :errors="['Some error']"></input-file>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pv-block">
+                      <h3 class="pv-block__title">Range</h3>
+                      <div class="pv-block__preview">
+                        <div class="pv-block__items pv-block__items--row pv-block__items--align-start">
+                          <div class="pv-block__item">
+                            <input-range id="default-range" label="Default Range" left-prefix="from" suffix="%"></input-range>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-range id="decimal-range" label="Decimal Range" suffix="%" mask-type="decimalMask" :step="-1"></input-range>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-range id="tooltip-range" label="Tooltip Range" suffix="%" :model-value="75" tooltips></input-range>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-range id="double-range" label="Double File" suffix="$" :model-value="[50, 100]"></input-range>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-range id="disabled-range" label="Disabled Range" suffix="%" disabled></input-range>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-range id="readonly-range" label="Readonly Range" suffix="%" :model-value="35" read-only></input-range>
+                          </div>
+                          <div class="pv-block__item">
+                            <input-range id="unvalid-range" label="Unvalid Range" suffix="%" :errors="['Some error']"></input-range>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pv-block">
+                      <h3 class="pv-block__title">Forms</h3>
+                      <div class="pv-block__preview">
+                        <form-example></form-example>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </main>
+          </root-component>
+        </template>
+      </suspense>
+      <div class="modals" id="modals-container">
+        <base-modal id="review-details-1" v-slot="{close}">
+          <div class="modal modal--wide">
+            <button class="modal__close" @click="close">
+                  <svg class="modal__close-icon" aria-hidden="true">
+                    <use xlink:href="/local/client-app/dist/img/icons.svg#icon-close"></use>
+                  </svg>
+            </button>
+            <div class="modal__wrapper">
+              <div class="modal__top">
+                <h3 class="modal__title">Юрий С.</h3>
+                <p class="modal__subtitle">19 Августа 2021</p>
+              </div>
+              <div class="modal__body">
+                <p class="modal__text">Я арендовал HiPhi X на выходные и остался в полном восторге! Этот электрокар не только выглядит современно и стильно, но и обладает потрясающей производительностью. Заряда батареи хватило на все мои поездки, а система быстрой зарядки была настоящим спасением. Рекомендую эту модель всем, кто хочет насладиться комфортом и безупречным управлением электрокара!</p>
+                <p class="modal__text">Я арендовал HiPhi X на выходные и остался в полном восторге! Этот электрокар не только выглядит современно и стильно, но и обладает потрясающей производительностью. Заряда батареи хватило на все мои поездки, а система быстрой зарядки была настоящим спасением. Рекомендую эту модель всем, кто хочет насладиться комфортом и безупречным управлением электрокара!</p>
+              </div>
+              <div class="modal__bottom">
+                <div class="reviews-card__product product-preview"><img class="product-preview__img" src="/local/client-app/dist/img/reviews/product-1.webp" alt="alt" width="120" height="72" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';">
+                  <div class="product-preview__name">HiPhi Y</div><a class="product-preview__link" href="#">Подробнее</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </base-modal>
+        <callback-modal></callback-modal>
+        <review-modal></review-modal>
+        <filter-modal></filter-modal>
+        <cookie-toast v-if="!isCookieConfirmed"></cookie-toast>
+      </div>
+    </div>
+    
+  </body>
+</html>

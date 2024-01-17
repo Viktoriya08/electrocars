@@ -1,0 +1,14 @@
+extends /base/_head
+block vars
+	- let title = 'Контакты'
+	- let layoutClass = 'layout'
+	- let bodyClass = null
+
+block content
+	include /sections/header
+	include /sections/mobile-header
+
+	main.page.page-contacts
+		include /pages/contacts
+
+	include /sections/footer

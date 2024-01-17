@@ -1,0 +1,93 @@
+section#product-color.page-section.content-block.content-block--product
+	.wrapper.content-block__wrapper
+		.content-block__body.content-block__body--product-color
+			.content-block__title
+				h2.subtitle Цвет
+
+			.content-block__cont
+				.product-color
+					tabs-template
+						template(#tabs="{changeTab}")
+							.product-color__tabs
+								base-tabs(:initial-value="'exterior'" :tabs="[{label: 'Экстерьер', value: 'exterior'}, {label: 'Салон', value: 'interior'}]" type="switcher" @change="changeTab")
+
+						template(#content="{currentTab}")
+							.product-color__list
+								template(v-if="currentTab === 'exterior'")
+
+									.product-color__item
+										product-color-slider
+											template(#default)
+												.swiper-slide.color-slider__photo
+													+image('img/product-inner/color-1.webp', '1370', '690', ' ', [{file:"img/product-inner/color-1-mob.webp", mediaQuery:"max-width", breakpoint:"768"}]).color-slider__photo-img
+
+													span.color-slider__photo-text леденцовый <br> оранжевый
+
+												.swiper-slide.color-slider__photo
+													+image('img/product-inner/color-2.webp', '1370', '690', ' ', [{file:"img/product-inner/color-2-mob.webp", mediaQuery:"max-width", breakpoint:"768"}]).color-slider__photo-img
+
+													span.color-slider__photo-text фиолетовый
+
+												.swiper-slide.color-slider__photo
+													+image('img/product-inner/color-3.webp', '1370', '690', ' ', [{file:"img/product-inner/color-3-mob.webp", mediaQuery:"max-width", breakpoint:"768"}]).color-slider__photo-img
+
+													span.color-slider__photo-text серебряный <br> серый
+
+											template(#thumbs)
+												.swiper-slide.color-slider__thumb
+													span.color-slider__color(style="background-color: #FF471F")
+												.swiper-slide.color-slider__thumb
+													span.color-slider__color(style="background-color: #42394F")
+												.swiper-slide.color-slider__thumb
+													span.color-slider__color(style="background-color: #A9A9A9")
+
+
+								template(v-if="currentTab === 'interior'")
+
+									.product-color__item
+										product-color-slider
+											template(#default)
+												.swiper-slide.color-slider__photo
+													+image('img/product-inner/color-3.webp', '1370', '690', ' ', [{
+														file: "img/product-inner/color-3-mob.webp",
+														mediaQuery: "max-width",
+														breakpoint: "768"
+													}]).color-slider__photo-img
+
+													span.color-slider__photo-text серебряный <br> серый
+
+												.swiper-slide.color-slider__photo
+													+image('img/product-inner/color-1.webp', '1370', '690', ' ', [{file:"img/product-inner/color-1-mob.webp", mediaQuery:"max-width", breakpoint:"768"}]).color-slider__photo-img
+
+													span.color-slider__photo-text леденцовый <br> оранжевый
+
+												.swiper-slide.color-slider__photo
+													+image('img/product-inner/color-2.webp', '1370', '690', ' ', [{file:"img/product-inner/color-2-mob.webp", mediaQuery:"max-width", breakpoint:"768"}]).color-slider__photo-img
+
+													span.color-slider__photo-text фиолетовый
+
+											template(#thumbs)
+												.swiper-slide.color-slider__thumb
+													span.color-slider__color(style="background-color: #A9A9A9")
+												.swiper-slide.color-slider__thumb
+													span.color-slider__color(style="background-color: #FF471F")
+												.swiper-slide.color-slider__thumb
+													span.color-slider__color(style="background-color: #42394F")
+
+			.content-block__info
+				.product-info
+					.product-info__item
+						.product-info__el
+							span.product-info__label Год выпуска
+							span.product-info__cont 2022
+						.product-info__el
+							span.product-info__label Емкость батареи
+							span.product-info__cont 320 кВт
+
+					.product-info__item
+						.product-info__el
+							span.product-info__label Запас хода
+							span.product-info__cont 560 км
+						.product-info__el
+							span.product-info__label Разгон 0-100 км/ч
+							span.product-info__cont 3,9 сек

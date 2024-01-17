@@ -1,0 +1,18 @@
+section.page-section.products-block#products-slider
+	.wrapper.products-block__wrapper
+		.page-section__top
+			h2.page-section__title Электрокары в лизинг
+
+			.page-section__controls
+				.swiper-buttons.page-section__controls-navigation
+					.swiper-button.swiper-button-prev
+					.swiper-button.swiper-button-next
+
+				.swiper-pagination.page-section__controls-pagination
+
+
+		products-slider.products-block__slider
+			template(#default)
+				each item, index in ['HiPhi X', 'Li9', 'Neta S', 'Rising R7', 'HiPhi X', 'Li9']
+					.products-block__slide.swiper-slide
+						+product-card(item, index)

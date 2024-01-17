@@ -1,0 +1,22 @@
+mixin page-header(title, breadcrumbs, withSearch = false)
+    section.page-header
+        .wrapper.page-header__wrapper
+            +breadcrumbs(breadcrumbs).page-header__breadcrumbs
+
+            if withSearch
+
+                header-actions
+                    template(#default="{searchShown, showSearch, hideSearch}")
+                        .page-header__content
+                            h1.page-title(v-show="!searchShown") !{title}
+
+                            .page-header__actions.page-header__actions--mob(v-show="!searchShown")
+                                button(@click="showSearch").page-header__action.link.link--simple.link--size-m.link--color-quaternary
+                                    +icon('search').link__icon
+                                    | Поиск
+
+                            site-search(v-if="searchShown" label="Поиск" class="page-header__search" @clear="hideSearch")
+
+            else
+                .page-header__content
+                    h1.page-title !{title}

@@ -1,0 +1,27 @@
+extends /base/_head
+block vars
+	- let title = 'Типовая'
+	- let layoutClass = 'layout'
+	- let bodyClass = null
+
+block content
+	include /sections/header
+	include /sections/mobile-header
+
+	main.page
+
+		//top
+		.page-header
+			.wrapper.page-header__wrapper
+				+breadcrumbs(["Главная", "Медиа", "Не боятся ли электромобили высоких температур"])
+
+		// content
+		include /blocks/standard-block
+
+
+
+
+	include /sections/footer
+
+	
+

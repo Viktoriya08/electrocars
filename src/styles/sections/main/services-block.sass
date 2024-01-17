@@ -1,0 +1,30 @@
+.services-block
+	&__list
+		display: grid
+		grid-template-columns: repeat(12, minmax(0,1fr))
+		grid-template-rows: auto
+		align-items: flex-start
+		gap: fluid(10,40)
+
+		.services-card
+			grid-column: span 2
+			grid-row: 1
+			height: 100%
+			aspect-ratio: auto
+
+			@include until-laptop
+				grid-column: span 3
+
+			@include until-tablet
+				grid-column: span 4
+
+			@include while-mob-xl
+				grid-column: span 6
+
+		.form-block
+			grid-column: span 8
+			grid-row: span 3
+
+			@include until-laptop
+				grid-column: -1/1
+				grid-row: auto

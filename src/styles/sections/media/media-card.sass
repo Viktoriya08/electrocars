@@ -1,0 +1,82 @@
+.media-card
+	position: relative
+	display: flex
+	flex-direction: column
+	gap: fluid(12,24)
+
+	@include hover
+		.media-card
+			&__img
+				&::after
+					opacity: 1
+
+	&__img
+		position: relative
+		isolation: isolate
+
+		display: flex
+		align-items: center
+		justify-content: center
+
+		aspect-ratio: 587/342
+
+		overflow: hidden
+
+		border-radius: var(--radius-m)
+		background-color: var(--color-neutral-200)
+
+		color: var(--color-neutral-100)
+
+		&::after
+			content: ''
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+
+			background-color: rgba(0, 0, 0, 0.5)
+			opacity: 0
+
+			transition: opacity .3s ease
+
+		picture
+			display: block
+			width: 100%
+			height: 100%
+
+		&-img
+			display: block
+			width: 100%
+			height: 100%
+			object-fit: cover
+			object-position: center
+
+	&__tags
+		margin-bottom: fluid(6,12)
+
+	&__name
+		flex-grow: 1
+
+		width: 100%
+		max-width: rem(500)
+
+		color: inherit
+		font-size: var(--fontSizeH4)
+		font-weight: 500
+		line-height: var(--lineHeightH4)
+
+		text-decoration: none
+
+		@include cut-string(3)
+
+	&__link
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		font-size: 0
+
+	.media-info
+		margin-top: fluid(12,24)

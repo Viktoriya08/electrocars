@@ -1,0 +1,40 @@
+.about-block
+	&__title
+		font-size: var(--fontSizeP6)
+		font-weight: 500
+		line-height: var(--lineHeightP3)
+
+		&:not(:last-child)
+			margin-bottom: fluid(40, 140)
+
+	&__advantages
+		display: grid
+		grid-template-columns: repeat(2, minmax(0,1fr))
+		gap: fluid(24,80) fluid(20,40)
+
+		@include while-mob-xl
+			grid-template-columns: 100%
+
+		&-name
+			font-size: fluid(16, 24)
+			font-weight: 500
+			line-height: var(--lineHeightH3)
+
+			&:not(:last-child)
+				margin-bottom: fluid(14,40)
+
+		&-text
+			opacity: .7
+			font-size: var(--fontSizeP1)
+			line-height: var(--lineHeightP1)
+
+	&--grey 
+		.about-block
+			&__title
+				&:not(:last-child)
+					margin-bottom: fluid(40, 80)
+
+			&__advantages
+				&-text 
+					color: var(--color-neutral-300)
+

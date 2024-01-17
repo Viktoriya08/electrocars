@@ -1,0 +1,30 @@
+.block-img
+
+	&__grid
+		@extend %base-grid
+
+	&__picture 
+		aspect-ratio: 1920/800
+		background-color: var(--color-primary-300)
+
+		@include while-mob-xl 
+			aspect-ratio: 320/200
+
+		img 
+			display: block
+			size: 100%
+			object-fit: cover
+			object-position: center
+
+	&__title 
+		grid-column: 6/-1
+		font-size: var(--fontSizeH2)
+		font-weight: 500
+		line-height: var(--lineHeightH2)
+
+		@include until-tablet
+			grid-column: 1/-1
+
+	> *
+		&:nth-child(n+2)
+			margin-top: fluid(70, 140)

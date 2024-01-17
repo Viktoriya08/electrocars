@@ -1,0 +1,39 @@
+.reviews-block
+	display: grid
+	grid-gap: fluid(24,60)
+	grid-template-columns: 100%
+
+	&__top
+		display: grid
+		grid-template-columns: repeat(10, minmax(0,1fr))
+		align-items: center
+		gap: fluid(12,40)
+
+		@include while-mob-xl
+			display: flex
+			justify-content: space-between
+
+	&__btn
+		grid-column: 1/3
+
+	&__controls
+		display: flex
+		grid-column: 8 / -1
+		align-items: center
+		justify-content: space-between
+		gap: fluid(12,40)
+		margin-left: rem(50)
+
+		@include while-mob-xl
+			order: -1
+			margin-left: 0
+
+	&__slider
+		width: 100%
+
+		&.swiper
+			overflow: visible
+
+	&__slide
+		&:not(:last-child)
+			margin-right: fluid(12,40)

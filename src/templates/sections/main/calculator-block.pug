@@ -1,0 +1,44 @@
+section.page-section
+	.wrapper
+		.page-section__top
+			h2.page-section__title Рассчитайте выгоду<br> от владения электрокаром
+
+		benefit-form(:fuel-consumption="9.8" :battery-capacity="78" :range-reserve="380" v-slot="{results, params, setElectricityCost, setFuelCost, setMileage, resultsShown, showResults}")
+			article.benefit-calculator
+				.benefit-calculator__form
+					.benefit-calculator__item.bc-item
+						span.bc-item__label Средняя стоимость <br> 1 кВт электроэнергии
+						span.bc-item__value {{ params.electricityCostHuman }} руб/кВт
+
+						.bc-item__action
+							base-tabs(:tabs="[{label: 'Домашняя зарядная станция', value: 'home'}, {label: 'Общественная зарядная станция', value: 'public'}]" type="switcher" @change="setElectricityCost").bc-item__tabs
+
+					.benefit-calculator__item.bc-item
+						span.bc-item__label Средняя стоимость <br> 1 л. топлива
+						span.bc-item__value {{ params.fuelCostHuman }} руб
+
+						.bc-item__action
+							input-range(:model-value="params.fuelCost" :lazy="false" :min="40" :max="85" :step=".1" slider-only @update:model-value="setFuelCost")
+
+					.benefit-calculator__item.bc-item
+						span.bc-item__label Ваш пробег в год, км
+						span.bc-item__value {{ params.mileageHuman }} км
+
+						.bc-item__action
+							input-range(:model-value="params.mileage" :lazy="false" :min="1000" :max="100000" :step="100" slider-only @update:model-value="setMileage")
+
+				.benefit-calculator__right
+					button.benefit-calculator__action.btn.btn--color-secondary(v-show="!resultsShown" @click="showResults") Рассчитать выгоду
+
+					.benefit-calculator__result.bc-result(v-show="resultsShown")
+						h3.bc-result__title Экономия
+
+						ul.bc-result__values
+							li.bc-result__value
+								span.bc-result__label Экономия в год
+								span.bc-result__num от {{ results.perYearEconomy }} руб
+
+							li.bc-result__value
+								span.bc-result__label Экономия на 100 км
+								span.bc-result__num от {{ results.perKmEconomy }} руб
+

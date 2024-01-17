@@ -1,0 +1,37 @@
+-
+	let requisites = [
+		{name: 'ИНН', data: '7460048798'},
+		{name: 'КПП', data: '746001001'},
+		{name: 'ОГРН', data: '1207400018528'},
+		{name: 'Расчетный счёт', data: '40702810404000033968'},
+		{name: 'Банк', data: 'Уральский филиал АО «Райффайзенбанк» г. Екатеринбург'},
+		{name: 'К/счет', data: '30101810100000000906'},
+		{name: 'БИК', data: '046577906'},
+	]
+
+section.page-section.content-block
+	.wrapper
+
+		.content-block__body
+
+			.content-block__title 
+				.subtitle реквизиты
+
+			.content-block__cont
+
+				.requisit
+						.requisit__name Наименование компании
+						.requisit__info Общество с ограниченной ответственностью «ЭлектроКарс Рус» (ООО «ЭлектроКарс Рус»)
+
+				.requisit
+						.requisit__name Юридический адрес
+						.requisit__info 456520, Челябинская область, Сосновский район, <br> поселок Полетаево II-е, железнодорожный разъезд, улица Садовая, дом 40, офис 2,
+
+				each item, i in requisites
+					.requisit
+						.requisit__name=item.name
+						.requisit__info=item.data
+
+				.requisit
+						.requisit__name Управляющий
+						.requisit__info ИП Рудько Дмитрий Анатольевич, ИНН 745005261786, <br> действующий на основании ДОГОВОРА о передаче полномочий единоличног <br>исполнительного органа управляющему от 19.05.2020г.

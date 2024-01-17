@@ -1,0 +1,60 @@
+section.page-section.main-banner
+	main-banner.main-banner__slider
+		template(#default)
+			.swiper-slide.mb-slide
+				.mb-slide__bg
+					+image('img/main/banner-1.webp', '1920', '1080', ' ', [{file:"img/main/banner-1-mob.webp", mediaQuery:"max-width", breakpoint:"768"}], false).mb-slide__img
+
+				.wrapper.mb-slide__wrapper
+					.mb-slide__cont
+						ul.mb-slide__info.marked-list
+							li.marked-list__item Доступно в лизинг
+							li.marked-list__item В кредит на выгодных условиях
+
+						.mb-slide__bottom
+							span.mb-slide__offer от 7 221 000 ₽
+
+							.mb-slide__actions
+								a(href="#").mb-slide__action.btn.btn--color-tertiary
+									span.btn__text Подробнее
+
+			.swiper-slide.mb-slide
+				.mb-slide__bg
+					+image('img/main/banner-2.webp', '1920', '1080', ' ', null).mb-slide__img
+
+				.wrapper.mb-slide__wrapper
+					.mb-slide__cont
+						ul.mb-slide__info.marked-list
+							li.marked-list__item Доступно в лизинг
+							li.marked-list__item В кредит на выгодных условиях
+
+						.mb-slide__bottom
+							span.mb-slide__offer от 7 857 000 ₽
+
+							.mb-slide__actions
+								a(href="#").mb-slide__action.btn.btn--color-tertiary
+									span.btn__text Подробнее
+
+			.swiper-slide.mb-slide.mb-slide--text
+				.mb-slide__bg
+					+image('img/main/banner-3.webp', '1920', '1080', ' ', null).mb-slide__img
+
+				.wrapper.mb-slide__wrapper
+					.mb-slide__cont
+						.mb-slide__top
+							.mb-slide__title Li&nbsp;Auto&nbsp;L7 доступен <br> для&nbsp;заказа
+							.mb-slide__subtitle Водительский электромобиль. В&nbsp;полноприводном <br> или&nbsp;заднеприводном исполнении.
+
+						ul.mb-slide__info.marked-list
+							li.marked-list__item Доступно в лизинг
+							li.marked-list__item В кредит на выгодных условиях
+
+						.mb-slide__bottom
+							span.mb-slide__offer от 10 221 000 ₽
+
+							.mb-slide__actions
+								a(href="#").mb-slide__action.btn.btn--color-tertiary
+									span.btn__text Подробнее
+
+		template(#pagination)
+			.main-banner__pagination.swiper-pagination

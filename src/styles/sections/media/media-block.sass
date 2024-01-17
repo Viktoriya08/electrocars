@@ -1,0 +1,11 @@
+@use "sass:math"
+
+.media-block
+	&__slider
+		&.swiper
+			width: 100%
+
+			@include until-container
+				width: calc(100% + rem($containerPadding))
+				margin: 0 rem(math.div($containerPadding, -2))
+				padding: 0 rem(math.div($containerPadding, 2))

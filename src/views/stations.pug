@@ -1,0 +1,14 @@
+extends /base/_head
+block vars
+	- let title = 'Зарядные станции и сервис'
+	- let layoutClass = 'layout'
+	- let bodyClass = null
+
+block content
+	include /sections/header
+	include /sections/mobile-header
+
+	main.page.page-service
+		include /pages/stations
+
+	include /sections/footer

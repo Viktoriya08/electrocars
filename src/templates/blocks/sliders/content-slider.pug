@@ -1,0 +1,17 @@
+mixin content-slider(items = [])
+	.standard-block__slider&attributes(attributes)
+		content-slider
+			template(#default)
+				each item in items
+					if i === 0
+						.swiper-slide
+							.standard-block__slider-img
+								+image(`img/content/${item.img}.jpg`)(fetchpriority='high')
+							.standard-block__slider-text
+								p!=item.text
+					else
+						.swiper-slide
+							.standard-block__slider-img
+								+image(`img/content/${item.img}.jpg`)(fetchpriority='low')
+							.standard-block__slider-text
+								p!=item.text

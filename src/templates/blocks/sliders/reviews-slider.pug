@@ -1,0 +1,86 @@
+section.page-section.color-block#reviews-slider
+	.wrapper.color-block__wrapper
+		.color-block__body.color-block__body--dark
+			.color-block__title
+				h2.subtitle Отзывы клиентов
+
+			.color-block__cont
+				article.reviews-block
+					.reviews-block__top
+						.reviews-block__btn
+							button(@click="openModal('review-modal')").btn.btn--color-fith
+								span.btn__text Оставить отзыв
+
+						.reviews-block__controls
+							.swiper-buttons
+								.swiper-button.swiper-button-prev.swiper-button--dark
+								.swiper-button.swiper-button-next.swiper-button--dark
+
+							.swiper-pagination
+
+					reviews-slider(id="reviews-slider").reviews-block__slider
+						template(#default)
+							.reviews-block__slide.swiper-slide
+								.reviews-card
+									.reviews-card__top
+										span.reviews-card__name Юрий С.
+										span.reviews-card__date 19 Августа 2021
+									.reviews-card__cont
+										.reviews-card__text
+											p Я арендовал HiPhi X на выходные и остался в полном восторге! Этот электрокар не только выглядит современно и стильно, но и обладает потрясающей производительностью. Заряда батареи хватило на все мои поездки, а система быстрой зарядки была настоящим спасением. Рекомендую эту модель всем...
+												| <br> Я арендовал HiPhi X на выходные и остался в полном восторге! Этот электрокар не только выглядит современно и стильно, но и обладает потрясающей производительностью. Заряда батареи хватило на все мои поездки, а система быстрой зарядки была настоящим спасением. Рекомендую эту модель всем...
+
+
+										.reviews-card__link
+											button(@click="openModal('review-details-1')").link подробнее
+
+									.reviews-card__bottom
+										.reviews-card__product.product-preview
+											+image("img/reviews/product-1.webp",120,72).product-preview__img
+											.product-preview__name HiPhi Y
+											a(href="#").product-preview__link Подробнее
+
+							.reviews-block__slide.swiper-slide
+								.reviews-card
+									.reviews-card__top
+										span.reviews-card__name Елена Д.
+										span.reviews-card__date 19 Августа 2021
+									.reviews-card__cont
+										.reviews-card__text
+											p Я арендовал HiPhi X на выходные и остался в полном восторге! Этот электрокар не только выглядит современно и стильно, но и обладает потрясающей производительностью. Заряда батареи хватило на все мои поездки, а система быстрой зарядки была настоящим спасением. Рекомендую эту модель всем, кто хочет насладиться комфортом и безупречным управлением электрокара!
+
+									.reviews-card__bottom
+										.reviews-card__product.product-preview
+											+image("img/reviews/product-1.webp",120,72).product-preview__img
+											.product-preview__name HiPhi Y
+											a(href="#").product-preview__link Подробнее
+
+							.reviews-block__slide.swiper-slide
+								.reviews-card
+									.reviews-card__top
+										span.reviews-card__name Александр Л.
+										span.reviews-card__date 19 Августа 2021
+									.reviews-card__cont
+										.reviews-card__text
+											p Я арендовал HiPhi X на выходные и остался в полном восторге! Этот электрокар не только выглядит современно и стильно, но и обладает потрясающей производительностью. Заряда батареи хватило на все мои поездки, а система быстрой зарядки была настоящим спасением. Рекомендую эту модель всем, кто хочет насладиться комфортом и безупречным управлением электрокара!
+
+									.reviews-card__bottom
+										.reviews-card__product.product-preview
+											+image("img/reviews/product-3.webp",120,72).product-preview__img
+											.product-preview__name HiPhi Y
+											a(href="#").product-preview__link Подробнее
+
+							.reviews-block__slide.swiper-slide
+								.reviews-card
+									.reviews-card__top
+										span.reviews-card__name Александр Л.
+										span.reviews-card__date 19 Августа 2021
+									.reviews-card__cont
+										.reviews-card__text
+											p Я арендовал HiPhi X на выходные и остался в полном восторге! Этот электрокар не только выглядит современно и стильно, но и обладает потрясающей производительностью. Заряда батареи хватило на все мои поездки, а система быстрой зарядки была настоящим спасением. Рекомендую эту модель всем, кто хочет насладиться комфортом и безупречным управлением электрокара!
+
+									.reviews-card__bottom
+										.reviews-card__product.product-preview
+											+image("img/reviews/product-3.webp",120,72).product-preview__img
+											.product-preview__name HiPhi Y
+											a(href="#").product-preview__link Подробнее

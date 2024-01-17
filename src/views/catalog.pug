@@ -1,0 +1,17 @@
+extends /base/_head
+block vars
+	- let title = 'Каталог'
+	- let layoutClass = 'layout'
+	- let bodyClass = null
+
+block content
+	include /sections/header
+	include /sections/mobile-header
+
+	main.page
+		include /pages/catalog
+
+	include /sections/footer
+
+	
+

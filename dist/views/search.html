@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <link rel="preload" as="font" type="font/woff" href="/local/client-app/dist/fonts/Inter/Inter-Medium.woff" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/local/client-app/dist/fonts/Inter/Inter-Medium.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff" href="/local/client-app/dist/fonts/Inter/Inter-Regular.woff" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/local/client-app/dist/fonts/Inter/Inter-Regular.woff2" crossorigin>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/local/client-app/dist/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/local/client-app/dist/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/local/client-app/dist/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/local/client-app/dist/favicons/favicon-16x16.png">
+    <!--link(rel="manifest" href="/favicons/site.webmanifest")-->
+    <!--link(rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#ffffff")-->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="Результаты поиска">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:image" content="https://html.xpager.ru/electrocars/img/opengraph-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="660">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://html.xpager.ru/electrocars/img/opengraph-image.jpg">
+    <meta name="format-detection" content="telephone=no">
+    <title>Результаты поиска</title>
+    <script type="module" crossorigin src="/local/client-app/dist/scripts/main-chunk-fdacad84.js"></script>
+    <link rel="stylesheet" href="/local/client-app/dist/styles/index-dbfe154b.css">
+  </head>
+  <body>
+    <div class="layout" id="app">
+      <suspense>
+        <template #default>
+          <root-component>
+            <sticky-header>
+              <template #default>
+                <header class="header">
+                  <div class="wrapper header__wrapper"><a class="header__logo logo" href="../"><img class="logo__img" src="/local/client-app/dist/img/logo-text.svg" alt="electrocars" width="142" height="12" loading="eager" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';"></a>
+                    <div class="header__block header__block--left">
+                      <nav class="header__nav">
+                        <button class="header__link link link--simple" @click="openModal('callback-modal')">Заказать звонок</button><a class="header__link link link--simple" href="#">Контакты</a>
+                      </nav>
+                    </div>
+                    <div class="header__block header__block--center">
+                      <button class="btn btn--color-secondary btn--size-medium" href="#"><span class="btn__text">Каталог</span>
+                            <svg class="btn__icon" aria-hidden="true">
+                              <use xlink:href="/local/client-app/dist/img/icons.svg#icon-catalog"></use>
+                            </svg>
+                      </button>
+                    </div>
+                    <header-actions>
+                      <template #default="{searchShown, showSearch, hideSearch}">
+                        <div class="header__block header__block--right">
+                          <nav class="header__nav" v-show="!searchShown"><a class="header__link link link--simple" href="#">Лизинг</a><a class="header__link link link--simple" href="#">Аренда</a><a class="header__link link link--simple" href="#">Зарядные станции и СТО</a></nav>
+                          <div class="header__actions">
+                            <site-search class="header__search" v-show="searchShown" @clear="hideSearch"></site-search><a class="header__action icon-btn icon-btn--color-primary" v-show="!searchShown" href="#" data-count="3">
+                                  <svg class="icon-btn__icon" aria-hidden="true">
+                                    <use xlink:href="/local/client-app/dist/img/icons.svg#icon-compare"></use>
+                                  </svg></a>
+                            <button class="header__action icon-btn icon-btn--color-primary" v-show="!searchShown" @click="showSearch">
+                                  <svg class="icon-btn__icon" aria-hidden="true">
+                                    <use xlink:href="/local/client-app/dist/img/icons.svg#icon-search"></use>
+                                  </svg>
+                            </button>
+                            <burger-dropdown class="header__action">
+                              <div class="burger-menu__links"><a class="burger-menu__link link link--simple link--size-l link--color-tertiary" href="#">Каталог <span class="count">24</span></a><a class="burger-menu__link link link--simple link--size-l" href="#">Лизинг</a><a class="burger-menu__link link link--simple link--size-l" href="#">Аренда</a><a class="burger-menu__link link link--simple link--size-l" href="#">Зарядные станции и СТО</a></div>
+                              <div class="burger-menu__links burger-menu__links--sm"><a class="burger-menu__link link link--simple link--size-m" href="#">Оплата и доставка</a><a class="burger-menu__link link link--simple link--size-m" href="#">О компании</a><a class="burger-menu__link link link--simple link--size-m" href="#">Медиа</a><a class="burger-menu__link link link--simple link--size-m" href="#">Акции</a><a class="burger-menu__link link link--simple link--size-m" href="#">Контакты</a></div>
+                            </burger-dropdown>
+                          </div>
+                        </div>
+                      </template>
+                    </header-actions>
+                  </div>
+                </header>
+              </template>
+            </sticky-header>
+            <mobile-header v-slot="{shouldBeHidden}">
+              <header class="mobile-header" :class="{'mobile-header--hidden' : shouldBeHidden}">
+                <div class="wrapper">
+                  <div class="mobile-header__body">
+                    <div class="mobile-header__actions">
+                      <burger-dropdown id="mobile-burger">
+                        <header-actions>
+                          <template #default="{searchShown, showSearch, hideSearch}">
+                            <div class="burger-menu__top"><a class="icon-btn icon-btn--color-primary" v-show="!searchShown" href="#" data-count="3">
+                                    <svg class="icon-btn__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-compare"></use>
+                                    </svg></a>
+                              <button class="header__action icon-btn icon-btn--color-primary" v-show="!searchShown" @click="showSearch">
+                                    <svg class="icon-btn__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-search"></use>
+                                    </svg>
+                              </button>
+                              <site-search class="burger-menu__search" v-if="searchShown" label="Поиск" @clear="hideSearch"></site-search>
+                            </div>
+                          </template>
+                        </header-actions>
+                        <div class="burger-menu__links"><a class="burger-menu__link link link--simple link--size-l link--color-tertiary" href="#">Каталог <span class="count">24</span></a><a class="burger-menu__link link link--simple link--size-l" href="#">Лизинг</a><a class="burger-menu__link link link--simple link--size-l" href="#">Аренда</a><a class="burger-menu__link link link--simple link--size-l" href="#">Зарядные станции и СТО</a></div>
+                        <div class="burger-menu__links burger-menu__links--sm"><a class="burger-menu__link link link--simple link--size-m" href="#">Оплата и доставка</a><a class="burger-menu__link link link--simple link--size-m" href="#">О компании</a><a class="burger-menu__link link link--simple link--size-m" href="#">Медиа</a><a class="burger-menu__link link link--simple link--size-m" href="#">Акции</a><a class="burger-menu__link link link--simple link--size-m" href="#">Контакты</a></div>
+                      </burger-dropdown>
+                    </div><a class="mobile-header__logo logo" href="#"><img class="logo__img" src="/local/client-app/dist/img/logo.svg" alt="electrocars" width="28" height="28" loading="eager" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';"></a>
+                    <div class="mobile-header__actions">
+                      <button class="link link--simple" @click="openModal('callback-modal')">Позвонить</button>
+                    </div>
+                  </div>
+                </div>
+              </header>
+            </mobile-header>
+            <main class="page page-search">
+              <!--top-->
+                  <section class="page-header">
+                    <div class="wrapper page-header__wrapper">
+                          <nav class="breadcrumbs page-header__breadcrumbs">
+                            <div class="breadcrumbs__wrapper">
+                              <ol class="breadcrumbs__items">
+                                <li class="breadcrumbs__item"><a class="breadcrumbs__link link" href="#" aria-current="page">Главная</a></li>
+                                <li class="breadcrumbs__item">Результаты поиска</li>
+                              </ol>
+                            </div>
+                          </nav>
+                      <div class="page-header__content">
+                        <h1 class="page-title">Результаты поиска</h1>
+                      </div>
+                    </div>
+                  </section>
+              <!--запрос-->
+              <div class="section-control">
+                <div class="wrapper"> 
+                  <div class="section-control__box section-control__box--flex section-control__box--align">
+                    <div class="section-control__subtitle">запрос</div>
+                    <div class="section-control__info"> 
+                      <div class="section-control__title">HiPhi X</div>
+                      <div class="section-control__result">Найдено: 24</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--Каталог-->
+              <section class="page-section page-section--border">
+                <div class="wrapper"> 
+                  <h2 class="page-section__title-default">Каталог</h2>
+                  <div class="catalog catalog__items catalog__items--four">
+                        <article class="product-card catalog__item">
+                          <div class="product-card__img"><img class="product-card__img-img" src="/local/client-app/dist/img/products/product-1.webp" alt=" " width="430" height="293" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/product.svg';"><a class="product-card__btn" href="#">
+                              <button class="btn btn--color-fith"><span class="btn__text">Подробнее</span></button></a>
+                          </div>
+                          <div class="product-card__desc">
+                            <div class="product-card__top">
+                              <!--теги первые, чтобы при переполнении контента они были сверху-->
+                              <div class="product-card__tags tags"><span class="tags__item">Новинка</span><span class="tags__item">Лизинг</span><span class="tags__item">Тест-драйв</span></div><a class="product-card__name" href="#">HiPhi X</a>
+                            </div>
+                            <div class="product-card__info">
+                              <div class="product-card__info-el"><span class="product-card__info-label">Емкость батареи</span><span class="product-card__info-cont">42,8 кВт</span></div>
+                              <div class="product-card__info-el"><span class="product-card__info-label">Запас хода</span><span class="product-card__info-cont">210 км</span></div>
+                              <div class="product-card__info-el"><span class="product-card__info-label">Разгон 0-100 км&nbsp;/&nbsp;ч</span><span class="product-card__info-cont">5,3 сек</span></div>
+                            </div>
+                            <div class="product-card__bottom"><span class="product-card__price">Цена <span class="price">от 7 221 000 ₽</span></span>
+                              <product-actions :product-data="{name: 'HiPhi X', id: 12, offers: [{name: 'Комфорт+', id: 13 }, {name: 'Бизнес', id: 11}, {name: 'Стандарт', id: 16}, {name: 'Эконом', id: 53}]}"></product-actions>
+                            </div>
+                          </div>
+                        </article>
+                        <article class="product-card catalog__item">
+                          <div class="product-card__img"><img class="product-card__img-img" src="/local/client-app/dist/img/products/product-2.webp" alt=" " width="430" height="293" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/product.svg';"><a class="product-card__btn" href="#">
+                              <button class="btn btn--color-fith"><span class="btn__text">Подробнее</span></button></a>
+                          </div>
+                          <div class="product-card__desc">
+                            <div class="product-card__top">
+                              <!--теги первые, чтобы при переполнении контента они были сверху-->
+                              <div class="product-card__tags tags"><span class="tags__item">Новинка</span><span class="tags__item">Лизинг</span><span class="tags__item">Тест-драйв</span></div><a class="product-card__name" href="#">Li9</a>
+                            </div>
+                            <div class="product-card__info">
+                              <div class="product-card__info-el"><span class="product-card__info-label">Емкость батареи</span><span class="product-card__info-cont">42,8 кВт</span></div>
+                              <div class="product-card__info-el"><span class="product-card__info-label">Запас хода</span><span class="product-card__info-cont">210 км</span></div>
+                              <div class="product-card__info-el"><span class="product-card__info-label">Разгон 0-100 км&nbsp;/&nbsp;ч</span><span class="product-card__info-cont">5,3 сек</span></div>
+                            </div>
+                            <div class="product-card__bottom"><span class="product-card__price">Цена <span class="price">от 7 221 000 ₽</span></span>
+                              <product-actions :product-data="{name: 'HiPhi X', id: 17, offers: []}"></product-actions>
+                            </div>
+                          </div>
+                        </article>
+                        <article class="product-card catalog__item">
+                          <div class="product-card__img"><img class="product-card__img-img" src="/local/client-app/dist/img/products/product-3.webp" alt=" " width="430" height="293" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/product.svg';"><a class="product-card__btn" href="#">
+                              <button class="btn btn--color-fith"><span class="btn__text">Подробнее</span></button></a>
+                          </div>
+                          <div class="product-card__desc">
+                            <div class="product-card__top">
+                              <!--теги первые, чтобы при переполнении контента они были сверху-->
+                              <div class="product-card__tags tags"><span class="tags__item">Новинка</span><span class="tags__item">Лизинг</span><span class="tags__item">Тест-драйв</span></div><a class="product-card__name" href="#">Neta S</a>
+                            </div>
+                            <div class="product-card__info">
+                              <div class="product-card__info-el"><span class="product-card__info-label">Емкость батареи</span><span class="product-card__info-cont">42,8 кВт</span></div>
+                              <div class="product-card__info-el"><span class="product-card__info-label">Запас хода</span><span class="product-card__info-cont">210 км</span></div>
+                              <div class="product-card__info-el"><span class="product-card__info-label">Разгон 0-100 км&nbsp;/&nbsp;ч</span><span class="product-card__info-cont">5,3 сек</span></div>
+                            </div>
+                            <div class="product-card__bottom"><span class="product-card__price">Цена <span class="price">от 7 221 000 ₽</span></span>
+                              <product-actions></product-actions>
+                            </div>
+                          </div>
+                        </article>
+                  </div>
+                </div>
+              </section>
+              <!--Медиа-->
+              <section class="page-section page-section--border media">
+                <div class="wrapper"> 
+                  <h2 class="page-section__title-default">Медиа</h2>
+                  <div class="media__list"> 
+                        <article class="media-card">
+                          <div class="media-card__img"><img class="media-card__img-img" src="/local/client-app/dist/img/media/media-1.webp" alt=" " width="587" height="342" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/media.svg';">
+                          </div>
+                          <div class="media-card__desc">
+                            <div class="media-card__tags tags"><span class="tags__item">Новости салона</span><span class="tags__item">Новинки</span></div><a class="media-card__name" href="#">Electrocars привозит в Россию автомобили RISING</a>
+                            <div class="media-info">
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-calendar"></use>
+                                    </svg><span class="media-info__text">4 октября</span>
+                              </div>
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-views-icon"></use>
+                                    </svg><span class="media-info__text">1 231</span>
+                              </div>
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-time-icon"></use>
+                                    </svg><span class="media-info__text">3 мин</span>
+                              </div>
+                            </div>
+                          </div><a class="media-card__link" href="#">Подробнее</a>
+                        </article>
+                        <article class="media-card">
+                          <div class="media-card__img"><img class="media-card__img-img" src="/local/client-app/dist/img/media/media-2.webp" alt=" " width="587" height="342" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/media.svg';">
+                          </div>
+                          <div class="media-card__desc">
+                            <div class="media-card__tags tags"><span class="tags__item">Новости салона</span><span class="tags__item">Новинки</span></div><a class="media-card__name" href="#">Сколько служат батарея и мотор электромобиля?</a>
+                            <div class="media-info">
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-calendar"></use>
+                                    </svg><span class="media-info__text">4 октября</span>
+                              </div>
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-views-icon"></use>
+                                    </svg><span class="media-info__text">1 231</span>
+                              </div>
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-time-icon"></use>
+                                    </svg><span class="media-info__text">3 мин</span>
+                              </div>
+                            </div>
+                          </div><a class="media-card__link" href="#">Подробнее</a>
+                        </article>
+                        <article class="media-card">
+                          <div class="media-card__img"><img class="media-card__img-img" src="/local/client-app/dist/img/media/media-3.webp" alt=" " width="587" height="342" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/media.svg';">
+                          </div>
+                          <div class="media-card__desc">
+                            <div class="media-card__tags tags"><span class="tags__item">Новости салона</span><span class="tags__item">Новинки</span></div><a class="media-card__name" href="#">HiPhi X – главная перчинка ресторанного форума</a>
+                            <div class="media-info">
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-calendar"></use>
+                                    </svg><span class="media-info__text">4 октября</span>
+                              </div>
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-views-icon"></use>
+                                    </svg><span class="media-info__text">1 231</span>
+                              </div>
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-time-icon"></use>
+                                    </svg><span class="media-info__text">3 мин</span>
+                              </div>
+                            </div>
+                          </div><a class="media-card__link" href="#">Подробнее</a>
+                        </article>
+                        <article class="media-card">
+                          <div class="media-card__img"><img class="media-card__img-img" src="/local/client-app/dist/img/media/media-1.webp" alt=" " width="587" height="342" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/media.svg';">
+                          </div>
+                          <div class="media-card__desc">
+                            <div class="media-card__tags tags"><span class="tags__item">Новости салона</span><span class="tags__item">Новинки</span></div><a class="media-card__name" href="#">Electrocars привозит в Россию автомобили RISING</a>
+                            <div class="media-info">
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-calendar"></use>
+                                    </svg><span class="media-info__text">4 октября</span>
+                              </div>
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-views-icon"></use>
+                                    </svg><span class="media-info__text">1 231</span>
+                              </div>
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-time-icon"></use>
+                                    </svg><span class="media-info__text">3 мин</span>
+                              </div>
+                            </div>
+                          </div><a class="media-card__link" href="#">Подробнее</a>
+                        </article>
+                        <article class="media-card">
+                          <div class="media-card__img"><img class="media-card__img-img" src="/local/client-app/dist/img/media/media-2.webp" alt=" " width="587" height="342" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/media.svg';">
+                          </div>
+                          <div class="media-card__desc">
+                            <div class="media-card__tags tags"><span class="tags__item">Новости салона</span><span class="tags__item">Новинки</span></div><a class="media-card__name" href="#">Сколько служат батарея и мотор электромобиля?</a>
+                            <div class="media-info">
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-calendar"></use>
+                                    </svg><span class="media-info__text">4 октября</span>
+                              </div>
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-views-icon"></use>
+                                    </svg><span class="media-info__text">1 231</span>
+                              </div>
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-time-icon"></use>
+                                    </svg><span class="media-info__text">3 мин</span>
+                              </div>
+                            </div>
+                          </div><a class="media-card__link" href="#">Подробнее</a>
+                        </article>
+                        <article class="media-card">
+                          <div class="media-card__img"><img class="media-card__img-img" src="/local/client-app/dist/img/media/media-3.webp" alt=" " width="587" height="342" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/media.svg';">
+                          </div>
+                          <div class="media-card__desc">
+                            <div class="media-card__tags tags"><span class="tags__item">Новости салона</span><span class="tags__item">Новинки</span></div><a class="media-card__name" href="#">Производитель накопителей электроэнергии VOLTS и поставщик электромобилей и зарядных станций Electrocars Rus подписали партнерское соглашение</a>
+                            <div class="media-info">
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-calendar"></use>
+                                    </svg><span class="media-info__text">4 октября</span>
+                              </div>
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-views-icon"></use>
+                                    </svg><span class="media-info__text">1 231</span>
+                              </div>
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-time-icon"></use>
+                                    </svg><span class="media-info__text">3 мин</span>
+                              </div>
+                            </div>
+                          </div><a class="media-card__link" href="#">Подробнее</a>
+                        </article>
+                        <article class="media-card">
+                          <div class="media-card__img"><img class="media-card__img-img" src="/local/client-app/dist/img/media/media-1.webp" alt=" " width="587" height="342" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/media.svg';">
+                          </div>
+                          <div class="media-card__desc">
+                            <div class="media-card__tags tags"><span class="tags__item">Новости салона</span><span class="tags__item">Новинки</span></div><a class="media-card__name" href="#">Electrocars привозит в Россию автомобили RISING</a>
+                            <div class="media-info">
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-calendar"></use>
+                                    </svg><span class="media-info__text">4 октября</span>
+                              </div>
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-views-icon"></use>
+                                    </svg><span class="media-info__text">1 231</span>
+                              </div>
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-time-icon"></use>
+                                    </svg><span class="media-info__text">3 мин</span>
+                              </div>
+                            </div>
+                          </div><a class="media-card__link" href="#">Подробнее</a>
+                        </article>
+                        <article class="media-card">
+                          <div class="media-card__img"><img class="media-card__img-img" src="/local/client-app/dist/img/media/media-2.webp" alt=" " width="587" height="342" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/media.svg';">
+                          </div>
+                          <div class="media-card__desc">
+                            <div class="media-card__tags tags"><span class="tags__item">Новости салона</span><span class="tags__item">Новинки</span></div><a class="media-card__name" href="#">Сколько служат батарея и мотор электромобиля?</a>
+                            <div class="media-info">
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-calendar"></use>
+                                    </svg><span class="media-info__text">4 октября</span>
+                              </div>
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-views-icon"></use>
+                                    </svg><span class="media-info__text">1 231</span>
+                              </div>
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-time-icon"></use>
+                                    </svg><span class="media-info__text">3 мин</span>
+                              </div>
+                            </div>
+                          </div><a class="media-card__link" href="#">Подробнее</a>
+                        </article>
+                        <article class="media-card">
+                          <div class="media-card__img"><img class="media-card__img-img" src="/local/client-app/dist/img/media/media-3.webp" alt=" " width="587" height="342" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/media.svg';">
+                          </div>
+                          <div class="media-card__desc">
+                            <div class="media-card__tags tags"><span class="tags__item">Новости салона</span><span class="tags__item">Новинки</span></div><a class="media-card__name" href="#">Производитель накопителей электроэнергии VOLTS и поставщик электромобилей и зарядных станций Electrocars Rus подписали партнерское соглашение</a>
+                            <div class="media-info">
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-calendar"></use>
+                                    </svg><span class="media-info__text">4 октября</span>
+                              </div>
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-views-icon"></use>
+                                    </svg><span class="media-info__text">1 231</span>
+                              </div>
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-time-icon"></use>
+                                    </svg><span class="media-info__text">3 мин</span>
+                              </div>
+                            </div>
+                          </div><a class="media-card__link" href="#">Подробнее</a>
+                        </article>
+                        <article class="media-card">
+                          <div class="media-card__img"><img class="media-card__img-img" src="/local/client-app/dist/img/media/media-1.webp" alt=" " width="587" height="342" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/media.svg';">
+                          </div>
+                          <div class="media-card__desc">
+                            <div class="media-card__tags tags"><span class="tags__item">Новости салона</span><span class="tags__item">Новинки</span></div><a class="media-card__name" href="#">Electrocars привозит в Россию автомобили RISING</a>
+                            <div class="media-info">
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-calendar"></use>
+                                    </svg><span class="media-info__text">4 октября</span>
+                              </div>
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-views-icon"></use>
+                                    </svg><span class="media-info__text">1 231</span>
+                              </div>
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-time-icon"></use>
+                                    </svg><span class="media-info__text">3 мин</span>
+                              </div>
+                            </div>
+                          </div><a class="media-card__link" href="#">Подробнее</a>
+                        </article>
+                        <article class="media-card">
+                          <div class="media-card__img"><img class="media-card__img-img" src="/local/client-app/dist/img/media/media-2.webp" alt=" " width="587" height="342" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/media.svg';">
+                          </div>
+                          <div class="media-card__desc">
+                            <div class="media-card__tags tags"><span class="tags__item">Новости салона</span><span class="tags__item">Новинки</span></div><a class="media-card__name" href="#">Сколько служат батарея и мотор электромобиля?</a>
+                            <div class="media-info">
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-calendar"></use>
+                                    </svg><span class="media-info__text">4 октября</span>
+                              </div>
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-views-icon"></use>
+                                    </svg><span class="media-info__text">1 231</span>
+                              </div>
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-time-icon"></use>
+                                    </svg><span class="media-info__text">3 мин</span>
+                              </div>
+                            </div>
+                          </div><a class="media-card__link" href="#">Подробнее</a>
+                        </article>
+                        <article class="media-card">
+                          <div class="media-card__img"><img class="media-card__img-img" src="/local/client-app/dist/img/media/media-3.webp" alt=" " width="587" height="342" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/img/media.svg';">
+                          </div>
+                          <div class="media-card__desc">
+                            <div class="media-card__tags tags"><span class="tags__item">Новости салона</span><span class="tags__item">Новинки</span></div><a class="media-card__name" href="#">Производитель накопителей электроэнергии VOLTS и поставщик электромобилей и зарядных станций Electrocars Rus подписали партнерское соглашение</a>
+                            <div class="media-info">
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-calendar"></use>
+                                    </svg><span class="media-info__text">4 октября</span>
+                              </div>
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-views-icon"></use>
+                                    </svg><span class="media-info__text">1 231</span>
+                              </div>
+                              <div class="media-info__item">
+                                    <svg class="media-info__icon" aria-hidden="true">
+                                      <use xlink:href="/local/client-app/dist/img/icons.svg#icon-time-icon"></use>
+                                    </svg><span class="media-info__text">3 мин</span>
+                              </div>
+                            </div>
+                          </div><a class="media-card__link" href="#">Подробнее</a>
+                        </article>
+                  </div>
+                  <div class="section-control section-control--gap">
+                    <div class="section-control__box section-control__box--flex section-control__box--gap">
+                      <div class="section-control__left">
+                        <button class="btn btn--border btn--size--medium"><span class="btn__text">Показать больше</span></button>
+                      </div>
+                      <div class="section-control__right">
+                        <base-pagination arrows-style="simple" :total="100" :limit="10" :max-buttons="4"></base-pagination>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </main>
+            <footer class="footer">
+              <div class="wrapper">
+                <div class="footer__cont">
+                  <nav class="footer__menu">
+                    <ul class="footer__menu-list">
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">Каталог</a></li>
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">Лизинг</a></li>
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">Аренда</a></li>
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">Зарядные станции и СТО</a></li>
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">Оплата и доставка</a></li>
+                    </ul>
+                    <ul class="footer__menu-list">
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">О компании</a></li>
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">Акции</a></li>
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">Контакты</a></li>
+                      <li class="footer__menu-item"><a class="footer__menu-link" href="#">Медиа</a></li>
+                    </ul>
+                  </nav>
+                  <address class="footer__contacts">
+                    <div class="footer__contacts-cont">
+                      <div class="footer__contacts-list">
+                        <div class="footer__contacts-item"><span class="footer__contacts-text">Челябинск <br> Свободы, 91&nbsp;к.&nbsp;1а</span><a class="footer__contacts-link" href="tel:+73517507750">+7 351 750 77 50</a></div>
+                        <div class="footer__contacts-item"><span class="footer__contacts-text">Екатеринбург <br> ул.&nbsp;Мамина-Сибиряка,&nbsp;140</span><a class="footer__contacts-link" href="tel:+73433281010">+7 343 328 10 10</a></div>
+                      </div>
+                      <div class="footer__socials">
+                        <div class="footer__socials-list socials socials--light"><a class="socials__item" href="#"><img class="socials__item-icon" src="/local/client-app/dist/img/socials/yt.svg" alt="alt" width="32" height="32" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';"></a><a class="socials__item" href="#"><img class="socials__item-icon" src="/local/client-app/dist/img/socials/vk.svg" alt="alt" width="32" height="32" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';"></a><a class="socials__item" href="#"><img class="socials__item-icon" src="/local/client-app/dist/img/socials/telegram.svg" alt="alt" width="32" height="32" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';"></a><a class="socials__item" href="#"><img class="socials__item-icon" src="/local/client-app/dist/img/socials/dzen.svg" alt="alt" width="32" height="32" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';"></a><a class="socials__item" href="#"><img class="socials__item-icon" src="/local/client-app/dist/img/socials/web.svg" alt="alt" width="32" height="32" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';"></a></div>
+                        <button class="footer__socials-btn btn btn--color-fith" @click="openModal('callback-modal')"><span class="btn__text">Заказать звонок</span></button>
+                      </div>
+                    </div>
+                  </address>
+                  <div class="footer__bottom"><a class="footer__logo logo logo--light" href="#"><img class="logo__img" src="/local/client-app/dist/img/logo-text.svg" alt="electrocars" width="142" height="12" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';"></a>
+                    <div class="footer__links"><a class="footer__links-item link link--color-secondary link--simple" href="#">Пользовательское соглашение</a><a class="footer__links-item link link--color-secondary link--simple" href="#">Политика конфиденциальности</a></div><span class="footer__copyright">&copy; 2023 «Electrocars»</span><a class="footer__dev" href="#">Заряжено в Xpage</a>
+                  </div>
+                </div>
+              </div>
+            </footer>
+          </root-component>
+        </template>
+      </suspense>
+      <div class="modals" id="modals-container">
+        <base-modal id="review-details-1" v-slot="{close}">
+          <div class="modal modal--wide">
+            <button class="modal__close" @click="close">
+                  <svg class="modal__close-icon" aria-hidden="true">
+                    <use xlink:href="/local/client-app/dist/img/icons.svg#icon-close"></use>
+                  </svg>
+            </button>
+            <div class="modal__wrapper">
+              <div class="modal__top">
+                <h3 class="modal__title">Юрий С.</h3>
+                <p class="modal__subtitle">19 Августа 2021</p>
+              </div>
+              <div class="modal__body">
+                <p class="modal__text">Я арендовал HiPhi X на выходные и остался в полном восторге! Этот электрокар не только выглядит современно и стильно, но и обладает потрясающей производительностью. Заряда батареи хватило на все мои поездки, а система быстрой зарядки была настоящим спасением. Рекомендую эту модель всем, кто хочет насладиться комфортом и безупречным управлением электрокара!</p>
+                <p class="modal__text">Я арендовал HiPhi X на выходные и остался в полном восторге! Этот электрокар не только выглядит современно и стильно, но и обладает потрясающей производительностью. Заряда батареи хватило на все мои поездки, а система быстрой зарядки была настоящим спасением. Рекомендую эту модель всем, кто хочет насладиться комфортом и безупречным управлением электрокара!</p>
+              </div>
+              <div class="modal__bottom">
+                <div class="reviews-card__product product-preview"><img class="product-preview__img" src="/local/client-app/dist/img/reviews/product-1.webp" alt="alt" width="120" height="72" loading="lazy" onerror="this.onerror=null;this.src='/local/client-app/dist/undefined';">
+                  <div class="product-preview__name">HiPhi Y</div><a class="product-preview__link" href="#">Подробнее</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </base-modal>
+        <callback-modal></callback-modal>
+        <review-modal></review-modal>
+        <filter-modal></filter-modal>
+        <cookie-toast v-if="!isCookieConfirmed"></cookie-toast>
+      </div>
+    </div>
+    
+  </body>
+</html>

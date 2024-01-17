@@ -1,0 +1,118 @@
+.map-block
+	&__top
+		display: flex
+		flex-wrap: wrap
+		align-items: flex-end
+		justify-content: space-between
+
+		gap: rem(24)
+
+		margin-bottom: fluid(24, 60)
+		padding-bottom: rem(24)
+
+		border-bottom: 1px solid var(--color-neutral-200)
+
+		@include while-mob-xl
+			flex-direction: column
+			align-items: stretch
+
+	&__tabs
+		max-width: 100%
+
+	&__city
+		flex: 0 1 rem(587)
+
+		@include until-laptop
+			flex: 0 1 rem(400)
+
+		@include until-tablet
+			flex: 0 1 rem(300)
+
+		@include while-mob-xl
+			flex: unset
+
+	&__cont
+		@extend %base-grid
+
+		@include while-mob-xl
+			row-gap: rem(14)
+
+		&--revers 
+			.map-block
+				&__aside
+					grid-column: span 3
+
+					@include until-laptop
+						grid-column: span 4
+
+					@include until-tablet
+						grid-column: 1/-1
+
+					.banner
+						min-height: rem(320)
+
+						@include until-laptop
+							min-height: auto
+
+						&__title
+							font-size: var(--fontSizeH4)
+
+						&__code
+							width: fluid(40,124)
+							height: fluid(40,124)
+							padding: fluid(8,12)
+
+						&__bg
+							max-width: 56%
+
+				&__map
+					grid-column: span 9
+					height: 100%
+					aspect-ratio: auto
+
+					@include until-laptop
+						grid-column: span 8
+
+					@include until-tablet
+						grid-column: 1/-1
+						aspect-ratio: 290/340
+
+
+	&__map
+		isolation: isolate
+		grid-column: span 8
+		aspect-ratio: 1213/589
+		overflow: hidden
+		border-radius: var(--radius-m)
+		background-color: var(--color-neutral-200)
+
+		@include until-tablet
+			grid-column: -1/1
+
+		@include while-mob-xl
+			aspect-ratio: 290/340
+
+		&-img
+			display: block
+			width: 100%
+			height: 100%
+			object-fit: cover
+			object-position: right center
+
+	&__aside
+		display: flex
+		grid-column: span 4
+		flex-direction: column
+		gap: fluid(20,40)
+
+		@include until-tablet
+			grid-column: -1/1
+			order: 2
+
+		@include while-mob-xl
+			gap: rem(14)
+
+	&__contacts 
+		&:not(:last-child)
+			margin-bottom: fluid(17, 80)
+			

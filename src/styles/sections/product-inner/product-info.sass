@@ -1,0 +1,39 @@
+.product-info
+	display: flex
+	flex-direction: column
+	gap: fluid(14,40)
+
+	&__item
+		display: flex
+		gap: fluid(14,24)
+		padding-top: fluid(8,14)
+		border-top: 1px solid var(--color-neutral-250)
+
+	&__el
+		display: flex
+		flex: 1
+		flex-direction: column
+		gap: fluid(8,12)
+
+	&__label
+		color: var(--color-neutral-300)
+		font-size: var(--fontSizeP4)
+		font-weight: 500
+		line-height: var(--lineHeightP2)
+
+		@include while-mob-xl
+			font-size: var(--fontSizeP5)
+
+	&__cont
+		font-size: var(--fontSizeH4)
+		font-weight: 500
+		line-height: var(--lineHeightH4)
+
+	&__color
+		display: flex
+		gap: rem(8)
+
+		&-el
+			width: fluid(32,42)
+			aspect-ratio: 1/1
+			border-radius: var(--radius-m)

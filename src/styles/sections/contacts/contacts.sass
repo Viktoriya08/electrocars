@@ -1,0 +1,76 @@
+.contacts
+
+	&__socials
+		justify-content: flex-end
+
+		&:not(:last-child)
+			margin-bottom: fluid(14, 24)
+			
+	&__address
+		display: grid
+		grid-template-columns: minmax(0,1fr) minmax(0,1fr)
+		gap: rem(40)
+		padding-top: fluid(24, 80)
+		border-top: 1px solid var(--color-neutral-200)
+
+		@include until-tablet
+			grid-template-columns: 100%
+
+		&:not(:last-child)
+			margin-bottom: fluid(24, 70)
+
+	&__map
+		aspect-ratio: 1840/800
+		overflow: hidden
+		border-radius: var(--radius-m)
+		background-color: var(--color-primary-400)
+
+		@include until-tablet
+			aspect-ratio: 320/345
+			margin-right: rem(-15)
+			margin-left: rem(-15)
+
+		img 
+			display: block
+			size: 100%
+			object-fit: cover
+
+
+.address-block
+	&__name 
+		padding-bottom: fluid(24, 40)
+		border-bottom: 1px solid var(--color-neutral-200)
+		font-size: var(--fontSizeH3)
+		font-weight: 500
+		line-height: var(--lineHeightH2)
+
+	&__box
+		display: flex
+		align-items: flex-start
+		justify-content: space-between
+		margin-top: fluid(8, 24)
+		padding-bottom: fluid(24, 40)
+		border-bottom: 1px solid var(--color-neutral-200)
+
+	&__title 
+		color: var(--color-neutral-300)
+		font-size: var(--fontSizeP1)
+		line-height: var(--lineHeightP1)
+
+		@include while-mob-xl
+			font-size: rem(11)
+			line-height: var(--lineHeightP2)
+
+	&__info 
+		color: var(--color-primary-500)
+		font-size: var(--fontSizeH4)
+		font-weight: 500
+		line-height: var(--lineHeightH2)
+		text-decoration: none
+
+		&[href]
+			transition: color .3s
+
+			@include hover 
+				color: var(--color-primary-400)
+

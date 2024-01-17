@@ -1,0 +1,39 @@
+.delivety
+
+	&__wrapper 
+		display: grid
+		grid-template-columns: minmax(0,1fr) minmax(0,2.5fr)
+		column-gap: rem(40)
+
+		@include until-tablet
+			grid-template-columns: 100%
+
+	&__title 
+		font-size: var(--fontSizeH4)
+		font-weight: 500
+		line-height: var(--lineHeightH2)
+
+		&:not(:last-child)
+			margin-bottom: fluid(14, 40)
+
+	&__text 
+		color: var(--color-neutral-300)
+		font-size: var(--fontSizeP2-2)
+		line-height: var(--lineHeightP1)
+
+		@include until-tablet
+			max-width: 70%
+
+	&__img 
+		max-width: rem(900)
+		aspect-ratio: 900/435
+		margin-left: auto
+
+		@include until-tablet
+			display: none
+
+		img 
+			display: block
+			size: 100%
+			object-fit: cover
+			object-position: center

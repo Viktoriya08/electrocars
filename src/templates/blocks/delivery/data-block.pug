@@ -1,0 +1,29 @@
+//- +data-block(['СОВКОМБАНКЛИЗИНГ'],['sov.svg'],['Программа «Экспресс»', 'Программа «Экспресс Плюс»'])
+mixin data-block(items = [], img=[], programs=[])
+
+	each item, i in items
+		article.data-block
+
+			.data-block__box 
+				.data-block__logo 
+					.data-block__icon 
+						img(src=`${BASE_URL}img/delivery/${img}`, alt="" loading="lazzy")
+					.data-block__name=item
+
+			.data-block__box.data-block__box--btn 
+				a(href="#application").data-block__btn.btn.btn--color-primary 
+					span.btn__text Отправить заявку
+
+			each prog in programs
+				.data-block__row 
+					.data-block__title=prog
+					.data-block__info.data 
+						.data__info до 3-х
+						.data__title автомобилей на компанию/<br>группу компаний
+					.data-block__info.data 
+						.data__info до 36 мес
+						.data__title срок договора лизинга
+					.data-block__info.data 
+						.data__info до 20 млн.руб
+						.data__title общая стоимость
+

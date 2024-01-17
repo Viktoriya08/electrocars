@@ -1,0 +1,57 @@
+.color-block
+
+	&__body
+		overflow: hidden
+		border-radius: var(--radius-m)
+
+		@extend %base-grid
+
+		@include until-tablet
+			padding: fluid(14,24)
+
+		&--medium
+			background-color: var(--color-primary-400)
+			color: var(--color-neutral-100)
+
+			.subtitle
+				color: inherit
+
+		&--light
+			background-color: var(--color-primary-300)
+
+			.subtitle
+				color: var(--color-neutral-300)
+
+		&--dark
+			background-color: var(--color-primary-500)
+			background-image: url('/img/content/color-block-bg.webp')
+			background-repeat: no-repeat
+			background-position: center
+			background-size: cover
+			color: var(--color-neutral-100)
+
+			@include until-tablet
+				background-image: url('/img/content/color-block-bg-mob.webp')
+
+			.subtitle
+				opacity: .5
+				color: var(--color-neutral-100)
+
+	&__title
+		grid-column: 1/3
+		padding: fluid(14,24) 0 fluid(14,24) fluid(14,24)
+
+		@include until-tablet
+			grid-column: -1/1
+			padding: 0
+
+	&__cont
+		grid-column: 3/11
+		padding: fluid(80, 140) fluid(14,24) fluid(80, 140) 0
+
+		@include until-laptop
+			grid-column: 3/12
+
+		@include until-tablet
+			grid-column: -1/1
+			padding: 0

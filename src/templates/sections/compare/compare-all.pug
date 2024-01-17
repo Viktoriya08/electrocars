@@ -1,0 +1,231 @@
+section.page-section
+	.compare-header
+		.wrapper
+			.compare__row
+				.compare__col
+					.compare__differences
+						input-switch(id="differences")
+						span.compare__differences-label Показать отличия
+				.compare__col
+					article.compare-product
+						.compare-product__desc
+							a(href="#").compare-product__name HiPhi X
+							span.compare-product__price.price от 9 750 000 ₽
+				.compare__col
+					article.compare-product
+						.compare-product__desc
+							a(href="#").compare-product__name Li Auto L7
+							span.compare-product__price.price от 9 750 000 ₽
+				.compare__col
+					article.compare-product
+						.compare-product__desc
+							a(href="#").compare-product__name Zeekr 001 100 kWh
+							span.compare-product__price.price от 9 750 000 ₽
+
+	.wrapper
+		.compare
+			.compare__top.compare__row
+				.compare__col.compare__col--align-bottom.compare__col--differences
+					.compare__differences
+						input-switch(id="differences")
+						span.compare__differences-label Показать отличия
+
+				.compare__col.compare__col--all
+					.compare__list.compare__list--all
+						each item, index in ['HiPhi X', 'Li Auto L7', 'Zeekr 001 100 kWh']
+							+compare-product(item, index)
+
+			.compare-table
+				.compare-table__el
+					.compare-table__label Основные характеристики
+					.compare-table__list
+						.compare__row
+							.compare__col.compare__col--label
+								.compare__feature
+									.compare__feature-el
+										span.compare-label Длина (мм)
+
+							.compare__col.compare__col--text
+								.compare__feature
+									.compare__feature-el
+										span.compare-text 5200
+
+							.compare__col.compare__col--text
+								.compare__feature
+									.compare__feature-el
+										span.compare-text 5200
+
+							.compare__col.compare__col--text
+								.compare__feature
+									.compare__feature-el
+										span.compare-text 5200
+
+						.compare__row
+							.compare__col.compare__col--label
+								.compare__feature
+									.compare__feature-el
+										span.compare-label Ширина (мм)
+
+							.compare__col.compare__col--text
+								.compare__feature
+									.compare__feature-el
+										span.compare-text 2198 / 2062
+
+							.compare__col.compare__col--text
+								.compare__feature
+									.compare__feature-el
+										span.compare-text 2198 / 2062
+
+							.compare__col.compare__col--text
+								.compare__feature
+									.compare__feature-el
+										span.compare-text 2198 / 2062
+
+				.compare-table__el
+					.compare-table__label Силовые характеристики
+					.compare-table__list
+						.compare__row
+							.compare__col.compare__col--label
+								.compare__feature
+									.compare__feature-el
+										span.compare-label Запас хода (км)
+
+							.compare__col.compare__col--text
+								.compare__feature
+									.compare__feature-el
+										span.compare-text 560 (CLTC) / 550 (NEDC)
+
+							.compare__col.compare__col--text
+								.compare__feature
+									.compare__feature-el
+										span.compare-text 560 (CLTC) / 550 (NEDC)
+
+							.compare__col.compare__col--text
+								.compare__feature
+									.compare__feature-el
+										span.compare-text 560 (CLTC) / 550 (NEDC)
+
+						.compare__row
+							.compare__col.compare__col--label
+								.compare__feature
+									.compare__feature-el
+										span.compare-label Ведущие колеса
+
+							.compare__col.compare__col--text
+								.compare__feature
+									.compare__feature-el
+										span.compare-text Интеллектуальный полный привод
+
+							.compare__col.compare__col--text
+								.compare__feature
+									.compare__feature-el
+										span.compare-text Интеллектуальный полный привод
+
+							.compare__col.compare__col--text
+								.compare__feature
+									.compare__feature-el
+										span.compare-text Интеллектуальный полный привод
+
+						.compare__row
+							.compare__col.compare__col--label
+								.compare__feature
+									.compare__feature-el
+										span.compare-label Режимы вождения
+
+							.compare__col.compare__col--text
+								.compare__feature
+									.compare__feature-el
+										span.compare-text Economy / Comfort / Sport / Personality)
+
+							.compare__col.compare__col--text
+								.compare__feature
+									.compare__feature-el
+										span.compare-text Economy / Comfort / Sport / Personality)
+
+							.compare__col.compare__col--text
+								.compare__feature
+									.compare__feature-el
+										span.compare-text Economy / Comfort / Sport / Personality)
+
+
+				.compare-table__el
+					.compare-table__label Управление энергией
+					.compare-table__list
+						.compare__row
+							.compare__col.compare__col--label
+								.compare__feature
+									.compare__feature-el
+										span.compare-label Рекуперация (с регулируемой интенсивностью)
+
+							.compare__col.compare__col--text
+								.compare__feature
+									.compare__feature-el
+										span.compare-text
+											+icon('yes').compare-text__icon
+
+							.compare__col.compare__col--text
+								.compare__feature
+									.compare__feature-el
+										span.compare-text
+											+icon('yes').compare-text__icon
+
+							.compare__col.compare__col--text
+								.compare__feature
+									.compare__feature-el
+										span.compare-text
+											+icon('yes').compare-text__icon
+
+						.compare__row
+							.compare__col.compare__col--label
+								.compare__feature
+									.compare__feature-el
+										span.compare-label Функция V2L (максимальная мощность 3,3 кВт)
+
+							.compare__col.compare__col--text
+								.compare__feature
+									.compare__feature-el
+										span.compare-text
+											+icon('no').compare-text__icon
+
+							.compare__col.compare__col--text
+								.compare__feature
+									.compare__feature-el
+										span.compare-text
+											+icon('no').compare-text__icon
+
+							.compare__col.compare__col--text
+								.compare__feature
+									.compare__feature-el
+										span.compare-text
+											+icon('no').compare-text__icon
+
+						.compare__row
+							.compare__col.compare__col--label
+								.compare__feature
+									.compare__feature-el
+										span.compare-label Рекуперация (с регулируемой интенсивностью)
+
+							.compare__col.compare__col--text
+								.compare__feature
+									.compare__feature-el
+										span.compare-text
+											+icon('no').compare-text__icon
+
+							.compare__col.compare__col--text
+								.compare__feature
+									.compare__feature-el
+										span.compare-text
+											+icon('no').compare-text__icon
+
+							.compare__col.compare__col--text
+								.compare__feature
+									.compare__feature-el
+										span.compare-text
+											+icon('no').compare-text__icon
+
+
+			.compare__bottom
+				.compare__row
+					.compare__col
+						button.compare__btn.btn.btn--color-fourth
+							span.btn__text Показать все характеристики

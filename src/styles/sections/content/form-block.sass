@@ -1,0 +1,63 @@
+.form-block
+	position: relative
+	isolation: isolate
+
+	display: flex
+	flex-direction: column
+	gap: fluid(40,80)
+
+	min-height: fluid(420, 629)
+	padding: fluid(14,24)
+
+	overflow: hidden
+
+	border-radius: var(--radius-m)
+	background-color: var(--color-primary-400)
+
+	&__bg
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+
+		picture
+			display: block
+			width: 100%
+			height: 100%
+
+		&-img
+			display: block
+			width: 100%
+			height: 100%
+			object-fit: cover
+			object-position: center
+
+	&__title,
+	&__form
+		position: relative
+
+	&__title
+		max-width: rem(750)
+		color: var(--color-neutral-100)
+		font-size: var(--fontSizeH2)
+		font-weight: 500
+		line-height: var(--lineHeightH2)
+
+	&__form
+		width: 100%
+		max-width: rem(573)
+		margin-top: auto
+		margin-left: auto
+		padding: fluid(14,24)
+		border-radius: var(--radius-m)
+		background-color: var(--color-neutral-100)
+
+		&--big 
+			max-width: rem(950)
+
+			@include until-laptop
+				max-width: 100%
+
+			.form__title
+				max-width: rem(400)

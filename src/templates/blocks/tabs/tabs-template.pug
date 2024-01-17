@@ -1,0 +1,14 @@
+mixin tabs-template(tabs = [], items = [])
+	tabs-template
+		template(#tabs='{setTab}')
+			base-tabs(@change='setTab' :tabs!=tabs).class__tabs
+		template(#content='{activeTab}')
+			each item, i in items
+				if i === 0
+					- let tab = tabs[i]
+					.class__content(v-if='activeTab === tab')
+						.class__content-wrapper!=item.content
+				else
+					- let tab = tabs[i]
+					.class__content(v-else-if='activeTab === tab')
+						.class__content-wrapper!=item.content

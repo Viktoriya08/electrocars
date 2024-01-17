@@ -1,0 +1,53 @@
+.compare-empty
+	padding-top: fluid(24,60)
+	border-top: 1px solid var(--color-neutral-200)
+
+	@extend %base-grid
+
+	&__cont
+		position: relative
+		display: flex
+		grid-column: 3/7
+		flex-direction: column
+
+		&::before
+			content: ''
+			position: absolute
+			top: 0
+			right: calc(100% + rem(40))
+
+			width: fluid(22,42)
+			height: fluid(22,42)
+
+			background-image: url('/img/icons/compare.svg')
+			background-repeat: no-repeat
+			background-position: center
+			background-size: contain
+
+			@include until-tablet
+				position: relative
+				right: auto
+				margin-bottom: rem(24)
+
+		@include until-laptop
+			grid-column: 3/8
+
+		@include until-tablet
+			grid-column: -1/1
+
+	&__title
+		font-size: var(--fontSizeH4)
+		font-weight: 500
+		line-height: var(--lineHeightH4)
+
+		&:not(:last-child)
+			margin-bottom: fluid(14,24)
+
+	&__text
+		color: var(--color-neutral-300)
+		font-size: var(--fontSizeP2-2)
+		line-height: var(--lineHeightP1)
+
+	&__btn
+		&:not(:first-child)
+			margin-top: fluid(14,40)

@@ -1,0 +1,17 @@
+extends /base/_head
+block vars
+	- let title = 'Медиа'
+	- let layoutClass = 'layout'
+	- let bodyClass = null
+
+block content
+	include /sections/header
+	include /sections/mobile-header
+
+	main.page.page-media
+		include /pages/media-search
+
+	include /sections/footer
+
+	
+

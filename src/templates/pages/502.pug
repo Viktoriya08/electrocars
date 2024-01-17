@@ -1,0 +1,29 @@
+.page-header
+	.wrapper.page-header__wrapper
+		.page-title На сайте возникла ошибка
+
+section.page-section.error-block.content-block.content-block--border
+	.wrapper
+		.content-block__body
+
+			h2.content-block__title.subtitle ошибка
+
+			.content-block__cont
+				p Уже исправляем. Скоро всё заработает!
+				
+				a.btn.btn--color-primary.error-block__btn(href="../")
+					span Вернуться на главную
+
+				.error-block__img
+					img(src=`${BASE_URL}img/502.svg`).error-block__img-img
+
+section.page-section.page-section--border
+	.wrapper 
+
+		h2.page-section__title-default Популярные статьи
+
+		.media__list 
+			each item, index in ['Electrocars привозит в Россию автомобили RISING', 'Сколько служат батарея и мотор электромобиля?', 'HiPhi X – главная перчинка ресторанного форума']
+				+media-card(item, index + 1)
+			each item, index in ['Electrocars привозит в Россию автомобили RISING', 'Сколько служат батарея и мотор электромобиля?', 'Производитель накопителей электроэнергии VOLTS и поставщик электромобилей и зарядных станций Electrocars Rus подписали партнерское соглашение']
+				+media-card(item, index + 1)

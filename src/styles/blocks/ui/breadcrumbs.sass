@@ -1,0 +1,52 @@
+.breadcrumbs
+
+	// &__wrapper
+
+	&__backward
+		display: none
+		gap: rem(8)
+		font-size: var(--breadcrumb-font-size)
+		line-height: var(--breadcrumb-line-height)
+		text-decoration: none
+
+		svg
+			size: rem(20)
+
+	&__items
+		display: flex
+
+	&__item
+		display: flex
+		align-items: center
+		color: var(--color-neutral-300)
+		font-size: var(--breadcrumb-font-size)
+		line-height: var(--breadcrumb-line-height)
+
+		&:last-child
+			display: -webkit-box
+			max-width: rem(273)
+			overflow: hidden
+			text-overflow: ellipsis
+			-webkit-line-clamp: 1
+			-webkit-box-orient: vertical
+
+			.breadcrumbs__link
+				cursor: default
+
+		&:not(:last-child)
+			margin-right: var(--breadcrumb-icon-margin)
+
+			&::after
+				content: "–"
+				display: inline-block
+				margin-left: var(--breadcrumb-icon-margin)
+
+	&__link
+		&[aria-current]
+			text-decoration: none
+
+	.link
+
+		&::before,
+		&::after
+			display: none

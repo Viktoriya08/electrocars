@@ -1,0 +1,24 @@
+section.page-section.media-block#media-slider
+	.wrapper
+		.page-section__top
+			h2.page-section__title Новости
+
+			.page-section__controls
+				.swiper-buttons
+					.swiper-button.swiper-button-prev
+					.swiper-button.swiper-button-next
+
+				.swiper-pagination
+
+			.page-section__link
+				a(href="#").link перейти в раздел
+
+		media-slider(id="media-slider").media-block__slider
+			template(#default)
+				each item, index in ['Electrocars привозит в Россию автомобили RISING', 'Сколько служат батарея и мотор электромобиля?', 'HiPhi X – главная перчинка ресторанного форума']
+					.media-block__slide.swiper-slide
+						+media-card(item, index + 1)
+
+				each item, index in ['Electrocars привозит в Россию автомобили RISING', 'Сколько служат батарея и мотор электромобиля?', 'HiPhi X – главная перчинка ресторанного форума']
+					.media-block__slide.swiper-slide
+						+media-card(item, index + 1)

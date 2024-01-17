@@ -1,0 +1,21 @@
+.product-offers
+    display: flex
+    flex-direction: column
+    gap: 0
+
+    &__item
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        padding: rem(6)
+        border-radius: var(--radius-m)
+        background-color: transparent
+
+        @include hover
+            background-color: var(--color-primary-300)
+
+        &.active
+            background-color: var(--color-primary-300)
+
+        &.disabled
+            pointer-events: none

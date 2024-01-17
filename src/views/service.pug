@@ -1,0 +1,16 @@
+extends /base/_head
+block vars
+	- let title = 'Зарядные станции и сервис'
+	- let layoutClass = 'layout'
+	- let bodyClass = null
+	// в    ../sections/stations/map    добавляется условие для вывода блока с контактами
+	- let isService = true
+
+block content
+	include /sections/header
+	include /sections/mobile-header
+
+	main.page.page-service
+		include /pages/stations
+
+	include /sections/footer

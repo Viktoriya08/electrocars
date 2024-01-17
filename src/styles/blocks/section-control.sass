@@ -1,0 +1,116 @@
+.section-control
+
+	&__box
+		&--flex
+			display: flex
+			flex-wrap: wrap
+			align-items: flex-end
+			justify-content: space-between
+
+			gap: rem(24)
+
+
+			@include while-mob-xl
+				flex-direction: column
+				align-items: stretch
+
+		&--gap 
+			@include while-mob-xl
+				gap: rem(14)
+
+		&--align 
+			align-items: flex-start
+
+		&--border
+			padding-bottom: fluid(14, 60)
+			border-bottom: 1px solid var(--color-neutral-200)
+
+			&:first-child
+				padding-bottom: fluid(14, 24)
+
+		&:not(:first-child)
+			padding-top: fluid(14, 60)
+
+		.tags
+			@include while-mob-xl
+				margin-top: rem(10)
+				margin-bottom: rem(24)
+			
+
+	&__left
+		max-width: 100%
+
+		@include while-mob-xl
+			.btn 
+				width: 100%
+
+	&__search
+		flex: 0 1 rem(587)
+
+		@include until-laptop
+			flex: 0 1 rem(400)
+
+		@include until-tablet
+			flex: 0 1 rem(300)
+
+		@include while-mob-xl
+			flex: unset
+
+	&__title 
+		font-size: var(--fontSizeH2)
+		font-weight: 500
+		line-height: var(--lineHeightH2)
+
+		&:not(:last-child)
+			margin-bottom: fluid(4, 12)
+
+	&__subtitle 
+		flex: 0 0 rem(270)
+		color: var(--color-neutral-300)
+		font-size: var(--fontSizeP2)
+		font-weight: 500
+		line-height: var(--lineHeightH2)
+		text-transform: uppercase
+
+		@include while-mob-xl
+			flex: 0 0 auto
+			margin-bottom: rem(4)
+
+	&__result 
+		color: var(--color-neutral-300)
+		font-size: rem(14)
+		line-height: var(---lineHeightP1)
+
+		@include while-mob-xl
+			font-size: rem(10)
+			font-weight: 500
+			line-height: var(---lineHeightP2)
+
+	&__info 
+		flex-grow: 1
+
+
+	&:not(:last-child)	
+		margin-bottom: fluid(24, 60)
+
+	.section-control__search
+		&--select 
+			.default-input__label
+				padding-bottom: rem(15)
+
+		.default-input__label
+			padding-bottom: 0
+	
+	.section-control__right
+		@include while-mob-xl
+			width: 100%
+
+			.pagination
+				width: 100%
+
+
+	
+
+
+
+	

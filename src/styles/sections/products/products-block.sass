@@ -1,0 +1,28 @@
+@use "sass:math"
+
+.products-block
+	&__slider
+		&.swiper
+			width: 100%
+
+			@include until-container
+				width: calc(100% + rem($containerPadding))
+				margin: 0 rem(math.div($containerPadding, -2))
+				padding: 0 rem(math.div($containerPadding, 2))
+
+	&__list
+		display: grid
+		grid-template-columns: repeat(12, 1fr)
+		gap: fluid(24,40)
+
+	&__item
+		grid-column: span 3
+
+		@include until-laptop-xl
+			grid-column: span 4
+
+		@include until-laptop
+			grid-column: span 6
+
+		@include while-mob-xl
+			grid-column: -1/1

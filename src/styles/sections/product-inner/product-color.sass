@@ -1,0 +1,21 @@
+.product-color
+	position: relative
+	display: flex
+	flex-direction: column
+	gap: fluid(10,20)
+
+	@include while-mob-xl
+		margin-bottom: rem(4)
+
+	&__tabs
+		position: absolute
+		top: 0
+		left: 0
+		z-index: calc(var(--z-index-above) + 1)
+		max-width: 100%
+		padding: fluid(14,24)
+
+		@include until-tablet
+			position: relative
+			padding: 0
+
