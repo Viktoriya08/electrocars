@@ -1,0 +1,1 @@
+import{d as h,_ as e,m as a}from"./main-chunk-0e8e2f38.js";const s=e(h({name:"HeaderActions",data:()=>({searchShown:!1}),methods:{showSearch(){this.searchShown=!0},hideSearch(){this.searchShown=!1}}}),[["render",function(h,e,s,r,o,c){return a(h.$slots,"default",{searchShown:h.searchShown,hideSearch:h.hideSearch,showSearch:h.showSearch})}]]);export{s as default};

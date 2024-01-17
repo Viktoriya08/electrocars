@@ -1,0 +1,1 @@
+import{d as a,_ as s,o as e,b as n,w as t,m as o,T as r}from"./main-chunk-0e8e2f38.js";const d=s(a({name:"FadeTransition"}),[["render",function(a,s,d,u,f,m){return e(),n(r,{name:"fade"},{default:t((()=>[o(a.$slots,"default")])),_:3})}]]);export{d as default};
